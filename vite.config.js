@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // @ -> src 폴더로 연결
+      '@': path.resolve(__dirname, './src'),
     },
   },
 })

@@ -34,7 +34,12 @@ export default [
       'jsx-a11y': eslintPluginJsxA11y,
     },
     settings: {
+      react: { version: '19.0.0' },
       'import/resolver': {
+        node: {
+          paths: ['src'],
+          extensions: ['.js', '.jsx'],
+        },
         alias: {
           map: [['@', './src']],
           extensions: ['.js', '.jsx'],
