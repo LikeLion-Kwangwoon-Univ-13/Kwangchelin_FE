@@ -1,40 +1,33 @@
-import eslintPluginImport from 'eslint-plugin-import'
-import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y'
-import prettierPlugin from 'eslint-plugin-prettier'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
-import eslintPluginUnusedImports from 'eslint-plugin-unused-imports'
+import { defineConfig } from 'eslint/config'
+import pluginImport from 'eslint-plugin-import'
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
+import pluginPrettier from 'eslint-plugin-prettier'
+import pluginReact from 'eslint-plugin-react'
+import pluginReactHooks from 'eslint-plugin-react-hooks'
+import pluginReactRefresh from 'eslint-plugin-react-refresh'
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import globals from 'globals'
 
 import js from '@eslint/js'
 
-export default [
-  { ignores: ['dist'] },
+export default defineConfig([
   {
-    files: ['**/*.{js,jsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-    },
+    files: ['**/*.{js,mjs,cjs,jsx}'],
     plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-      prettier: prettierPlugin,
-      'unused-imports': eslintPluginUnusedImports,
-      'simple-import-sort': eslintPluginSimpleImportSort,
-      import: eslintPluginImport,
-      'jsx-a11y': eslintPluginJsxA11y,
+      js,
+      react: pluginReact,
+      'react-hooks': pluginReactHooks,
+      'react-refresh': pluginReactRefresh,
+      prettier: pluginPrettier,
+      import: pluginImport,
+      'simple-import-sort': pluginSimpleImportSort,
+      'jsx-a11y': pluginJsxA11y,
     },
     settings: {
-      react: { version: '19.0.0' },
+      react: {
+        version: 'detect',
+        jsxRuntime: 'automatic',
+      },
       'import/resolver': {
         node: {
           paths: ['src'],
@@ -46,48 +39,46 @@ export default [
         },
       },
     },
+    extends: [
+      'js/recommended',
+      pluginReact.configs.flat.recommended,
+      pluginReact.configs.flat['jsx-runtime'],
+    ],
     rules: {
-      // 기본 recommended 세팅
       ...js.configs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
 
-      // 프로젝트 맞춤 규칙
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-      'prettier/prettier': 'error',
+      // JSX a11y 접근성 권장 규칙
+      ...pluginJsxA11y.configs.recommended.rules,
 
-      // unused-imports: 사용되지 않는 import/변수 제거
-      'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': [
-        'warn',
-        {
-          vars: 'all',
-          varsIgnorePattern: '^_',
-          args: 'after-used',
-          argsIgnorePattern: '^_',
-        },
-      ],
+      // React Hooks 권장 설정
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
 
-      // simple-import-sort: import/export 정렬
+      // React Refresh 권장 규칙
+      'react-refresh/only-export-components': 'warn',
+
+      // Prettier 규칙
+      'prettier/prettier': 'warn',
+
+      // Import 규칙
+      'import/no-unresolved': ['error', { ignore: ['\\?react$'] }],
+      'import/named': 'error',
+      'import/default': 'error',
+      'import/namespace': 'error',
+      'import/no-duplicates': 'warn',
+
+      // Simple Import Sort 규칙
       'simple-import-sort/imports': [
         'error',
-        {
-          groups: [
-            // 기본 내장 모듈
-            ['^node:.*', '^\\w'],
-            // 절대경로 (예: @/로 시작하는 것들)
-            ['^@/'],
-            // 상대경로 (./ ../)
-            ['^\\.'],
-          ],
-        },
+        { groups: [['^node:.*', '^\\w'], ['^@/'], ['^\\.']] },
       ],
       'simple-import-sort/exports': 'error',
 
-      // jsx-a11y: 접근성 관련 경고
-      'jsx-a11y/alt-text': 'warn',
-      'jsx-a11y/anchor-is-valid': 'warn',
-      'jsx-a11y/no-autofocus': 'warn',
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+
+      'react/prop-types': 'off',
     },
   },
-]
+  { files: ['**/*.{js,mjs,cjs,jsx}'], languageOptions: { globals: globals.browser } },
+  { ignores: ['dist/**', '/node_modules/**', '.git/**'] },
+])
