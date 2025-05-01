@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:icons": "node src/utils/generate-icon-map.js"
+    "generate:icons": "node src/scripts/generate-icon-map.js"
   },
   "dependencies": {
     "react": "^19.0.0",
