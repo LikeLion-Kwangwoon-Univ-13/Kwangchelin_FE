@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+
 import { iconMap } from './iconMap'
 
 export const Icon = ({ name, size = 24, className = '', ...props }) => {
