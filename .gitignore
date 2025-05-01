@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+
+# 자동 생성된 아이콘 맵 파일
+/src/components/Icon/iconMap.js
