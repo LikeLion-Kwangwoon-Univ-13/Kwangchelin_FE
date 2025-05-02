@@ -31,11 +31,11 @@ export default defineConfig([
       'import/resolver': {
         node: {
           paths: ['src'],
-          extensions: ['.js', '.jsx'],
+          extensions: ['.js', '.jsx', '.css', '.module.css'],
         },
         alias: {
           map: [['@', './src']],
-          extensions: ['.js', '.jsx'],
+          extensions: ['.js', '.jsx', '.css', '.module.css'],
         },
       },
     },

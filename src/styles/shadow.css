@@ -9,7 +9,7 @@
   --shadow-button: 5px 5px 20px 0px rgba(255, 161, 0, 0.2);
 
   /* 버튼 클릭 이펙트 */
-  --shadow-button-press: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  --shadow-button-effect: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
 
   /* 드롭다운 그림자 */
   --shadow-dropdown: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
