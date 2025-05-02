@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  box-shadow: var(--shadow-button-effect);
+  cursor: pointer;
+}
+
+/* 버튼 색상 */
+.button-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.button-secondary {
+  background-color: var(--color-header-bg);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+}
+
+/* 버튼 사이즈 */
+.button-md {
+  width: 131px;
+  height: 41.13px;
+  font: var(--font-button-medium);
+}
+
+.button-lg {
+  width: 228px;
+  height: 54px;
+  font: var(--font-button-large);
+}
