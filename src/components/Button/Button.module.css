@@ -5,29 +5,39 @@
   border-radius: 24px;
   box-shadow: var(--shadow-button-effect);
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* 버튼 색상 */
-.button-primary {
+.buttonPrimary {
   background-color: var(--color-primary);
   color: white;
+  border: none;
 }
 
-.button-secondary {
+.buttonSecondary {
   background-color: var(--color-header-bg);
   color: var(--color-secondary);
   border: 1px solid var(--color-secondary);
 }
 
 /* 버튼 사이즈 */
-.button-md {
+.buttonMd {
   width: 131px;
-  height: 41.13px;
+  height: 41px;
   font: var(--font-button-medium);
 }
 
-.button-lg {
+.buttonLg {
   width: 228px;
   height: 54px;
   font: var(--font-button-large);
+}
+
+/* 비활성화 상태 */
+.buttonDisabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
