@@ -31,7 +31,7 @@ const generateIconMap = () => {
     const files = readdirSync(folderPath).filter((file) => file.endsWith('.svg'))
 
     for (const file of files) {
-      const importKey = `${folder}/${file.replace('.svg', '')}`
+      const importKey = `${file.replace('.svg', '')}`
       const varName = toCamelCase(`${folder}-${file}`)
       const importPath = `@/assets/${folder}/${file}`
 
