@@ -1,6 +1,5 @@
-import { CategorySection } from './components/CategorySection/CategorySection'
-import { Header } from './components/Header/Header'
-import { LinkCardSection } from './components/LinkCardSection/LinkCardSection'
+import { CategorySection, Header, LinkCardSection } from '@/features/main/ui'
+
 import styles from './MainPage.module.css'
 
 export const MainPage = () => {

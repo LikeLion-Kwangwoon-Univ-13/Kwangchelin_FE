@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router'
 
-import { MainPage } from '@/pages/main/MainPage'
+import { MainPage } from '@/pages/main'
 import { SchoolFoodPage } from '@/pages/school-food'
 
 export const AppRouter = () => {
