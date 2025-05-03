@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 21px;
+  padding: 24px;
+  border: 1px solid var(--color-outline);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: var(--font-home-main-button-size);
+  font-weight: var(--font-home-main-button-weight);
+  line-height: var(--font-home-main-button-line-height);
+  color: var(--color-secondary);
+}
+
+.subTitle {
+  font-size: var(--font-home-description-size);
+  font-weight: var(--font-home-description-weight);
+  color: var(--color-text);
+}
