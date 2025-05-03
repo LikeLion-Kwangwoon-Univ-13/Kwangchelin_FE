@@ -4,7 +4,7 @@ import { ReviewListSection, SchoolFoodHomeLink } from '@/features/schoolFoodRevi
 
 import styles from './SchoolFoodReviewPage.module.css'
 
-export const SchoolFoodReviewPage = () => {
+export const SchoolFoodPage = () => {
   return (
     <MainLayout title='학식 정보' hasBackgroundColor>
       <div className={styles.container}>

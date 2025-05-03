@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router'
 
 import { MainPage } from '@/pages/main/MainPage'
-import { SchoolFoodReviewPage } from '@/pages/school-food-review'
+import { SchoolFoodPage } from '@/pages/school-food'
 
 export const AppRouter = () => {
   return (
@@ -9,7 +9,7 @@ export const AppRouter = () => {
       <Route path='/' element={<MainPage />} />
 
       {/* 학식 */}
-      <Route path='/school-food' element={<SchoolFoodReviewPage />}>
+      <Route path='/school-food' element={<SchoolFoodPage />}>
         {/* <Route path='review' element={<SchoolFoodReviewPage />} /> */}
       </Route>
 
