@@ -1,0 +1,16 @@
+.backgroundGradient {
+  display: flex;
+  flex-direction: column;
+  background: var(--gradient-main-background);
+  min-height: 100svh;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex-grow: 1;
+  padding: 25px 16px;
+  border-radius: 16px 16px 0 0;
+  background: white;
+}
