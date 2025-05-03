@@ -1,0 +1,33 @@
+/* 룰렛 카테고리 */
+.roulette {
+  width: 80px;
+  height: 40px;
+  border-radius: 60px;
+  background-color: #d3d3d3;
+  font: var(--font-selected-category-title);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.rouletteSelected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* 필터 카테고리 */
+.filter {
+  width: 70px;
+  height: 30px;
+  border: 0.5px solid var(--color-outline);
+  border-radius: 60px;
+  box-shadow: var(--shadow-category);
+  background-color: white;
+  font: var(--font-detail-info);
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+.filterSelected {
+  border: 0.5px solid var(--color-accent);
+  color: var(--color-accent);
+}
