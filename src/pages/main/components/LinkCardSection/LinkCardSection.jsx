@@ -1,8 +1,8 @@
 import { Link } from 'react-router'
 
 import { Icon } from '@/components/Icon/Icon'
-import { BANNER_LIST } from '@/pages/main/constants/bannerList'
 
+import { LINK_CARD_LIST } from '../../constants/linkCardList'
 import styles from './LinkCardSection.module.css'
 
 export const LinkCardSection = () => {
@@ -15,7 +15,7 @@ export const LinkCardSection = () => {
       </Link>
 
       <ul className={styles.bannerContainer}>
-        {BANNER_LIST.map(({ label, description, icon, to }) => (
+        {LINK_CARD_LIST.map(({ label, description, icon, to }) => (
           <li key={label} className={styles.banner}>
             <Link to={to} className={styles.header}>
               <span>{label}</span>
