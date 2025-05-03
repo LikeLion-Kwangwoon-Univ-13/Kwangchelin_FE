@@ -16,13 +16,13 @@ export const LinkCardSection = () => {
 
       <ul className={styles.bannerContainer}>
         {LINK_CARD_LIST.map(({ label, description, icon, to }) => (
-          <li key={label} className={styles.banner}>
-            <Link to={to} className={styles.header}>
+          <Link key={label} to={to} className={styles.banner}>
+            <li className={styles.header}>
               <span>{label}</span>
               <Icon name={icon} size={20} />
-            </Link>
+            </li>
             <p className={styles.description}>{description}</p>
-          </li>
+          </Link>
         ))}
       </ul>
     </nav>
