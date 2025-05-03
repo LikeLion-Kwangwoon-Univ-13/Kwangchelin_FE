@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router'
 
+import { cn } from '@/libs/cn'
+
 import { Icon } from '../Icon/Icon'
 import styles from './PageHeader.module.css'
 
-export const PageHeader = ({ title, onBack }) => {
+export const PageHeader = ({ title, onBack, hasBackgroundColor }) => {
   const navigate = useNavigate()
 
   const handleBack = () => {
@@ -14,8 +16,10 @@ export const PageHeader = ({ title, onBack }) => {
     }
   }
 
+  const classNames = cn(styles.container, hasBackgroundColor && styles.backgroundColor)
+
   return (
-    <div className={styles.container}>
+    <div className={classNames}>
       <header className={styles.header}>
         <button className={styles.buttonArrow} onClick={handleBack}>
           <Icon name={'shape-back'} size={24} />
