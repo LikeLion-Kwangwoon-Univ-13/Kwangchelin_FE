@@ -20,12 +20,14 @@
   /* 일반 텍스트 */
   --color-text: #7a7a7a;
 
+  --color-background: #fff9ef;
+
   /* 그라데이션 시작 / 끝 */
   --color-bg-gradient-start: #ffffff;
   --color-bg-gradient-end: #fffcf6;
 
   /* 그라데이션 배경 */
-  --gradient-background: linear-gradient(
+  --color-background-light: linear-gradient(
     to bottom,
     var(--color-bg-gradient-start) 0%,
     var(--color-bg-gradient-end) 100%
