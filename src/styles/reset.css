@@ -144,3 +144,10 @@ button {
   text-indent: 0;
   text-shadow: none;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}

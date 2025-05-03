@@ -20,12 +20,18 @@
   /* 일반 텍스트 */
   --color-text: #7a7a7a;
 
+  /* 그라데이션 시작 / 끝 */
+  --color-bg-gradient-start: #ffffff;
+  --color-bg-gradient-end: #fffcf6;
+
   /* 그라데이션 배경 */
   --gradient-background: linear-gradient(
     to bottom,
     var(--color-bg-gradient-start) 0%,
     var(--color-bg-gradient-end) 100%
   );
+
+  --gradient-main-background: linear-gradient(87deg, #922b29 4.96%, #ffa100 194.39%);
 
   /* 팝업 배경 (25% 투명도 블랙) */
   --color-popup-bg: rgba(0, 0, 0, 0.25);
