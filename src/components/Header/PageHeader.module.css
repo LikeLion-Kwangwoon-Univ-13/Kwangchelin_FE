@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  height: 100px;
+  padding: 0 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.buttonArrow {
+  cursor: pointer;
+}
+
+.title {
+  font: var(--font-top-title);
+  letter-spacing: var(--letter-top-title);
+  color: var(--color-black);
+}
