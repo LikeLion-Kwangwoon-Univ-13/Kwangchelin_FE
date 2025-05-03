@@ -1,0 +1,58 @@
+export const REVIEW_DUMMY_DATA = [
+  {
+    id: 0,
+    nickname: '닉네임1',
+    date: '23.10.01. 12:00',
+    content: '리뷰 내용1',
+    rating: 4,
+  },
+  {
+    id: 1,
+    nickname: '닉네임2',
+    date: '23.10.02. 12:00',
+    content: '리뷰 내용2',
+    rating: 5,
+  },
+  {
+    id: 2,
+    nickname: '닉네임3',
+    date: '23.10.03. 12:00',
+    content: '리뷰 내용3',
+    rating: 3,
+  },
+  {
+    id: 3,
+    nickname: '닉네임4',
+    date: '23.10.04. 12:00',
+    content: '리뷰 내용4',
+    rating: 2,
+  },
+  {
+    id: 4,
+    nickname: '닉네임5',
+    date: '23.10.05. 12:00',
+    content: '리뷰 내용5',
+    rating: 1,
+  },
+  {
+    id: 5,
+    nickname: '닉네임6',
+    date: '23.10.06. 12:00',
+    content: '리뷰 내용6',
+    rating: 4,
+  },
+  {
+    id: 6,
+    nickname: '닉네임7',
+    date: '23.10.07. 12:00',
+    content: '리뷰 내용7',
+    rating: 5,
+  },
+  {
+    id: 7,
+    nickname: '닉네임8',
+    date: '23.10.08. 12:00',
+    content: '리뷰 내용8',
+    rating: 3,
+  },
+]

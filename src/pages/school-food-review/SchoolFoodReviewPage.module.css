@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  overflow-y: hidden;
+  padding: 0 16px;
+}
+
+.label {
+  font-size: var(--font-description-size);
+  font-weight: var(--font-description-weight);
+  line-height: var(--font-description-line-height);
+  letter-description: var(--letter-description);
+  color: var(--color-black);
+}
