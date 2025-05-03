@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 185px;
+  margin: 99px 16.5px 16px;
+}
+
+.header {
+  position: relative;
+  font-size: var(--font-home-subtitle-size);
+  font-weight: var(--font-home-subtitle-weight);
+  line-height: var(--font-home-title-line-height);
+  color: white;
+}
+
+.header > span {
+  font-size: var(--font-home-title-size);
+  font-weight: var(--font-home-title-weight);
+  color: white;
+}
+
+.dot {
+  position: absolute;
+  top: 24.77px;
+  left: 122.19px;
+  display: flex;
+  align-items: center;
+  gap: 14.1px;
+}
+
+.dot > div {
+  width: 6.45px;
+  height: 6.45px;
+  background-color: #ffa100;
+  border-radius: 50%;
+}
+
+.subTitle {
+  font-size: var(--font-home-description-size);
+  font-weight: var(--font-home-description-weight);
+  color: white;
+}
