@@ -27,13 +27,15 @@
 .buttonMd {
   width: 131px;
   height: 41px;
-  font: var(--font-button-medium);
+  font-size: var(--font-button-medium-size);
+  font-weight: var(--font-button-medium-weight);
 }
 
 .buttonLg {
   width: 228px;
   height: 54px;
-  font: var(--font-button-large);
+  font-size: var(--font-button-large-size);
+  font-weight: var(--font-button-large-weight);
 }
 
 /* 비활성화 상태 */

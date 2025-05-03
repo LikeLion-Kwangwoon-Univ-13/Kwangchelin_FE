@@ -4,7 +4,8 @@
   height: 40px;
   border-radius: 60px;
   background-color: #d3d3d3;
-  font: var(--font-selected-category-title);
+  font-size: var(--font-selected-category-title-size);
+  font-weight: var(--font-selected-category-title-weight);
   color: var(--color-text);
   cursor: pointer;
 }
@@ -22,7 +23,8 @@
   border-radius: 60px;
   box-shadow: var(--shadow-category);
   background-color: white;
-  font: var(--font-detail-info);
+  font-size: var(--font-detail-info-size);
+  font-weight: var(--font-detail-info-weight);
   color: var(--color-black);
   cursor: pointer;
 }

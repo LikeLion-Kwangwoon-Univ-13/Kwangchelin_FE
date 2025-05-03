@@ -1,71 +1,112 @@
 :root {
-  /* 기본 폰트 */
   --font-family: 'paperlogy', sans-serif;
 
   /* 홈 화면 */
-  --font-home-title: 800 normal 30px;
-  --font-home-subtitle: 400 normal 24px;
-  --font-home-description: 400 normal 12px;
-  --font-home-main-button: 600 20px 20px;
-  --font-home-banner-text: 400 normal 13px;
-  --font-home-category-title: 500 normal 10px;
+  --font-home-title-weight: 800;
+  --font-home-title-size: 30px;
+  --font-home-title-line-height: 120%;
+
+  --font-home-subtitle-weight: 400;
+  --font-home-subtitle-size: 24px;
+
+  --font-home-description-weight: 400;
+  --font-home-description-size: 12px;
+
+  --font-home-main-button-weight: 600;
+  --font-home-main-button-size: 20px;
+  --font-home-main-button-line-height: 20px;
+
+  --font-home-banner-text-weight: 400;
+  --font-home-banner-text-size: 13px;
+
+  --font-home-category-title-weight: 500;
+  --font-home-category-title-size: 10px;
 
   /* 검색창 */
-  --font-search-bar: 600 normal 12px;
+  --font-search-bar-weight: 600;
+  --font-search-bar-size: 12px;
 
   /* 상단 제목 */
-  --font-top-title: 600 24px auto;
+  --font-top-title-weight: 600;
+  --font-top-title-size: 24px;
   --letter-top-title: 5%;
 
   /* 리뷰 */
-  --font-review-nickname: 600 normal 15px;
-  --font-review-text: 400 normal 14px;
-  --font-review-date: 400 auto 14px;
+  --font-review-nickname-weight: 600;
+  --font-review-nickname-size: 15px;
+
+  --font-review-text-weight: 400;
+  --font-review-text-size: 14px;
+
+  --font-review-date-weight: 400;
+  --font-review-date-size: 14px;
   --letter-review-date: -5%;
 
   /* 설명글 전체 */
-  --font-description: 400 15px 20px;
+  --font-description-weight: 400;
+  --font-description-size: 15px;
+  --font-description-line-height: 20px;
   --letter-description: -3%;
 
   /* 게임 설명 */
-  --font-game-description: 400 normal 20px;
+  --font-game-description-weight: 400;
+  --font-game-description-size: 20px;
 
   /* 식당 상세정보 */
-  --font-restaurant-detail-location: 600 16px 16px;
+  --font-restaurant-detail-location-weight: 600;
+  --font-restaurant-detail-location-size: 16px;
+  --font-restaurant-detail-location-line-height: 16px;
 
   /* 소제목 */
-  --font-subtitle: 600 normal 20px;
+  --font-subtitle-weight: 600;
+  --font-subtitle-size: 20px;
 
   /* 검색 오류 */
-  --font-search-error: 900 normal 14px;
+  --font-search-error-weight: 900;
+  --font-search-error-size: 14px;
 
   /* 리스트 */
-  --font-list-restaurant-name: 800 normal 16px;
-  --font-list-restaurant-address: 300 normal 12px;
+  --font-list-restaurant-name-weight: 800;
+  --font-list-restaurant-name-size: 16px;
+
+  --font-list-restaurant-address-weight: 300;
+  --font-list-restaurant-address-size: 12px;
 
   /* 리뷰 입력 문구 */
-  --font-review-input: 500 normal 12px;
+  --font-review-input-weight: 500;
+  --font-review-input-size: 12px;
 
   /* 버튼 */
-  --font-button-small: 600 normal 12px var(--font-family);
-  --font-button-medium: 600 normal 15px var(--font-family);
-  --font-button-large: 700 normal 20px var(--font-family);
+  --font-button-small-weight: 600;
+  --font-button-small-size: 12px;
+
+  --font-button-medium-weight: 600;
+  --font-button-medium-size: 15px;
+
+  --font-button-large-weight: 700;
+  --font-button-large-size: 20px;
 
   /* 선택버튼 카테고리 제목 */
-  --font-selected-category-title: 500 normal 13px;
+  --font-selected-category-title-weight: 500;
+  --font-selected-category-title-size: 13px;
 
   /* 식당 룰렛 */
-  --font-restaurant-roulette: 500 normal 24px;
+  --font-restaurant-roulette-weight: 500;
+  --font-restaurant-roulette-size: 24px;
 
   /* 정렬 목록 */
-  --font-sort-list: 500 normal 14px;
+  --font-sort-list-weight: 500;
+  --font-sort-list-size: 14px;
 
   /* 상세정보 */
-  --font-detail-info: 500 normal 12px;
+  --font-detail-info-weight: 500;
+  --font-detail-info-size: 12px;
 
   /* 거리 */
-  --font-distance: 400 normal 10px;
+  --font-distance-weight: 400;
+  --font-distance-size: 10px;
 
   /* 카테고리 룰렛 */
-  --font-category-roulette: 700 normal 14px;
+  --font-category-roulette-weight: 700;
+  --font-category-roulette-size: 14px;
 }

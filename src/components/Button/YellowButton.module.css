@@ -5,6 +5,7 @@
   box-shadow: var(--shadow-button);
   background-color: var(--color-accent);
 
-  font: var(--font-button-small);
+  font-size: var(--font-button-small-size);
+  font-weight: var(--font-button-small-weight);
   color: white;
 }

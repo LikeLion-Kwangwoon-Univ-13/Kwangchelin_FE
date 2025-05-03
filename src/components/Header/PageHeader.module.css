@@ -15,7 +15,8 @@
 }
 
 .title {
-  font: var(--font-top-title);
+  font-size: var(--font-top-title-size);
+  font-weight: var(--font-top-title-weight);
   letter-spacing: var(--letter-top-title);
   color: var(--color-black);
 }
