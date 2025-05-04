@@ -13,7 +13,7 @@ export const SchoolFoodPage = () => {
 
         <ReviewListSection />
       </div>
-      <FloatingButton />
+      <FloatingButton to={'/school-food/review'} />
     </MainLayout>
   )
 }
