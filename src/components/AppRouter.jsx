@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router'
 
 import { MainPage } from '@/pages/main'
+import { RoulettePage } from '@/pages/roulette/RoulettePage'
 import { SchoolFoodPage } from '@/pages/school-food/SchoolFoodPage'
 import { SchoolFoodReviewPage } from '@/pages/school-food/SchoolFoodReviewPage'
 
@@ -22,7 +23,7 @@ export const AppRouter = () => {
       </Route> */}
 
       {/* 룰렛 */}
-      {/* <Route path='/roulette' element={<RoulettePage />}> */}
+      <Route path='/roulette' element={<RoulettePage />} />
       {/* 카테고리 룰렛 */}
       {/* <Route path='category' element={<CategoryRoulettePage />}>
           <Route path='select' element={<CategorySelectPage />} />
