@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router'
 
 import { MainPage } from '@/pages/main'
-import { SchoolFoodPage } from '@/pages/school-food'
+import { SchoolFoodPage } from '@/pages/school-food/SchoolFoodPage'
+import { SchoolFoodReviewPage } from '@/pages/school-food/SchoolFoodReviewPage'
 
 export const AppRouter = () => {
   return (
@@ -9,9 +10,8 @@ export const AppRouter = () => {
       <Route path='/' element={<MainPage />} />
 
       {/* 학식 */}
-      <Route path='/school-food' element={<SchoolFoodPage />}>
-        {/* <Route path='review' element={<SchoolFoodReviewPage />} /> */}
-      </Route>
+      <Route path='/school-food' element={<SchoolFoodPage />} />
+      <Route path='/school-food/review' element={<SchoolFoodReviewPage />} />
 
       {/* 식당 지도 */}
       {/* <Route path='/restaurant' element={<RestaurantMapPage />}>

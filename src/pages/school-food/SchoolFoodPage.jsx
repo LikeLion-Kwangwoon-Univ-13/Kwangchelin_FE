@@ -1,8 +1,8 @@
 import { FloatingButton } from '@/components/Button/FloatingButton'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { ReviewListSection, SchoolFoodHomeLink } from '@/features/schoolFoodReview/ui'
+import { ReviewListSection, SchoolFoodHomeLink } from '@/features/school-food/ui'
 
-import styles from './SchoolFoodReviewPage.module.css'
+import styles from './SchoolFoodPage.module.css'
 
 export const SchoolFoodPage = () => {
   return (
