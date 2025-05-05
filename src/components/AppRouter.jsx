@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router'
 
 import { MainPage } from '@/pages/main'
+import { CategoryRouletteGamePage } from '@/pages/roulette/CategoryRouletteGamePage'
+import { CategoryRoulettePage } from '@/pages/roulette/CategoryRoulettePage'
 import { RoulettePage } from '@/pages/roulette/RoulettePage'
 import { SchoolFoodPage } from '@/pages/school-food/SchoolFoodPage'
 import { SchoolFoodReviewPage } from '@/pages/school-food/SchoolFoodReviewPage'
@@ -24,10 +26,10 @@ export const AppRouter = () => {
 
       {/* 룰렛 */}
       <Route path='/roulette' element={<RoulettePage />} />
+      <Route path='/roulette/category' element={<CategoryRoulettePage />} />
+      <Route path='/roulette/category/game' element={<CategoryRouletteGamePage />} />
       {/* 카테고리 룰렛 */}
-      {/* <Route path='category' element={<CategoryRoulettePage />}>
-          <Route path='select' element={<CategorySelectPage />} />
-          <Route path='play' element={<RouletteGamePage />} />
+      {/* <Route path='select' element={<CategorySelectPage />} />
         </Route> */}
 
       {/* 식당 룰렛 */}

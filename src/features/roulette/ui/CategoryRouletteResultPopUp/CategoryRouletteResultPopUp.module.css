@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  margin-top: 12px;
+  font-size: var(--font-top-title-size);
+  font-weight: var(--font-top-title-weight);
+  letter-spacing: var(--letter-top-title);
+  color: var(--color-black);
+}
+
+.description {
+  margin-top: 15px;
+  font-size: var(--font-description-size);
+  font-weight: var(--font-description-weight);
+  line-height: var(--font-description-line-height);
+  letter-spacing: var(--letter-description);
+  text-align: center;
+  color: var(--color-text);
+  white-space: pre-wrap;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.buttonContainer > button {
+  flex-grow: 1;
+}

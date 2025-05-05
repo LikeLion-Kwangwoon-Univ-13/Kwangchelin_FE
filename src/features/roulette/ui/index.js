@@ -1,1 +1,4 @@
-export * from './RouletteOptionCard/RouletteOptionCard'
+export * from './CategoryRouletteResultPopUp'
+export * from './RouletteBoard'
+export * from './RouletteOptionCard'
+export * from './RouletteStartButton'

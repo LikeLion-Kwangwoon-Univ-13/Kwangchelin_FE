@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  place-items: center;
+  width: 315px !important;
+  height: 315px !important;
+  aspect-ratio: 1/1 !important;
+  rotate: -47deg;
+}
+
+.container > div {
+  width: 315px !important;
+  height: 315px !important;
+}

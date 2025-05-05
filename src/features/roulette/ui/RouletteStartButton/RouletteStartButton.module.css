@@ -1,0 +1,16 @@
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  font-size: var(--font-button-medium-size);
+  font-weight: var(--font-button-medium-weight);
+  color: var(--color-secondary);
+  z-index: 10;
+}
