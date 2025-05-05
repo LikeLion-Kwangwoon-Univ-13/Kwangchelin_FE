@@ -11,7 +11,7 @@ export const LinkCardSection = () => {
       <Link to={'/restaurant'} className={styles.bannerMap}>
         <span>맛집 지도</span>
         <Icon className={styles.pingIcon} name={'map-location'} size={20} fill='#ffffff' />
-        <Icon name={'shape-arrow-right'} size={20} />
+        <Icon name={'shape-arrow-right'} size={20} fill={'#fff'} />
       </Link>
 
       <ul className={styles.bannerContainer}>

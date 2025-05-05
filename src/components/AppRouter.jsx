@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router'
 import { MainPage } from '@/pages/main'
 import { CategoryRouletteGamePage } from '@/pages/roulette/CategoryRouletteGamePage'
 import { CategoryRoulettePage } from '@/pages/roulette/CategoryRoulettePage'
+import { RestaurantRouletteGamePage } from '@/pages/roulette/RestaurantRouletteGamePage'
+import { RestaurantRoulettePage } from '@/pages/roulette/RestaurantRoulettePage'
 import { RoulettePage } from '@/pages/roulette/RoulettePage'
 import { SchoolFoodPage } from '@/pages/school-food/SchoolFoodPage'
 import { SchoolFoodReviewPage } from '@/pages/school-food/SchoolFoodReviewPage'
@@ -26,18 +28,17 @@ export const AppRouter = () => {
 
       {/* 룰렛 */}
       <Route path='/roulette' element={<RoulettePage />} />
+
+      {/* 카테고리 룰렛 */}
       <Route path='/roulette/category' element={<CategoryRoulettePage />} />
       <Route path='/roulette/category/game' element={<CategoryRouletteGamePage />} />
-      {/* 카테고리 룰렛 */}
-      {/* <Route path='select' element={<CategorySelectPage />} />
-        </Route> */}
 
       {/* 식당 룰렛 */}
-      {/* <Route path='restaurant' element={<RestaurantRoulettePage />}>
-          <Route path='select' element={<RestaurantCategorySelectPage />} />
-          <Route path='play' element={<RestaurantRouletteGamePage />} />
-        </Route>
-      </Route> */}
+      <Route path='/roulette/restaurant' element={<RestaurantRoulettePage />} />
+      <Route path='/roulette/restaurant/game' element={<RestaurantRouletteGamePage />} />
+      {/* <Route path='select' element={<RestaurantCategorySelectPage />} /> */}
+      {/* <Route path='play' element={<RestaurantRouletteGamePage />} /> */}
+      {/* </Route> */}
 
       {/* 카드 뒤집기 */}
       {/* <Route path='/card-flip' element={<CardFlipPage />}>

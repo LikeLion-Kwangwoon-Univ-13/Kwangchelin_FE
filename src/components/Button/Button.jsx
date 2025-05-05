@@ -19,6 +19,7 @@ const SIZE_CLASS_MAP = {
 
 export const Button = ({
   variant = 'primary',
+  type = 'button',
   size,
   className = '',
   loading = false,
@@ -29,7 +30,7 @@ export const Button = ({
   const buttonClass = cn(styles.button, VARIANT_CLASS_MAP[variant], SIZE_CLASS_MAP[size], className)
 
   return (
-    <button className={buttonClass} disabled={disabled || loading} {...props}>
+    <button type={type} className={buttonClass} disabled={disabled || loading} {...props}>
       {children}
     </button>
   )
