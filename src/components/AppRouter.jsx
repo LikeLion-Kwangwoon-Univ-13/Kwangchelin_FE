@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router'
 
+import { CardFlipPage } from '@/pages/card-flip/CardFlipPage'
 import { MainPage } from '@/pages/main'
 import { CategoryRouletteGamePage } from '@/pages/roulette/CategoryRouletteGamePage'
 import { CategoryRoulettePage } from '@/pages/roulette/CategoryRoulettePage'
@@ -41,10 +42,9 @@ export const AppRouter = () => {
       {/* </Route> */}
 
       {/* 카드 뒤집기 */}
-      {/* <Route path='/card-flip' element={<CardFlipPage />}>
-        <Route path='select' element={<CardFlipSelectPage />} />
-        <Route path='play' element={<CardFlipGamePage />} />
-      </Route> */}
+      <Route path='/card-flip' element={<CardFlipPage />} />
+      {/* <Route path='/card-flip/game' element={<CardFlipGamePage />} /> */}
+      {/* <Route path='select' element={<CardFlipSelectPage />} />
 
       {/* 광운 PICK 맛집 */}
       {/* <Route path='/kwangwoon' element={<KwangwoonPickPage />} /> */}
