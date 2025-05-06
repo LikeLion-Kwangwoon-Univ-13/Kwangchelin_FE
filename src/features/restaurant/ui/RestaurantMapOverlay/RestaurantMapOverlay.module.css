@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 188px;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 249, 238, 0.9);
+  box-shadow: var(--shadow-align);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.name {
+  /* min-width: 0; */
+  white-space: pre-wrap;
+  font-size: var(--font-restaurant-detail-location-size);
+  font-weight: var(--font-restaurant-detail-location-weight);
+  line-height: var(--font-restaurant-detail-location-line-height);
+  color: var(--color-black);
+  /* word-break: break-word; */
+}
+
+.description {
+  font-size: var(--font-selected-category-title-size);
+  font-weight: var(--font-selected-category-title-weight);
+  color: var(--color-black);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  margin-bottom: 4.3px;
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.container > a {
+  align-self: flex-end;
+}
