@@ -21,7 +21,7 @@ export const RestaurantMapPage = () => {
           onClickCategory={handleCategoryClick}
         />
 
-        <RestaurantMap />
+        <RestaurantMap selectedCategory={selectedCategory} />
 
         <YellowButton onClick={() => {}} className={styles.button}>
           목록 보기

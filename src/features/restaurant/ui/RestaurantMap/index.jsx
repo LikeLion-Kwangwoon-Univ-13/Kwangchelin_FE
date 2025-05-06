@@ -1,14 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import mapPing from '@/assets/map/map-ping.svg'
-import { RESTAURANT_DUMMY_DATA } from '@/mock/restaurantDummyData'
+import { getRestaurantsByCategory } from '@/mock/restaurantUtils'
 
 import { RestaurantMapOverlay } from '../RestaurantMapOverlay'
 import styles from './RestaurantMap.module.css'
 
-export const RestaurantMap = () => {
-  const [_, setMap] = useState(null)
+const DEFAULT_LAT = 37.6194277
+const DEFAULT_LNG = 127.05982
+
+export const RestaurantMap = ({ selectedCategory }) => {
+  const [map, setMap] = useState(null)
+
+  const overlayContainerRef = useRef(document.createElement('div'))
+  const rootRef = useRef(null)
+  const overlayRef = useRef(null)
 
   //처음 지도 그리기
   useEffect(() => {
@@ -20,39 +27,55 @@ export const RestaurantMap = () => {
     const container = document.getElementById('map')
 
     //지도를 생성할 때 필요한 기본 옵션 (중심 좌표, 레벨)
-    const options = { center: new kakao.maps.LatLng(37.6194277, 127.05982) }
+    const options = { center: new kakao.maps.LatLng(DEFAULT_LAT, DEFAULT_LNG) }
 
     //지도 생성 및 객체 리턴
     const kakaoMap = new kakao.maps.Map(container, options)
 
     setMap(kakaoMap)
 
+    rootRef.current = createRoot(overlayContainerRef.current)
+
+    overlayRef.current = new kakao.maps.CustomOverlay({
+      xAnchor: 0.5,
+      yAnchor: 1.1,
+      content: overlayContainerRef.current,
+    })
+
+    return () => {
+      kakaoMap && kakaoMap.destroy()
+      rootRef.current.unmount()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!window.kakao) return
+
+    const { kakao } = window
+
     const imageSize = new kakao.maps.Size(24, 24)
     const imageOption = { offset: new kakao.maps.Point(12, 24) }
     const markerImage = new kakao.maps.MarkerImage(mapPing, imageSize, imageOption)
 
-    // 오버레이 인스턴스 생성 (한번만)
-    const overlayContainer = document.createElement('div')
-    const root = createRoot(overlayContainer)
+    const root = rootRef.current
+    const overlay = overlayRef.current
 
-    const overlay = new kakao.maps.CustomOverlay({
-      xAnchor: 0.5,
-      yAnchor: 1.0,
-      content: overlayContainer,
-    })
+    const filteredData = getRestaurantsByCategory(selectedCategory)
 
-    RESTAURANT_DUMMY_DATA.forEach((markerInfo) => {
-      const markerPosition = new kakao.maps.LatLng(markerInfo.latitude, markerInfo.longitude)
+    const markers = []
+
+    filteredData.forEach((markerInfo) => {
+      const position = new kakao.maps.LatLng(markerInfo.latitude, markerInfo.longitude)
 
       // 마커 생성
       const marker = new kakao.maps.Marker({
-        position: markerPosition,
+        position,
         title: markerInfo.title,
         image: markerImage,
       })
 
       // 마커가 지도 위에 표시되도록 설정
-      marker.setMap(kakaoMap)
+      marker.setMap(map)
 
       // 마커 클릭 → 오버레이 렌더링
       kakao.maps.event.addListener(marker, 'click', () => {
@@ -67,11 +90,18 @@ export const RestaurantMap = () => {
           />,
         )
 
-        overlay.setPosition(markerPosition)
-        overlay.setMap(kakaoMap)
+        overlayRef.current.setPosition(position)
+        overlayRef.current.setMap(map)
       })
+
+      markers.push(marker)
     })
-  }, [])
+
+    return () => {
+      markers.forEach((marker) => marker.setMap(null))
+      overlay.setMap(null)
+    }
+  }, [map, selectedCategory])
 
   return (
     <div className={styles.container}>
