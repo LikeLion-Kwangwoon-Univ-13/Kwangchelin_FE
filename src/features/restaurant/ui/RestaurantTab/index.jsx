@@ -1,6 +1,5 @@
+import clsx from 'clsx'
 import { useState } from 'react'
-
-import { cn } from '@/libs/cn'
 
 import { RestaurantLocation } from '../RestaurantLocation'
 import { RestaurantReview } from '../RestaurantReview'
@@ -20,7 +19,7 @@ export const RestaurantTab = ({ detailData }) => {
         {TABS.map((tab) => (
           <button
             key={tab.id}
-            className={cn(styles.tabButton, selectedTab === tab.id ? styles.active : '')}
+            className={clsx(styles.tabButton, selectedTab === tab.id ? styles.active : '')}
             onClick={() => setSelectedTab(tab.id)}
           >
             {tab.label}

@@ -1,5 +1,6 @@
+import clsx from 'clsx'
+
 import { Icon } from '@/components/Icon/Icon'
-import { cn } from '@/libs/cn'
 
 import styles from './CardGrid.module.css'
 
@@ -30,7 +31,7 @@ export const CardGrid = ({ cards, onFlip, peopleCount, remainedLosers, openModal
             disabled={card.isFlipped}
             className={styles.card}
           >
-            <div className={cn(styles.cardInner, card.isFlipped ? styles.flipped : '')}>
+            <div className={clsx(styles.cardInner, card.isFlipped ? styles.flipped : '')}>
               <div className={`${styles.cardFace} ${styles.cardFront}`}>
                 <Icon name={'card-background'} size={70} />
               </div>

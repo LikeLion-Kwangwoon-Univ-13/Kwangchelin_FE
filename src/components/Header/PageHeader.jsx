@@ -1,6 +1,5 @@
+import clsx from 'clsx'
 import { useNavigate } from 'react-router'
-
-import { cn } from '@/libs/cn'
 
 import { Icon } from '../Icon/Icon'
 import styles from './PageHeader.module.css'
@@ -16,7 +15,7 @@ export const PageHeader = ({ title, onBack, hasBackgroundColor }) => {
     }
   }
 
-  const classNames = cn(styles.container, hasBackgroundColor && styles.backgroundColor)
+  const classNames = clsx(styles.container, hasBackgroundColor && styles.backgroundColor)
 
   return (
     <div className={classNames}>

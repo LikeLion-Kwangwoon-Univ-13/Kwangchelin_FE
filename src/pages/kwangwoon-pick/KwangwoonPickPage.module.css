@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 57px 16.5px 0;
+}
+
+.dropdown {
+  align-self: flex-end;
+}

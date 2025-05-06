@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.image {
+  width: 120px;
+  height: 72px;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-size: var(--font-list-restaurant-name-size);
+  font-weight: var(--font-list-restaurant-name-weight);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-selected-category-title-size);
+  font-weight: var(--font-selected-category-title-weight);
+}
+
+.address {
+  font-size: var(--font-list-restaurant-address-size);
+  font-weight: var(--font-list-restaurant-address-weight);
+}

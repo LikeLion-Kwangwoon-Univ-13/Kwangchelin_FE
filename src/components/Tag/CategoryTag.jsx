@@ -1,4 +1,4 @@
-import { cn } from '@/libs/cn'
+import clsx from 'clsx'
 
 import styles from './CategoryTag.module.css'
 
@@ -20,7 +20,7 @@ export const CategoryTag = ({
   disabled = false,
   loading = false,
 }) => {
-  const classNames = cn([VARIANT_STYLE[variant]], selected && SELECTED_STYLE[variant])
+  const classNames = clsx([VARIANT_STYLE[variant]], selected && SELECTED_STYLE[variant])
 
   return (
     <button className={classNames} onClick={onClick} disabled={disabled || loading}>

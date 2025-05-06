@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router'
 
 import { CardFlipGamePage } from '@/pages/card-flip/CardFlipGamePage'
 import { CardFlipPage } from '@/pages/card-flip/CardFlipPage'
+import { KwangwoonPickPage } from '@/pages/kwangwoon-pick/KwangwoonPickPage'
 import { MainPage } from '@/pages/main'
 import { RestaurantAllReviewsPage } from '@/pages/restaurant/RestaurantAllReviewsPage'
 import { RestaurantDetailPage } from '@/pages/restaurant/RestaurantDetailPage'
@@ -48,7 +49,7 @@ export const AppRouter = () => {
       <Route path='/card-flip/game' element={<CardFlipGamePage />} />
 
       {/* 광운 PICK 맛집 */}
-      {/* <Route path='/kwangwoon' element={<KwangwoonPickPage />} /> */}
+      <Route path='/kwangwoon' element={<KwangwoonPickPage />} />
     </Routes>
   )
 }

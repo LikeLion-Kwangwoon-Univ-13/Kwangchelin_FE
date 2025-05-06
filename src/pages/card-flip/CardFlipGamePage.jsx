@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 
@@ -6,7 +7,6 @@ import { useCardGame } from '@/features/card-flip/hook'
 import { BombPopup, CardGrid } from '@/features/card-flip/ui'
 import { FinishPopup } from '@/features/card-flip/ui/FinishPopUp'
 import { useModal } from '@/hooks/useModal'
-import { cn } from '@/libs/cn'
 
 import styles from './CardFlipGamePage.module.css'
 
@@ -57,7 +57,7 @@ export const CardFlipGamePage = () => {
     <>
       <MainLayout title={'카드 뒤집기'} hasBackgroundColor>
         <div className={styles.container}>
-          <p className={cn(styles.description, isRemainLosers && styles.remainedLosers)}>
+          <p className={clsx(styles.description, isRemainLosers && styles.remainedLosers)}>
             {isRemainLosers ? `꽝 ${remainedLosers}개 남았어요!` : '모든 카드가 공개되었어요!'}
           </p>
 

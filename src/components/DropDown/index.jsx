@@ -1,6 +1,5 @@
+import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
-
-import { cn } from '@/libs/cn'
 
 import { Icon } from '../Icon/Icon'
 import styles from './DropDown.module.css'
@@ -33,17 +32,13 @@ export const Dropdown = ({ options = [], selected, onSelect, className }) => {
 
   const filteredOptions = options.filter((option) => option !== selected)
 
-  const classNames = cn(styles.container, isOpen && styles.active, className)
+  const classNames = clsx(styles.container, isOpen && styles.active, className)
 
   return (
     <div className={classNames} ref={dropdownRef}>
       <button onClick={toggleDropdown} className={styles.trigger}>
         <span>{selected}</span>
-        <Icon
-          name={isOpen ? 'shape-sorting' : 'shape-sorting'}
-          size={20}
-          className={isOpen && styles.arrowUp}
-        />
+        <Icon name={'shape-sorting'} size={20} className={clsx(isOpen && styles.arrowUp)} />
       </button>
 
       {isOpen && filteredOptions.length > 0 && (

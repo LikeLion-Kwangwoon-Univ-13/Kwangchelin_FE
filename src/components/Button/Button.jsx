@@ -1,4 +1,4 @@
-import { cn } from '@/libs/cn'
+import clsx from 'clsx'
 
 import styles from './Button.module.css'
 
@@ -27,7 +27,12 @@ export const Button = ({
   children,
   ...props
 }) => {
-  const buttonClass = cn(styles.button, VARIANT_CLASS_MAP[variant], SIZE_CLASS_MAP[size], className)
+  const buttonClass = clsx(
+    styles.button,
+    VARIANT_CLASS_MAP[variant],
+    SIZE_CLASS_MAP[size],
+    className,
+  )
 
   return (
     <button type={type} className={buttonClass} disabled={disabled || loading} {...props}>
