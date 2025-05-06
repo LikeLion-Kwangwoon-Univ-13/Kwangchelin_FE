@@ -1,4 +1,4 @@
-export const CATEGORY_LIST = [
+export const CATEGORY_ICON_LIST = [
   'category-korean',
   'category-chinese',
   'category-japanese',

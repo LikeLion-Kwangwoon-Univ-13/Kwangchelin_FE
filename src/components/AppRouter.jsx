@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router'
 
+import { MainPage } from '@/features/main/entry'
 import { CardFlipGamePage } from '@/pages/card-flip/CardFlipGamePage'
 import { CardFlipPage } from '@/pages/card-flip/CardFlipPage'
 import { KwangwoonPickPage } from '@/pages/kwangwoon-pick/KwangwoonPickPage'
-import { MainPage } from '@/pages/main'
 import { RestaurantAllReviewsPage } from '@/pages/restaurant/RestaurantAllReviewsPage'
 import { RestaurantDetailPage } from '@/pages/restaurant/RestaurantDetailPage'
 import { RestaurantListPage } from '@/pages/restaurant/RestaurantListPage'

@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  height: 103px;
+  border: 1px solid #ffe69d;
+  border-radius: 10px;
+  box-shadow: var(--shadow-button-effect);
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title > span {
+  font-size: var(--font-home-main-button-size);
+  font-weight: var(--font-home-main-button-weight);
+  line-height: var(--font-home-main-button-line-height);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--font-home-description-size);
+  font-weight: var(--font-home-description-weight);
+  color: var(--color-text);
+}

@@ -1,3 +1,4 @@
+export * from './BannerRotator/BannerRotator'
 export * from './CategorySection/CategorySection'
-export * from './Header/Header'
-export * from './LinkCardSection/LinkCardSection'
+export * from './LinkCardNavigation/LinkCard'
+export * from './LinkCardNavigation/LinkCardNavigation'
