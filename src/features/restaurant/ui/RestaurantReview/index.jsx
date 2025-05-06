@@ -49,12 +49,12 @@ export const RestaurantReview = () => {
           </div>
         </div>
       </section>
-      <Link to={'/restaurant/review'} className={styles.reviewLink}>
+      <Link to={`/restaurant/${restaurantId}/reviews`} className={styles.reviewLink}>
         <span>리뷰 전체보기</span>
         <Icon name={'shape-arrow-right'} size={13} fill={'#7A7A7A'} />
       </Link>
 
-      <div className={styles.reviewList}>
+      <div>
         {REVIEW_DUMMY_DATA.map(({ id, nickname, date, content, rating }) => (
           <ReviewItem key={id} nickname={nickname} date={date} content={content} rating={rating} />
         ))}
