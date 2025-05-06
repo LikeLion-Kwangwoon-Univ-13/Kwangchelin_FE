@@ -1,0 +1,19 @@
+.tabList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  width: 100%;
+  padding: 12px;
+}
+
+.tabList > button {
+  width: 64px;
+  height: 32px;
+  font-size: var(--font-sort-list-size);
+  font-weight: var(--font-sort-list-weight);
+  color: var(--color-black);
+}
+
+.active {
+  border-bottom: 1px solid var(--color-accent);
+}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 import { Icon } from '@/components/Icon/Icon'
 import { getRestaurantsByCategory } from '@/mock/restaurantUtils'
 
@@ -9,7 +11,7 @@ export const RestaurantList = ({ selectedCategory }) => {
   return (
     <section className={styles.container}>
       {filteredData.map(({ location_id, name, rating, distance, address }) => (
-        <div key={location_id} className={styles.item}>
+        <Link to={`/restaurant/${location_id}`} key={location_id} className={styles.item}>
           <div className={styles.header}>
             <p className={styles.name}>{name}</p>
             <p className={styles.distance}>{distance}m</p>
@@ -24,7 +26,7 @@ export const RestaurantList = ({ selectedCategory }) => {
               <span>{address}</span>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </section>
   )

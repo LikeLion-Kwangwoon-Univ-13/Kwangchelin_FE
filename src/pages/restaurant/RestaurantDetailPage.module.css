@@ -1,0 +1,54 @@
+.image {
+  width: 100%;
+  height: 234px;
+  object-fit: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 13px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.rating {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-black);
+  transform: translateY(1px);
+}
+
+.restaurant {
+  padding: 32.78px 32.68px;
+  background-color: white;
+}
+
+.metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.metadata > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.description {
+  font-size: var(--font-detail-info-size);
+  font-weight: var(--font-detail-info-weight);
+  color: var(--color-black);
+}
+
+.divider {
+  width: 100%;
+  height: 11px;
+  background-color: var(--color-outline);
+}

@@ -1,6 +1,6 @@
+import { ReviewItem } from '@/components/ReviewItem'
 import { REVIEW_DUMMY_DATA } from '@/mock/review/reviewDummyData'
 
-import { ReviewItem } from '../ReviewItem/ReviewItem'
 import styles from './ReviewListSection.module.css'
 
 export const ReviewListSection = () => {

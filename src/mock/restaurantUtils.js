@@ -31,5 +31,12 @@ export const getRestaurantsByKeyword = (keyword) => {
  * @returns {object|null}
  */
 export const getRestaurantById = (locationId) => {
-  return RESTAURANT_DUMMY_DATA.find((restaurant) => restaurant.location_id === locationId) || null
+  const parsedId = Number(locationId)
+
+  if (isNaN(parsedId)) {
+    console.warn(`Invalid locationId: ${locationId}`)
+    return null
+  }
+
+  return RESTAURANT_DUMMY_DATA.find((restaurant) => restaurant.location_id === parsedId) || null
 }

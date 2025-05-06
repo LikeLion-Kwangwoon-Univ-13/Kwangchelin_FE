@@ -1,0 +1,12 @@
+.title {
+  margin: 20px 0 24px 25px;
+  font-size: var(--font-restaurant-detail-location-size);
+  font-weight: var(--font-restaurant-detail-location-weight);
+  line-height: var(--font-restaurant-detail-location-line-height);
+  color: var(--color-black);
+}
+
+.map {
+  width: 100%;
+  height: 600px;
+}
