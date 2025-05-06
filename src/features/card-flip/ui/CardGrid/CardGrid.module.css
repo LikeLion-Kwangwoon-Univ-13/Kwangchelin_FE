@@ -1,0 +1,87 @@
+.card {
+  width: 100px;
+  height: 130px;
+  perspective: 1000px;
+}
+
+.cardInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFace {
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 130px;
+  border: 5px solid var(--color-secondary);
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #c9272a 0%, #5e1113 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.cardFront {
+  width: 100px;
+  height: 130px;
+  perspective: 1000px;
+}
+
+.cardBack {
+  background: var(--color-background);
+  transform: rotateY(180deg);
+}
+
+.loseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.loseCard > svg {
+  transform: rotate(14deg);
+}
+
+.loseCard > span {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+/* 카드 그리드 레이아웃 */
+.gridTwo {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  justify-content: center;
+  gap: 20px;
+}
+
+.gridThree {
+  display: grid;
+  grid-template-columns: 100px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gridSix {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  justify-content: center;
+  gap: 20px;
+}
+
+.gridMany {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  justify-content: center;
+  gap: 20px;
+}

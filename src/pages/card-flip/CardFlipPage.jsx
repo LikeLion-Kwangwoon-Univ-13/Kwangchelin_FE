@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router'
 
 import { Button } from '@/components/Button/Button'
@@ -10,8 +11,24 @@ import styles from './CardFlipPage.module.css'
 export const CardFlipPage = () => {
   const navigate = useNavigate()
 
+  const [peopleCount, setPeopleCount] = useState(2)
+  const [loserCount, setLoserCount] = useState(1)
+
+  const handlePeopleChange = (count) => {
+    setPeopleCount(count)
+
+    const maxLoser = Math.floor(count / 2)
+    if (loserCount > maxLoser) {
+      setLoserCount(maxLoser)
+    }
+  }
+
+  const handleLoserChange = (count) => {
+    setLoserCount(count)
+  }
+
   const handleGoGame = () => {
-    navigate('/card-flip/game')
+    navigate('/card-flip/game', { state: { peopleCount, loserCount } })
   }
 
   return (
@@ -21,7 +38,12 @@ export const CardFlipPage = () => {
         <p className={styles.description}>카드를 뒤집으면 꽝 여부가 공개됩니다.</p>
 
         <div className={styles.main}>
-          <Counter />
+          <Counter
+            peopleCount={peopleCount}
+            loserCount={loserCount}
+            onPeopleChange={handlePeopleChange}
+            onLoserChange={handleLoserChange}
+          />
 
           <div className={styles.notice}>
             <Icon name={'error-warning'} size={16} />

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 19px;
+}
+
+.container > svg {
+  transform: rotate(14deg);
+}
+
+.label {
+  font-size: var(--font-top-title-size);
+  font-weight: var(--font-top-title-weight);
+  letter-spacing: var(--letter-top-title);
+  text-align: center;
+  color: var(--color-black);
+}
