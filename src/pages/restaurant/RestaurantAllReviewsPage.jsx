@@ -17,27 +17,19 @@ export const RestaurantAllReviewsPage = () => {
   const [selected, setSelected] = useState(sortOptions[0])
 
   return (
-    <>
-      <MainLayout title={'리뷰'}>
-        <Dropdown
-          options={sortOptions}
-          selected={selected}
-          onSelect={setSelected}
-          className={styles.dropdown}
-        />
-        <div>
-          {REVIEW_DUMMY_DATA.map(({ id, nickname, date, content, rating }) => (
-            <ReviewItem
-              key={id}
-              nickname={nickname}
-              date={date}
-              content={content}
-              rating={rating}
-            />
-          ))}
-        </div>
-      </MainLayout>
+    <MainLayout title={'리뷰'}>
+      <Dropdown
+        options={sortOptions}
+        selected={selected}
+        onSelect={setSelected}
+        className={styles.dropdown}
+      />
+      <div>
+        {REVIEW_DUMMY_DATA.map(({ id, nickname, date, content, rating }) => (
+          <ReviewItem key={id} nickname={nickname} date={date} content={content} rating={rating} />
+        ))}
+      </div>
       <FloatingButton to={`/restaurant/${restaurantId}/review`} />
-    </>
+    </MainLayout>
   )
 }
