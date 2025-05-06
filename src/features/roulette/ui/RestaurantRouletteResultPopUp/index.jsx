@@ -6,13 +6,9 @@ import { PopUp } from '@/components/PopUp/PopUp'
 
 import styles from './RestaurantRouletteResultPopUp.module.css'
 
-export const RestaurantRouletteResultPopUp = ({ restaurant, isOpen, closeModal }) => {
-  const handleRetryClick = () => {
-    // 룰렛 재실행
-    closeModal()
-  }
+export const RestaurantRouletteResultPopUp = ({ restaurant, isOpen, onRetry, onClose }) => {
   return (
-    <PopUp isOpen={isOpen} onClose={closeModal}>
+    <PopUp isOpen={isOpen} onClose={onClose}>
       <div className={styles.container}>
         <Icon name={'pop-up-roulette'} size={70} />
 
@@ -23,7 +19,7 @@ export const RestaurantRouletteResultPopUp = ({ restaurant, isOpen, closeModal }
           <Icon name={'shape-arrow-right'} size={13} fill={'#7A7A7A'} />
         </Link>
 
-        <Button variant='primary' size='md' onClick={handleRetryClick} className={styles.button}>
+        <Button variant='primary' size='md' onClick={onRetry} className={styles.button}>
           다시 하기
         </Button>
       </div>

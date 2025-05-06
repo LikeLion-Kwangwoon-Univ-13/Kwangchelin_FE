@@ -20,15 +20,21 @@ export const useSlotRoulette = (openModal) => {
   const animationRef = useRef(null)
   const startTimeRef = useRef(0)
 
-  const showResult = () => openModal(items[targetIndex])
+  // 결과 팝업 표시
+  const showResult = useCallback(() => {
+    openModal(items[targetIndex])
+  }, [openModal, targetIndex])
 
+  // 룰렛 시작
   const start = () => {
     if (isRolling) return
+
     const randomIndex = Math.floor(Math.random() * items.length)
     setTargetIndex(randomIndex)
     setIsRolling(true)
   }
 
+  // 룰렛 정지
   const stop = useCallback(() => {
     cancelAnimationFrame(animationRef.current)
 
@@ -49,6 +55,7 @@ export const useSlotRoulette = (openModal) => {
     return () => clearTimeout(timer)
   }, [position, totalHeight, targetIndex, showResult])
 
+  // 룰렛 롤링 애니메이션
   useEffect(() => {
     if (!isRolling) return
 
@@ -72,11 +79,13 @@ export const useSlotRoulette = (openModal) => {
     return () => cancelAnimationFrame(animationRef.current)
   }, [isRolling])
 
+  // 정지 시점 감지 후 stop 실행
   useEffect(() => {
     if (!shouldStop) return
     stop()
   }, [shouldStop, stop])
 
+  // 화면에 표시할 위치 계산
   const wrappedPosition = ((position % totalHeight) + totalHeight - 2 * ITEM_HEIGHT) % totalHeight
 
   return {

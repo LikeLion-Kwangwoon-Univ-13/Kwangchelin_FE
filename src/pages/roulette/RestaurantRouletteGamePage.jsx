@@ -18,14 +18,16 @@ export const RestaurantRouletteGamePage = () => {
 
   return (
     <MainLayout title={'식당 룰렛'} hasBackgroundColor>
-      <div>
-        <h3 className={styles.title}>{selectedCategory} 랜덤 룰렛을 시작합니다!</h3>
-        <p className={styles.description}>
-          시작하기 버튼을 누르면 {selectedCategory} 매장이 랜덤으로 선택됩니다.
-        </p>
-      </div>
+      <div className={styles.container}>
+        <div>
+          <h3 className={styles.title}>{selectedCategory} 랜덤 룰렛을 시작합니다!</h3>
+          <p className={styles.description}>
+            시작하기 버튼을 누르면 {selectedCategory} 매장이 랜덤으로 선택됩니다.
+          </p>
+        </div>
 
-      <RestaurantRouletteBoard />
+        <RestaurantRouletteBoard />
+      </div>
     </MainLayout>
   )
 }
