@@ -6,6 +6,7 @@ import { MainPage } from '@/pages/main'
 import { RestaurantDetailPage } from '@/pages/restaurant/RestaurantDetailPage'
 import { RestaurantListPage } from '@/pages/restaurant/RestaurantListPage'
 import { RestaurantMapPage } from '@/pages/restaurant/RestaurantMapPage'
+import { RestaurantReviewPage } from '@/pages/restaurant/RestaurantReviewPage'
 import { CategoryRouletteGamePage } from '@/pages/roulette/CategoryRouletteGamePage'
 import { CategoryRoulettePage } from '@/pages/roulette/CategoryRoulettePage'
 import { RestaurantRouletteGamePage } from '@/pages/roulette/RestaurantRouletteGamePage'
@@ -27,7 +28,7 @@ export const AppRouter = () => {
       <Route path='/restaurant' element={<RestaurantMapPage />} />
       <Route path='/restaurant/list' element={<RestaurantListPage />} />
       <Route path='/restaurant/:restaurantId' element={<RestaurantDetailPage />} />
-      {/* <Route path=':restaurantId/review' element={<RestaurantReviewPage />} /> */}
+      <Route path='/restaurant/:restaurantId/review' element={<RestaurantReviewPage />} />
       {/* <Route path=':restaurantId/reviews' element={<RestaurantAllReviewsPage />} /> */}
 
       {/* 룰렛 */}

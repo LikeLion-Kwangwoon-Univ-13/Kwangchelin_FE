@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { Link, useParams } from 'react-router'
 
 import { FloatingButton } from '@/components/Button/FloatingButton'
 import { Icon } from '@/components/Icon/Icon'
@@ -20,6 +20,7 @@ const dummyData = {
 }
 
 export const RestaurantReview = () => {
+  const { restaurantId } = useParams()
   const { average, totalReviews, scores } = dummyData
   const maxScoreCount = Math.max(...Object.values(scores))
 
@@ -59,7 +60,7 @@ export const RestaurantReview = () => {
         ))}
       </div>
 
-      <FloatingButton to={'/restaurant/review'} />
+      <FloatingButton to={`/restaurant/${restaurantId}/review`} />
     </>
   )
 }
