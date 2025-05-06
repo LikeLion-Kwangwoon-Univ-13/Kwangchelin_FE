@@ -1,16 +1,23 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router'
+
+import { YellowButton } from '@/components/Button/YellowButton'
 import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { RestaurantMap } from '@/features/restaurant/ui/RestaurantMap'
 
 import styles from './RestaurantMapPage.module.css'
-import { useState } from 'react'
-import { RestaurantMap } from '@/features/restaurant/ui/RestaurantMap'
-import { YellowButton } from '@/components/Button/YellowButton'
 
 export const RestaurantMapPage = () => {
+  const navigate = useNavigate()
   const [selectedCategory, setSelectedCategory] = useState(null)
 
   const handleCategoryClick = (category) => {
     setSelectedCategory((prev) => (prev === category ? null : category))
+  }
+
+  const handleViewListClick = () => {
+    navigate('/restaurant/list')
   }
 
   return (
@@ -23,7 +30,7 @@ export const RestaurantMapPage = () => {
 
         <RestaurantMap selectedCategory={selectedCategory} />
 
-        <YellowButton onClick={() => {}} className={styles.button}>
+        <YellowButton onClick={handleViewListClick} className={styles.button}>
           목록 보기
         </YellowButton>
       </div>

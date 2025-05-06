@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import { CardFlipGamePage } from '@/pages/card-flip/CardFlipGamePage'
 import { CardFlipPage } from '@/pages/card-flip/CardFlipPage'
 import { MainPage } from '@/pages/main'
+import { RestaurantListPage } from '@/pages/restaurant/RestaurantListPage'
 import { RestaurantMapPage } from '@/pages/restaurant/RestaurantMapPage'
 import { CategoryRouletteGamePage } from '@/pages/roulette/CategoryRouletteGamePage'
 import { CategoryRoulettePage } from '@/pages/roulette/CategoryRoulettePage'
@@ -23,7 +24,7 @@ export const AppRouter = () => {
 
       {/* 식당 지도 */}
       <Route path='/restaurant' element={<RestaurantMapPage />} />
-      {/* <Route path='list' element={<RestaurantListPage />} /> */}
+      <Route path='/restaurant/list' element={<RestaurantListPage />} />
       {/* <Route path=':restaurantId' element={<RestaurantDetailPage />} /> */}
       {/* <Route path=':restaurantId/review' element={<RestaurantReviewPage />} /> */}
       {/* <Route path=':restaurantId/reviews' element={<RestaurantAllReviewsPage />} /> */}

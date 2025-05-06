@@ -1,0 +1,56 @@
+.container {
+  flex-grow: 1;
+  margin-top: 57px;
+  padding: 0 16.5px;
+  overflow: scroll;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 6.7px;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.name {
+  font-size: var(--font-button-medium-size);
+  font-weight: var(--font-button-medium-weight);
+  color: var(--color-black);
+}
+
+.distance {
+  font-size: var(--font-distance-size);
+  font-weight: var(--font-distance-weight);
+  color: var(--color-text);
+}
+
+.content {
+  display: flex;
+  algin-items: center;
+  gap: 15.27px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-selected-category-title-size);
+  font-weight: var(--font-selected-category-title-weight);
+  color: var(--color-black);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-list-restaurant-address-size);
+  font-weight: var(--font-list-restaurant-address-weight);
+  color: var(--color-black);
+}

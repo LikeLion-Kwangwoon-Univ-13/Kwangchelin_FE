@@ -8,7 +8,7 @@ export const MainLayout = ({ title, hasBackgroundColor, hasSearch, onSearch, chi
       {hasSearch && (
         <button
           onClick={onSearch}
-          style={{ height: '35px', boxShadow: 'inset 0 0 20px blue' }}
+          style={{ height: '35px', boxShadow: 'inset 0 0 20px blue', flexShrink: 0 }}
         ></button>
       )}
       <main className={styles.content}>{children}</main>
