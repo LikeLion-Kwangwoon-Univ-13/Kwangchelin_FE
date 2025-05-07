@@ -16,7 +16,7 @@ export const FinishModal = () => {
 
   const handleClose = () => {
     resetGame()
-    navigate('/card-flip', { replace: true })
+    navigate(-1)
   }
 
   const handleRetry = () => {
