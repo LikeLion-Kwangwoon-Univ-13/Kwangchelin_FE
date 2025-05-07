@@ -11,7 +11,7 @@ export const LinkCard = ({ title, subtitle, icon, to }) => {
         <span>{title}</span>
         <Icon name={icon} size={20} />
       </li>
-      <p className={styles.subTitle}>{subtitle}</p>
+      <p className={styles.subtitle}>{subtitle}</p>
     </Link>
   )
 }
