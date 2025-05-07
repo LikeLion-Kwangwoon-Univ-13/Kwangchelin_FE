@@ -10,7 +10,7 @@ export const SchoolFoodReviewSuccessModal = ({ isOpen, onClose }) => {
 
   const handleModalClose = () => {
     onClose()
-    navigate('/school-food', { replace: true })
+    navigate(-1)
   }
 
   return (
