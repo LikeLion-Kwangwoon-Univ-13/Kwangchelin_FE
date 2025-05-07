@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom'
 
 import { Icon } from '../Icon/Icon'
-import styles from './Popup.module.css'
+import styles from './Modal.module.css'
 
 export const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null
