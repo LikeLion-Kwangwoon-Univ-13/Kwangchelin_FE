@@ -56,32 +56,3 @@
   font-weight: 600;
   color: var(--color-black);
 }
-
-/* 카드 그리드 레이아웃 */
-.gridTwo {
-  display: grid;
-  grid-template-columns: repeat(2, 100px);
-  justify-content: center;
-  gap: 20px;
-}
-
-.gridThree {
-  display: grid;
-  grid-template-columns: 100px;
-  justify-content: center;
-  gap: 20px;
-}
-
-.gridSix {
-  display: grid;
-  grid-template-columns: repeat(2, 100px);
-  justify-content: center;
-  gap: 20px;
-}
-
-.gridMany {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  justify-content: center;
-  gap: 20px;
-}
