@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router'
 
 import { MainPage } from '@/features/main/entry'
+import { SchoolFoodPage, SchoolFoodReviewPage } from '@/features/school-food/entry'
 import { CardFlipGamePage } from '@/pages/card-flip/CardFlipGamePage'
 import { CardFlipPage } from '@/pages/card-flip/CardFlipPage'
 import { KwangwoonPickPage } from '@/pages/kwangwoon-pick/KwangwoonPickPage'
@@ -14,8 +15,6 @@ import { CategoryRoulettePage } from '@/pages/roulette/CategoryRoulettePage'
 import { RestaurantRouletteGamePage } from '@/pages/roulette/RestaurantRouletteGamePage'
 import { RestaurantRoulettePage } from '@/pages/roulette/RestaurantRoulettePage'
 import { RoulettePage } from '@/pages/roulette/RoulettePage'
-import { SchoolFoodPage } from '@/pages/school-food/SchoolFoodPage'
-import { SchoolFoodReviewPage } from '@/pages/school-food/SchoolFoodReviewPage'
 
 export const AppRouter = () => {
   return (

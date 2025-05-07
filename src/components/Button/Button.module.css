@@ -18,7 +18,7 @@
 }
 
 .buttonSecondary {
-  background-color: var(--color-header-bg);
+  background-color: var(--color-background);
   color: var(--color-secondary);
   border: 1px solid var(--color-secondary);
 }

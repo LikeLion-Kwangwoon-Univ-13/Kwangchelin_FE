@@ -43,8 +43,19 @@ export const RestaurantMap = ({ selectedCategory }) => {
     })
 
     return () => {
-      kakaoMap && kakaoMap.destroy()
-      rootRef.current.unmount()
+      // 지도를 DOM에서 제거
+      if (container) {
+        container.innerHTML = ''
+      }
+
+      // 오버레이 해제
+      overlayRef.current?.setMap(null)
+
+      // React root 언마운트
+      rootRef.current?.unmount()
+
+      // map state 초기화
+      setMap(null)
     }
   }, [])
 

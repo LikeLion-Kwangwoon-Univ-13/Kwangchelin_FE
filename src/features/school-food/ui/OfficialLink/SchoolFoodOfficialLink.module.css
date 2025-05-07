@@ -9,7 +9,7 @@
   background-color: white;
 }
 
-.textContent {
+.description {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -22,7 +22,7 @@
   color: var(--color-secondary);
 }
 
-.subTitle {
+.subtitle {
   font-size: var(--font-home-description-size);
   font-weight: var(--font-home-description-weight);
   color: var(--color-text);

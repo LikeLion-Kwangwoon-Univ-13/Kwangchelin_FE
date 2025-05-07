@@ -5,7 +5,7 @@ import { FloatingButton } from '@/components/Button/FloatingButton'
 import { Dropdown } from '@/components/DropDown'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { ReviewItem } from '@/components/ReviewItem'
-import { REVIEW_DUMMY_DATA } from '@/mock/review/reviewDummyData'
+import { REVIEW_DUMMY_DATA } from '@/mock'
 
 import styles from './RestaurantAllReviewsPage.module.css'
 
