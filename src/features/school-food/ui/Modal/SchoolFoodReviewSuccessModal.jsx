@@ -1,25 +1,25 @@
 import { useNavigate } from 'react-router'
 
 import { Icon } from '@/components/Icon/Icon'
-import { PopUp } from '@/components/PopUp/PopUp'
+import { Modal } from '@/components/Modal/Modal'
 
-import styles from './ReviewSubmitSuccessPopUp.module.css'
+import styles from './SchoolFoodReviewSuccessModal.module.css'
 
-export const ReviewSubmitSuccessPopUp = ({ isOpen, closeModal }) => {
+export const SchoolFoodReviewSuccessModal = ({ isOpen, onClose }) => {
   const navigate = useNavigate()
 
   const handleModalClose = () => {
-    closeModal()
+    onClose()
     navigate('/school-food', { replace: true })
   }
 
   return (
-    <PopUp isOpen={isOpen} onClose={handleModalClose}>
+    <Modal isOpen={isOpen} onClose={handleModalClose}>
       <div className={styles.container}>
         <Icon name={'pop-up-review'} size={70} />
         <p className={styles.label}>등록 완료!</p>
         <p className={styles.description}>{`소중한 후기가 등록되었어요.\n감사합니다`}</p>
       </div>
-    </PopUp>
+    </Modal>
   )
 }

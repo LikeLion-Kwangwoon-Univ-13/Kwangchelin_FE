@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router'
 
 import { Button } from '@/components/Button/Button'
 import { Icon } from '@/components/Icon/Icon'
-import { PopUp } from '@/components/PopUp/PopUp'
+import { Modal } from '@/components/Modal/Modal'
 
 import styles from './CategoryRouletteResultPopUp.module.css'
 
@@ -24,7 +24,7 @@ export const CategoryRouletteResultPopUp = ({ category, isOpen, closeModal }) =>
   }
 
   return (
-    <PopUp isOpen={isOpen} onClose={handleModalClose}>
+    <Modal isOpen={isOpen} onClose={handleModalClose}>
       <div className={styles.container}>
         <Icon name={'pop-up-roulette'} size={70} />
 
@@ -39,6 +39,6 @@ export const CategoryRouletteResultPopUp = ({ category, isOpen, closeModal }) =>
           </Button>
         </div>
       </div>
-    </PopUp>
+    </Modal>
   )
 }

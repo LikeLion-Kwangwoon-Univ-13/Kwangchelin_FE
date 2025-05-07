@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { YellowButton } from '@/components/Button/YellowButton'
 import { Icon } from '@/components/Icon/Icon'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { ReviewSubmitSuccessPopUp } from '@/features/school-food/ui'
+import { SchoolFoodReviewSuccessModal } from '@/features/school-food/ui'
 import { useModal } from '@/hooks/useModal'
 
 import styles from './RestaurantReviewPage.module.css'
@@ -52,7 +52,7 @@ export const RestaurantReviewPage = () => {
           </form>
         </div>
       </MainLayout>
-      <ReviewSubmitSuccessPopUp isOpen={isOpen} closeModal={closeModal} />
+      <SchoolFoodReviewSuccessModal isOpen={isOpen} closeModal={closeModal} />
     </>
   )
 }

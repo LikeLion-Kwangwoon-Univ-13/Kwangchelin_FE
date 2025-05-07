@@ -2,13 +2,13 @@ import { Link } from 'react-router'
 
 import { Button } from '@/components/Button/Button'
 import { Icon } from '@/components/Icon/Icon'
-import { PopUp } from '@/components/PopUp/PopUp'
+import { Modal } from '@/components/Modal/Modal'
 
 import styles from './RestaurantRouletteResultPopUp.module.css'
 
 export const RestaurantRouletteResultPopUp = ({ restaurant, isOpen, onRetry, onClose }) => {
   return (
-    <PopUp isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <div className={styles.container}>
         <Icon name={'pop-up-roulette'} size={70} />
 
@@ -23,6 +23,6 @@ export const RestaurantRouletteResultPopUp = ({ restaurant, isOpen, onRetry, onC
           다시 하기
         </Button>
       </div>
-    </PopUp>
+    </Modal>
   )
 }

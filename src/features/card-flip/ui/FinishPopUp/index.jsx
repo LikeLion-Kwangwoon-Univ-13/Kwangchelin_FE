@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router'
 
 import { Button } from '@/components/Button/Button'
 import { Icon } from '@/components/Icon/Icon'
-import { PopUp } from '@/components/PopUp/PopUp'
+import { Modal } from '@/components/Modal/Modal'
 
 import styles from './FinishPopUp.module.css'
 
@@ -19,7 +19,7 @@ export const FinishPopup = ({ isOpen, onClose, onRetry }) => {
   }
 
   return (
-    <PopUp isOpen={isOpen} onClose={handleModalClose}>
+    <Modal isOpen={isOpen} onClose={handleModalClose}>
       <div className={styles.container}>
         <Icon name={'pop-up-card'} size={90} />
         <p className={styles.label}>게임 종료!</p>
@@ -27,6 +27,6 @@ export const FinishPopup = ({ isOpen, onClose, onRetry }) => {
           다시 하기
         </Button>
       </div>
-    </PopUp>
+    </Modal>
   )
 }
