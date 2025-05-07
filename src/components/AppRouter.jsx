@@ -1,9 +1,8 @@
 import { Route, Routes } from 'react-router'
 
+import { CardFlipGamePage, CardFlipSettingPage } from '@/features/card-flip/entry'
 import { MainPage } from '@/features/main/entry'
 import { SchoolFoodPage, SchoolFoodReviewPage } from '@/features/school-food/entry'
-import { CardFlipGamePage } from '@/pages/card-flip/CardFlipGamePage'
-import { CardFlipPage } from '@/pages/card-flip/CardFlipPage'
 import { KwangwoonPickPage } from '@/pages/kwangwoon-pick/KwangwoonPickPage'
 import { RestaurantAllReviewsPage } from '@/pages/restaurant/RestaurantAllReviewsPage'
 import { RestaurantDetailPage } from '@/pages/restaurant/RestaurantDetailPage'
@@ -44,7 +43,7 @@ export const AppRouter = () => {
       <Route path='/roulette/restaurant/game' element={<RestaurantRouletteGamePage />} />
 
       {/* 카드 뒤집기 */}
-      <Route path='/card-flip' element={<CardFlipPage />} />
+      <Route path='/card-flip' element={<CardFlipSettingPage />} />
       <Route path='/card-flip/game' element={<CardFlipGamePage />} />
 
       {/* 광운 PICK 맛집 */}

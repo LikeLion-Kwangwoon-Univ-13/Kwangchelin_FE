@@ -1,49 +1,29 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router'
 
 import { Button } from '@/components/Button/Button'
 import { Icon } from '@/components/Icon/Icon'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { Counter } from '@/features/card-flip/ui'
+import { CardFlipSettingProvider, useCardFlipSetting } from '@/features/card-flip/domain/context'
+import { CardFlipSetting } from '@/features/card-flip/ui'
 
-import styles from './CardFlipPage.module.css'
+import styles from './CardFlipSettingPage.module.css'
 
-export const CardFlipPage = () => {
+const CardFlipSettingPageContent = () => {
   const navigate = useNavigate()
+  const { peopleCount, loserCount } = useCardFlipSetting()
 
-  const [peopleCount, setPeopleCount] = useState(2)
-  const [loserCount, setLoserCount] = useState(1)
-
-  const handlePeopleChange = (count) => {
-    setPeopleCount(count)
-
-    const maxLoser = Math.floor(count / 2)
-    if (loserCount > maxLoser) {
-      setLoserCount(maxLoser)
-    }
-  }
-
-  const handleLoserChange = (count) => {
-    setLoserCount(count)
-  }
-
-  const handleGoGame = () => {
+  const handleStartGame = () => {
     navigate('/card-flip/game', { state: { peopleCount, loserCount } })
   }
 
   return (
-    <MainLayout title={'카드 뒤집기'}>
+    <MainLayout title={'카드 뒤집기'} hasBackgroundColor>
       <div className={styles.container}>
         <h3 className={styles.title}>오늘의 벌칙자, 카드로 정해보세요!</h3>
         <p className={styles.description}>카드를 뒤집으면 꽝 여부가 공개됩니다.</p>
 
         <div className={styles.main}>
-          <Counter
-            peopleCount={peopleCount}
-            loserCount={loserCount}
-            onPeopleChange={handlePeopleChange}
-            onLoserChange={handleLoserChange}
-          />
+          <CardFlipSetting />
 
           <div className={styles.notice}>
             <Icon name={'error-warning'} size={16} />
@@ -54,10 +34,18 @@ export const CardFlipPage = () => {
           </div>
         </div>
 
-        <Button variant='secondary' size={'lg'} className={styles.button} onClick={handleGoGame}>
+        <Button variant='secondary' size={'lg'} className={styles.button} onClick={handleStartGame}>
           시작하기
         </Button>
       </div>
     </MainLayout>
+  )
+}
+
+export const CardFlipSettingPage = () => {
+  return (
+    <CardFlipSettingProvider>
+      <CardFlipSettingPageContent />
+    </CardFlipSettingProvider>
   )
 }

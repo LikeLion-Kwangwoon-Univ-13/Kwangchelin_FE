@@ -1,4 +1,5 @@
 export * from './BombPopUp'
 export * from './CardGrid'
-export * from './Counter'
 export * from './FinishPopUp'
+export * from './Setting/CardFlipSetting'
+export * from './Setting/CounterControl'

@@ -8,7 +8,6 @@ export const CounterControl = ({ label, count, min, max, onChange }) => {
       onChange(count - 1)
     }
   }
-  console.log(count)
 
   const handleIncrease = () => {
     if (max !== undefined && count >= max) return
