@@ -10,7 +10,9 @@ import { RestaurantMapMarkers } from './RestaurantMapMarkers'
 export const RestaurantMap = ({ selectedCategory }) => {
   const [map, setMap] = useState(null)
 
-  const restaurants = getRestaurantsByCategory(selectedCategory)
+  const restaurants = getRestaurantsByCategory(
+    selectedCategory === '전체' ? null : selectedCategory,
+  )
 
   if (!restaurants) return null
 
