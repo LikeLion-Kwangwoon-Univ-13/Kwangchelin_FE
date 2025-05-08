@@ -6,6 +6,7 @@ import {
   CategoryRouletteSelectPage,
 } from '@/features/category-roulette/entry'
 import { MainPage } from '@/features/main/entry'
+import { RestaurantAllReviewsPage } from '@/features/restaurant-all-reviews/entry/RestaurantAllReviewsPage'
 import { RestaurantDetailPage } from '@/features/restaurant-detail/entry/RestaurantDetailPage'
 import { RestaurantListPage } from '@/features/restaurant-list/entry/RestaurantListPage'
 import { RestaurantMapPage } from '@/features/restaurant-map/entry'
@@ -17,7 +18,6 @@ import {
 import { RoulettePage } from '@/features/roulette/entry'
 import { SchoolFoodPage, SchoolFoodReviewPage } from '@/features/school-food/entry'
 import { KwangwoonPickPage } from '@/pages/kwangwoon-pick/KwangwoonPickPage'
-import { RestaurantAllReviewsPage } from '@/pages/restaurant/RestaurantAllReviewsPage'
 
 export const AppRouter = () => {
   return (

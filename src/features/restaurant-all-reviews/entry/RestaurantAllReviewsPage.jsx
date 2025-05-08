@@ -5,27 +5,35 @@ import { FloatingButton } from '@/components/Button/FloatingButton'
 import { Dropdown } from '@/components/DropDown'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { ReviewItem } from '@/components/ReviewItem'
-import { REVIEW_DUMMY_DATA } from '@/mock'
+import { getSortedReviews, REVIEW_DUMMY_DATA } from '@/mock'
 
 import styles from './RestaurantAllReviewsPage.module.css'
 
-const sortOptions = ['평점순', '리뷰순', '조회순']
+const SORT_OPTIONS = ['최신순', '평점순']
 
 export const RestaurantAllReviewsPage = () => {
   const { restaurantId } = useParams()
 
-  const [selected, setSelected] = useState(sortOptions[0])
+  const [selected, setSelected] = useState(SORT_OPTIONS[0])
+  const [sortedReviews, setSortedReviews] = useState(REVIEW_DUMMY_DATA)
+
+  const handleDropDownClick = (option) => {
+    setSelected(option)
+    setSortedReviews(
+      getSortedReviews(REVIEW_DUMMY_DATA, option === SORT_OPTIONS[0] ? 'latest' : 'rating'),
+    )
+  }
 
   return (
     <MainLayout title={'리뷰'}>
       <Dropdown
-        options={sortOptions}
+        options={SORT_OPTIONS}
         selected={selected}
-        onSelect={setSelected}
+        onSelect={handleDropDownClick}
         className={styles.dropdown}
       />
       <div>
-        {REVIEW_DUMMY_DATA.map(({ id, nickname, date, content, rating }) => (
+        {sortedReviews.map(({ id, nickname, date, content, rating }) => (
           <ReviewItem key={id} nickname={nickname} date={date} content={content} rating={rating} />
         ))}
       </div>
