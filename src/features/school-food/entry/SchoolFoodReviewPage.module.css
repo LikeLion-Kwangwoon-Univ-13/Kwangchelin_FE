@@ -53,6 +53,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
   font-size: var(--font-review-input-size);
   font-weight: var(--font-review-input-weight);

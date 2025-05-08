@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router'
 import { Icon } from '@/components/Icon/Icon'
 import { Modal } from '@/components/Modal/Modal'
 
-import styles from './SchoolFoodReviewSuccessModal.module.css'
+import styles from './ReviewSuccessModal.module.css'
 
-export const SchoolFoodReviewSuccessModal = ({ isOpen, onClose }) => {
+export const ReviewSuccessModal = ({ isOpen, onClose }) => {
   const navigate = useNavigate()
 
   const handleModalClose = () => {

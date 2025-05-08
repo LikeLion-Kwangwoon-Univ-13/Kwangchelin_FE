@@ -8,6 +8,7 @@ import {
 import { MainPage } from '@/features/main/entry'
 import { RestaurantListPage } from '@/features/restaurant-list/entry/RestaurantListPage'
 import { RestaurantMapPage } from '@/features/restaurant-map/entry'
+import { RestaurantReviewPage } from '@/features/restaurant-review/entry/RestaurantReviewPage'
 import {
   RestaurantRoulettePlayPage,
   RestaurantRouletteSelectPage,
@@ -17,7 +18,6 @@ import { SchoolFoodPage, SchoolFoodReviewPage } from '@/features/school-food/ent
 import { KwangwoonPickPage } from '@/pages/kwangwoon-pick/KwangwoonPickPage'
 import { RestaurantAllReviewsPage } from '@/pages/restaurant/RestaurantAllReviewsPage'
 import { RestaurantDetailPage } from '@/pages/restaurant/RestaurantDetailPage'
-import { RestaurantReviewPage } from '@/pages/restaurant/RestaurantReviewPage'
 
 export const AppRouter = () => {
   return (

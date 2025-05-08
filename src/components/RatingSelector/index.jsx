@@ -1,10 +1,8 @@
 import { Icon } from '@/components/Icon/Icon'
 
-import styles from './RatingStars.module.css'
+import styles from './RatingSelector.module.css'
 
-const MAX_RATING = 5
-
-export const RatingSelector = ({ rating, onRate }) => {
+export const RatingSelector = ({ rating, onRate, iconSize }) => {
   const handleRate = (selectedRating) => {
     onRate(selectedRating)
   }
@@ -16,7 +14,7 @@ export const RatingSelector = ({ rating, onRate }) => {
 
         return (
           <button key={index} type='button' onClick={() => handleRate(index + 1)}>
-            <Icon name={isFilled ? 'review-fill' : 'review-unfilled'} size={52} />
+            <Icon name={isFilled ? 'review-fill' : 'review-unfilled'} size={iconSize} />
           </button>
         )
       })}

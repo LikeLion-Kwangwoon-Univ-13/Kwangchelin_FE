@@ -1,6 +1,4 @@
-export * from './Modal/SchoolFoodReviewSuccessModal'
 export * from './OfficialLink/SchoolFoodOfficialLink'
-export * from './Review/RatingSelector'
 export * from './Review/RatingStars'
 export * from './Review/SchoolFoodReviewItem'
 export * from './Review/SchoolFoodReviewList'

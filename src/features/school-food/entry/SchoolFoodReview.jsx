@@ -2,7 +2,8 @@ import { useState } from 'react'
 
 import { YellowButton } from '@/components/Button/YellowButton'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { RatingSelector, SchoolFoodReviewSuccessModal } from '@/features/school-food/ui'
+import { RatingSelector } from '@/components/RatingSelector'
+import { ReviewSuccessModal } from '@/components/ReviewSuccessModal'
 import { useModal } from '@/hooks/useModal'
 
 import styles from './SchoolFoodReviewPage.module.css'
@@ -30,7 +31,7 @@ export const SchoolFoodReviewPage = () => {
             <p className={styles.title}>오늘의 학식</p>
             <p className={styles.subtitle}>맛있게 드셨나요?</p>
 
-            <RatingSelector rating={rating} onRate={setRating} />
+            <RatingSelector rating={rating} onRate={setRating} iconSize={52} />
 
             <div className={styles.textareaContainer}>
               <textarea className={styles.textarea} value={review} onChange={handleReviewChange} />
@@ -46,7 +47,7 @@ export const SchoolFoodReviewPage = () => {
         </div>
       </MainLayout>
 
-      <SchoolFoodReviewSuccessModal isOpen={isOpen} onClose={closeModal} />
+      <ReviewSuccessModal isOpen={isOpen} onClose={closeModal} />
     </>
   )
 }
