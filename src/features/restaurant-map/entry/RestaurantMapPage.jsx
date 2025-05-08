@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router'
 import { YellowButton } from '@/components/Button/YellowButton'
 import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { CATEGORY_LIST } from '@/constants/category'
 import { RestaurantMap } from '@/features/restaurant-map/ui'
+import { useSelectedCategory } from '@/hooks/useSelectedCategory'
 
-import { useSelectedCategory } from '../domain/hooks'
 import styles from './RestaurantMapPage.module.css'
 
 export const RestaurantMapPage = () => {
@@ -32,6 +33,7 @@ export const RestaurantMapPage = () => {
     <MainLayout title={'광운대 근처 맛집'} hasBackgroundColor hasSearch>
       <div className={styles.container}>
         <CategoryFilterTagList
+          categoryList={['전체', ...CATEGORY_LIST]}
           selectedCategory={selectedCategory}
           onClickCategory={handleCategoryClick}
         />

@@ -1,16 +1,21 @@
 import { Link } from 'react-router'
 
 import { Icon } from '@/components/Icon/Icon'
+import { useSelectedCategory } from '@/hooks/useSelectedCategory'
 import { getRestaurantsByCategory } from '@/mock/restaurantUtils'
 
 import styles from './RestaurantList.module.css'
 
-export const RestaurantList = ({ selectedCategory }) => {
-  const filteredData = getRestaurantsByCategory(selectedCategory)
+export const RestaurantList = () => {
+  const selectedCategory = useSelectedCategory()
+
+  const filteredData = getRestaurantsByCategory(
+    selectedCategory === '전체' ? null : selectedCategory,
+  )
 
   return (
     <section className={styles.container}>
-      {filteredData.map(({ location_id, name, rating, distance, address }) => (
+      {filteredData.map(({ location_id, name, distance, address }) => (
         <Link to={`/restaurant/${location_id}`} key={location_id} className={styles.item}>
           <div className={styles.header}>
             <p className={styles.name}>{name}</p>

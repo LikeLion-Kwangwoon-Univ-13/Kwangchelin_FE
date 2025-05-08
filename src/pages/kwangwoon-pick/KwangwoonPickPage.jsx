@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { Dropdown } from '@/components/DropDown'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { CATEGORY_LIST } from '@/constants/category'
 import { RestaurantItem } from '@/features/kwangwoon-pick/ui/RestaurantItem'
 import { getRestaurantsByCategory } from '@/mock/restaurantUtils'
 
@@ -25,6 +26,7 @@ export const KwangwoonPickPage = () => {
     <MainLayout title={'광운PICK 맛집'}>
       <div className={styles.container}>
         <CategoryFilterTagList
+          categoryList={['전체', ...CATEGORY_LIST]}
           selectedCategory={selectedCategory}
           onClickCategory={handleCategoryClick}
         />
