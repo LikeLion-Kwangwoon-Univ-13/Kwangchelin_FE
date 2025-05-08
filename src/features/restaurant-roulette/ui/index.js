@@ -1,2 +1,2 @@
-export * from './Modal/RestaurantRouletteResultModal'
-export * from './RestaurantRoulette/RestaurantRouletteBoard'
+export * from './RestaurantRouletteBoard'
+export * from './RestaurantRouletteResultModal'

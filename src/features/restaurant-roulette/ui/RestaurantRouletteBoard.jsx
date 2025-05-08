@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
-import { useRestaurantRoulette } from '../../domain/context'
-import { useRouletteSpin } from '../../domain/hooks'
+import { useRestaurantRoulette } from '../domain/context'
+import { useRouletteSpin } from '../domain/hooks'
 import styles from './RestaurantRouletteBoard.module.css'
 
 export const RestaurantRouletteBoard = ({ restartKey, onSelect }) => {

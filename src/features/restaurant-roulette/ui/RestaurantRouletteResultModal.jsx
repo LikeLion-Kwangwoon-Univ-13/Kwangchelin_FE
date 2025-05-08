@@ -4,7 +4,7 @@ import { Button } from '@/components/Button/Button'
 import { Icon } from '@/components/Icon/Icon'
 import { Modal } from '@/components/Modal/Modal'
 
-import { useRestaurantRoulette } from '../../domain/context'
+import { useRestaurantRoulette } from '../domain/context'
 import styles from './RestaurantRouletteResultModal.module.css'
 
 export const RestaurantRouletteResultModal = ({ isOpen, onRetry }) => {

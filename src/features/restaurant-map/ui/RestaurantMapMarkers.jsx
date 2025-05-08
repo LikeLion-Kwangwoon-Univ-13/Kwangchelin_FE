@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import mapPing from '@/assets/map/map-ping.svg'
@@ -6,7 +6,9 @@ import mapPing from '@/assets/map/map-ping.svg'
 import { RestaurantMapOverlay } from './RestaurantMapOverlay'
 
 export const RestaurantMapMarkers = ({ map, restaurants }) => {
-  const overlayContainerRef = useRef(document.createElement('div'))
+  const [selected, setSelected] = useState(null)
+
+  const overlayContainerRef = useRef(null)
   const rootRef = useRef(null)
   const overlayRef = useRef(null)
 
@@ -15,8 +17,9 @@ export const RestaurantMapMarkers = ({ map, restaurants }) => {
 
     const { kakao } = window
 
-    const container = overlayContainerRef.current
+    const container = document.createElement('div')
     document.body.appendChild(container)
+    overlayContainerRef.current = container
 
     const root = createRoot(container)
     rootRef.current = root
@@ -27,6 +30,21 @@ export const RestaurantMapMarkers = ({ map, restaurants }) => {
       content: container,
     })
     overlayRef.current = overlay
+
+    return () => {
+      overlay.setMap(null)
+
+      setTimeout(() => {
+        root.unmount()
+        container.remove()
+      }, 0)
+    }
+  }, [map])
+
+  useEffect(() => {
+    if (!window.kakao || !map) return
+
+    const { kakao } = window
 
     const imageSize = new kakao.maps.Size(24, 24)
     const imageOption = { offset: new kakao.maps.Point(12, 24) }
@@ -44,17 +62,10 @@ export const RestaurantMapMarkers = ({ map, restaurants }) => {
       marker.setMap(map)
 
       kakao.maps.event.addListener(marker, 'click', () => {
-        root.render(
-          <RestaurantMapOverlay
-            id={info.location_id}
-            name={info.name}
-            category={info.category}
-            phone={info.phone || ''}
-            score={5}
-          />,
-        )
-        overlay.setPosition(position)
-        overlay.setMap(map)
+        setSelected({
+          ...info,
+          position,
+        })
       })
 
       return marker
@@ -62,14 +73,30 @@ export const RestaurantMapMarkers = ({ map, restaurants }) => {
 
     return () => {
       markers.forEach((marker) => marker.setMap(null))
-      overlay.setMap(null)
-
-      setTimeout(() => {
-        root.unmount()
-        container.remove()
-      }, 0)
     }
   }, [map, restaurants])
+
+  useEffect(() => {
+    if (!window.kakao || !map) return
+    if (!selected) return
+
+    const overlay = overlayRef.current
+    const root = rootRef.current
+
+    root.render(
+      <RestaurantMapOverlay
+        id={selected.location_id}
+        name={selected.name}
+        category={selected.category}
+        phone={selected.phone || ''}
+        score={5}
+        onClose={() => setSelected(null)}
+      />,
+    )
+
+    overlay.setPosition(selected.position)
+    overlay.setMap(map)
+  }, [map, selected])
 
   return null
 }

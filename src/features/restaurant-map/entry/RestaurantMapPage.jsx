@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router'
 
 import { YellowButton } from '@/components/Button/YellowButton'
@@ -6,14 +5,23 @@ import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { RestaurantMap } from '@/features/restaurant-map/ui'
 
+import { useSelectedCategory } from '../domain/hooks'
 import styles from './RestaurantMapPage.module.css'
 
 export const RestaurantMapPage = () => {
   const navigate = useNavigate()
-  const [selectedCategory, setSelectedCategory] = useState(null)
+  const selectedCategory = useSelectedCategory()
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory((prev) => (prev === category ? null : category))
+    const nextCategory = selectedCategory === category ? null : category
+
+    navigate(
+      {
+        pathname: '/restaurant',
+        search: nextCategory ? `?category=${nextCategory}` : '',
+      },
+      { replace: true },
+    )
   }
 
   const handleViewListClick = () => {
