@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import { YellowButton } from '@/components/Button/YellowButton'
 import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { RestaurantMap } from '@/features/restaurant/ui/RestaurantMap'
+import { RestaurantMap } from '@/features/restaurant-map/ui'
 
 import styles from './RestaurantMapPage.module.css'
 
