@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+  border-top: 1px solid var(--color-outline);
+  border-radius: 24px 24px 0 0;
+  background-color: white;
+  box-shadow: 0px -1px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.slot {
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.highlight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #ffa4a4;
+  opacity: 0.25;
+}
+
+.list {
+  transform: translateY(0);
+  transition: none;
+}
+
+.rolling {
+  transition: transform 0.7s ease-out;
+}
+
+.item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}

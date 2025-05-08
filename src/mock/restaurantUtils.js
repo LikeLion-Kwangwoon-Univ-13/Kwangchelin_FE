@@ -40,3 +40,7 @@ export const getRestaurantById = (locationId) => {
 
   return RESTAURANT_DUMMY_DATA.find((restaurant) => restaurant.location_id === parsedId) || null
 }
+
+export const getRestaurantNamesByCategory = (category) => {
+  return RESTAURANT_DUMMY_DATA.filter((item) => item.category === category).map((item) => item.name)
+}

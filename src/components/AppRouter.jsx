@@ -1,7 +1,16 @@
 import { Route, Routes } from 'react-router'
 
 import { CardFlipGamePage, CardFlipSettingPage } from '@/features/card-flip/entry'
+import {
+  CategoryRoulettePlayPage,
+  CategoryRouletteSelectPage,
+} from '@/features/category-roulette/entry'
 import { MainPage } from '@/features/main/entry'
+import {
+  RestaurantRoulettePlayPage,
+  RestaurantRouletteSelectPage,
+} from '@/features/restaurant-roulette/entry'
+import { RoulettePage } from '@/features/roulette/entry'
 import { SchoolFoodPage, SchoolFoodReviewPage } from '@/features/school-food/entry'
 import { KwangwoonPickPage } from '@/pages/kwangwoon-pick/KwangwoonPickPage'
 import { RestaurantAllReviewsPage } from '@/pages/restaurant/RestaurantAllReviewsPage'
@@ -9,11 +18,6 @@ import { RestaurantDetailPage } from '@/pages/restaurant/RestaurantDetailPage'
 import { RestaurantListPage } from '@/pages/restaurant/RestaurantListPage'
 import { RestaurantMapPage } from '@/pages/restaurant/RestaurantMapPage'
 import { RestaurantReviewPage } from '@/pages/restaurant/RestaurantReviewPage'
-import { CategoryRouletteGamePage } from '@/pages/roulette/CategoryRouletteGamePage'
-import { CategoryRoulettePage } from '@/pages/roulette/CategoryRoulettePage'
-import { RestaurantRouletteGamePage } from '@/pages/roulette/RestaurantRouletteGamePage'
-import { RestaurantRoulettePage } from '@/pages/roulette/RestaurantRoulettePage'
-import { RoulettePage } from '@/pages/roulette/RoulettePage'
 
 export const AppRouter = () => {
   return (
@@ -35,12 +39,12 @@ export const AppRouter = () => {
       <Route path='/roulette' element={<RoulettePage />} />
 
       {/* 카테고리 룰렛 */}
-      <Route path='/roulette/category' element={<CategoryRoulettePage />} />
-      <Route path='/roulette/category/game' element={<CategoryRouletteGamePage />} />
+      <Route path='/roulette/category' element={<CategoryRouletteSelectPage />} />
+      <Route path='/roulette/category/game' element={<CategoryRoulettePlayPage />} />
 
       {/* 식당 룰렛 */}
-      <Route path='/roulette/restaurant' element={<RestaurantRoulettePage />} />
-      <Route path='/roulette/restaurant/game' element={<RestaurantRouletteGamePage />} />
+      <Route path='/roulette/restaurant' element={<RestaurantRouletteSelectPage />} />
+      <Route path='/roulette/restaurant/game' element={<RestaurantRoulettePlayPage />} />
 
       {/* 카드 뒤집기 */}
       <Route path='/card-flip' element={<CardFlipSettingPage />} />

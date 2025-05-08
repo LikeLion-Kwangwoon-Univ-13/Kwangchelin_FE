@@ -4,9 +4,12 @@ import { BrowserRouter } from 'react-router'
 
 import './styles/global.css'
 import App from './App.jsx'
+import { RestaurantRouletteProvider } from './features/restaurant-roulette/domain/context'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <App />
+    <RestaurantRouletteProvider>
+      <App />
+    </RestaurantRouletteProvider>
   </BrowserRouter>,
 )
