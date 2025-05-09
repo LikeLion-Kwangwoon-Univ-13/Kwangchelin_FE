@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router'
+
 import { Icon } from '@/components/Icon/Icon'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { useCategoryRouletteSpin } from '@/features/category-roulette/domain/hooks'
@@ -7,11 +10,14 @@ import {
   CategoryRouletteStartButton,
 } from '@/features/category-roulette/ui'
 
+import { useCategoryRoulette } from '../domain/context'
 import styles from './CategoryRoulettePlayPage.module.css'
 
 export const CategoryRoulettePlayPage = () => {
+  const navigate = useNavigate()
+  const { selectedCategoryList, clearCategory } = useCategoryRoulette()
+
   const {
-    categories,
     resultCategory,
     isOpen,
     mustSpin,
@@ -22,13 +28,27 @@ export const CategoryRoulettePlayPage = () => {
     closeModal,
   } = useCategoryRouletteSpin()
 
+  useEffect(() => {
+    if (!selectedCategoryList || !selectedCategoryList.length) {
+      navigate('/roulette/category', { replace: true })
+    }
+  }, [selectedCategoryList, navigate])
+
+  useEffect(() => {
+    return () => {
+      clearCategory()
+    }
+  }, [])
+
+  if (!selectedCategoryList || !selectedCategoryList.length) return null
+
   return (
     <MainLayout title='카테고리 룰렛'>
       <div className={styles.container}>
         <div className={styles.content}>
           <Icon name='roulette-pointer' size={66} className={styles.pointer} />
           <CategoryRouletteBoard
-            categories={categories}
+            categories={selectedCategoryList}
             prizeNumber={prizeIndex}
             mustSpin={mustSpin}
             onStopSpinning={stopSpin}

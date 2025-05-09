@@ -10,6 +10,11 @@ export const RestaurantRouletteProvider = ({ children }) => {
   const [restaurantList, setRestaurantList] = useState(null)
   const [resultRestaurant, setResultRestaurant] = useState(null)
 
+  const clearRestaurantRoulette = () => {
+    setRestaurantList(null)
+    setResultRestaurant(null)
+  }
+
   useEffect(() => {
     setRestaurantList(getRestaurantNamesByCategory(selectedCategory))
   }, [selectedCategory])
@@ -22,6 +27,7 @@ export const RestaurantRouletteProvider = ({ children }) => {
         restaurantList,
         setSelectedCategory,
         setResultRestaurant,
+        clearRestaurantRoulette,
       }}
     >
       {children}

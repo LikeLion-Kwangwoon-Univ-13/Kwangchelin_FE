@@ -16,13 +16,19 @@ export const RestaurantRoulettePlayPage = () => {
   const [restartKey, setRestartKey] = useState(false)
 
   const { isOpen, openModal, closeModal } = useModal()
-  const { selectedCategory, setResultRestaurant } = useRestaurantRoulette()
+  const { selectedCategory, setResultRestaurant, clearRestaurantRoulette } = useRestaurantRoulette()
 
   useEffect(() => {
     if (!selectedCategory) {
-      navigate('/roulette/restaurant')
+      navigate('/roulette/restaurant', { replace: true })
     }
   }, [selectedCategory, navigate])
+
+  useEffect(() => {
+    return () => {
+      clearRestaurantRoulette()
+    }
+  }, [])
 
   const handleSelectRestaurant = (restaurant) => {
     setResultRestaurant(restaurant)

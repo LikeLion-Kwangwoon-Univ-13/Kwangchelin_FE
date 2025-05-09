@@ -3,20 +3,23 @@ import { useNavigate } from 'react-router'
 import { Button } from '@/components/Button/Button'
 import { Icon } from '@/components/Icon/Icon'
 import { Modal } from '@/components/Modal/Modal'
+import { useRestaurantRoulette } from '@/features/restaurant-roulette/domain/context'
 
 import styles from './CategoryRouletteResultModal.module.css'
 
 export const CategoryRouletteResultModal = ({ category, isOpen, onClose }) => {
   const navigate = useNavigate()
+  const { setResultRestaurant } = useRestaurantRoulette()
 
   const handleGoRestaurantList = () => {
     onClose()
-    navigate(`/restaurant/list/category=${category}`)
+    navigate(`/restaurant/list?category=${category}`, { replace: true })
   }
 
   const handleGoRoulette = () => {
     onClose()
-    navigate('/roulette/restaurant')
+    setResultRestaurant(category)
+    navigate('/roulette/restaurant', { replace: true })
   }
 
   return (

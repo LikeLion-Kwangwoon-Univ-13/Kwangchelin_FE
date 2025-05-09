@@ -5,11 +5,14 @@ import { BrowserRouter } from 'react-router'
 import './styles/global.css'
 import App from './App.jsx'
 import { RestaurantRouletteProvider } from './features/restaurant-roulette/domain/context'
+import { CategoryRouletteProvider } from './features/category-roulette/domain/context'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <RestaurantRouletteProvider>
-      <App />
+      <CategoryRouletteProvider>
+        <App />
+      </CategoryRouletteProvider>
     </RestaurantRouletteProvider>
   </BrowserRouter>,
 )

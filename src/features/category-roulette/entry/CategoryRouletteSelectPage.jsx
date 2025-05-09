@@ -3,14 +3,11 @@ import { useNavigate } from 'react-router'
 import { Button } from '@/components/Button/Button'
 import { CategoryTagList } from '@/components/CategoryTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import {
-  CategoryRouletteProvider,
-  useCategoryRoulette,
-} from '@/features/category-roulette/domain/context'
+import { useCategoryRoulette } from '@/features/category-roulette/domain/context'
 
 import styles from './CategoryRouletteSelectPage.module.css'
 
-const CategoryRouletteSelectPageContent = () => {
+export const CategoryRouletteSelectPage = () => {
   const navigate = useNavigate()
   const { selectedCategoryList, toggleCategory } = useCategoryRoulette()
 
@@ -44,9 +41,3 @@ const CategoryRouletteSelectPageContent = () => {
     </MainLayout>
   )
 }
-
-export const CategoryRouletteSelectPage = () => (
-  <CategoryRouletteProvider>
-    <CategoryRouletteSelectPageContent />
-  </CategoryRouletteProvider>
-)
