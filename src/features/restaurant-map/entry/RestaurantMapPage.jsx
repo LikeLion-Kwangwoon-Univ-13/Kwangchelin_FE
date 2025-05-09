@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
 
-import { YellowButton } from '@/components/Button/YellowButton'
+import { YellowButton } from '@/components'
 import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { CATEGORY_LIST } from '@/constants'

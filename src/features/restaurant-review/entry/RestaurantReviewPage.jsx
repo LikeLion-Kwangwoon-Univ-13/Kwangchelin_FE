@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { YellowButton } from '@/components/Button/YellowButton'
+import { YellowButton } from '@/components'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { RatingSelector } from '@/components/RatingSelector'
 import { ReviewSuccessModal } from '@/components/ReviewSuccessModal'
