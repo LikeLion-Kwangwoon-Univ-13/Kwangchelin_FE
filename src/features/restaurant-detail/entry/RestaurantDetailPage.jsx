@@ -1,8 +1,7 @@
 import { useParams } from 'react-router'
 
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { REVIEW_SUMMARY_DUMMY_DATA } from '@/mock'
-import { getRestaurantById } from '@/mock/restaurantUtils'
+import { getRestaurantById, REVIEW_SUMMARY_DUMMY_DATA } from '@/mock'
 
 import { RestaurantSummary } from '../ui/RestaurantSummary'
 import { RestaurantTab } from '../ui/RestaurantTab'

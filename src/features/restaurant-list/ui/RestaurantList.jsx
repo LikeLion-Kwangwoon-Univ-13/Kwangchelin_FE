@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { Icon } from '@/components/Icon/Icon'
 import { useSearchKeyword } from '@/hooks/useSearchKeword'
 import { useSelectedCategory } from '@/hooks/useSelectedCategory'
-import { getFilteredRestaurants } from '@/mock/restaurantUtils'
+import { getFilteredRestaurants } from '@/mock'
 
 import styles from './RestaurantList.module.css'
 

@@ -1,4 +1,4 @@
-import { RESTAURANT_DUMMY_DATA } from '@/mock/restaurantDummyData'
+import { RESTAURANT_DUMMY_DATA } from '@/mock'
 
 /**
  * 카테고리와 검색어로 식당 목록 필터링

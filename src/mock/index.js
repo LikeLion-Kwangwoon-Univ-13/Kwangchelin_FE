@@ -1,3 +1,5 @@
+export * from './restaurantDummyData'
+export * from './restaurantUtils'
 export * from './reviewDummyData'
 export * from './reviewSummaryDummyData'
 export * from './reviewUtils'

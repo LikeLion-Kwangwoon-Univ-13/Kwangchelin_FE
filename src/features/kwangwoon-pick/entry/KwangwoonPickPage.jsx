@@ -5,7 +5,7 @@ import { Dropdown } from '@/components/DropDown'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { CATEGORY_LIST } from '@/constants/category'
 import { RestaurantItem } from '@/features/kwangwoon-pick/ui/RestaurantItem'
-import { getFilteredRestaurants } from '@/mock/restaurantUtils'
+import { getFilteredRestaurants } from '@/mock'
 
 import styles from './KwangwoonPickPage.module.css'
 

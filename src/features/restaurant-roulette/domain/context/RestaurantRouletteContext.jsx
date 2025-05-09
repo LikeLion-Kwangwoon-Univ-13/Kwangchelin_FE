@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-import { getFilteredRestaurants } from '@/mock/restaurantUtils'
+import { getFilteredRestaurants } from '@/mock'
 
 const RestaurantRouletteContext = createContext()
 
