@@ -5,7 +5,7 @@ import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { CATEGORY_LIST } from '@/constants/category'
 import { RestaurantMap } from '@/features/restaurant-map/ui'
-import { useSelectedCategory } from '@/hooks/useSelectedCategory'
+import { useSelectedCategory } from '@/hooks'
 
 import styles from './RestaurantMapPage.module.css'
 

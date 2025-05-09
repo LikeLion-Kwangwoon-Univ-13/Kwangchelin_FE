@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
-import { useSearchKeyword } from '@/hooks/useSearchKeword'
-import { useSelectedCategory } from '@/hooks/useSelectedCategory'
+import { useSearchKeyword, useSelectedCategory } from '@/hooks'
 import { getFilteredRestaurants } from '@/mock'
 
 import { SCHOOL_LAT, SCHOOL_LNG } from '../domain/constants'
