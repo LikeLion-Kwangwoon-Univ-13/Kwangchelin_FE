@@ -13,7 +13,6 @@ const sortOptions = ['평점순', '리뷰순', '조회순']
 
 export const KwangwoonPickPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null)
-
   const [selected, setSelected] = useState(sortOptions[0])
 
   const restaurants = getRestaurantsByCategory(selectedCategory)
