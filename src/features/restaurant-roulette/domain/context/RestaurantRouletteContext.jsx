@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-import { getRestaurantNamesByCategory } from '@/mock/restaurantUtils'
+import { getFilteredRestaurants } from '@/mock/restaurantUtils'
 
 const RestaurantRouletteContext = createContext()
 
@@ -16,7 +16,9 @@ export const RestaurantRouletteProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    setRestaurantList(getRestaurantNamesByCategory(selectedCategory))
+    const restaurantNameList = getFilteredRestaurants(selectedCategory).map((item) => item.name)
+
+    setRestaurantList(restaurantNameList)
   }, [selectedCategory])
 
   return (
