@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 37px;
   height: 100%;
+  background-color: var(--color-background);
 }
 
 .description {

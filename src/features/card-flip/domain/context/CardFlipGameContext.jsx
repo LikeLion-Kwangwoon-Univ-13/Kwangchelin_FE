@@ -27,8 +27,22 @@ export const CardFlipGameProvider = ({ peopleCount, loserCount, children }) => {
   }
 
   const resetGame = () => {
-    setCards(generateShuffledCards(peopleCount, loserCount))
-    setGameStatus(GAME_STATUS.PLAYING)
+    setCards((prevCards) =>
+      prevCards.map((card) => ({
+        ...card,
+        isFlipped: false,
+      })),
+    )
+
+    setJustFlippedCard(null)
+
+    setTimeout(() => {
+      setCards(generateShuffledCards(peopleCount, loserCount))
+      setGameStatus(GAME_STATUS.PLAYING)
+    }, 300)
+  }
+
+  const clearJustFlippedCard = () => {
     setJustFlippedCard(null)
   }
 
@@ -40,10 +54,6 @@ export const CardFlipGameProvider = ({ peopleCount, loserCount, children }) => {
       setGameStatus(GAME_STATUS.FINISHED)
     }
   }, [cards, remainedLosers, gameStatus])
-
-  const clearJustFlippedCard = () => {
-    setJustFlippedCard(null)
-  }
 
   return (
     <CardFlipGameContext.Provider
