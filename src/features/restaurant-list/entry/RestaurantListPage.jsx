@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router'
 
 import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { CATEGORY_LIST } from '@/constants/category'
+import { CATEGORY_LIST } from '@/constants'
 import { useSelectedCategory } from '@/hooks'
 
 import { RestaurantList } from '../ui/RestaurantList'

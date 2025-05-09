@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { YellowButton } from '@/components/Button/YellowButton'
 import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { CATEGORY_LIST } from '@/constants/category'
+import { CATEGORY_LIST } from '@/constants'
 import { RestaurantMap } from '@/features/restaurant-map/ui'
 import { useSelectedCategory } from '@/hooks'
 

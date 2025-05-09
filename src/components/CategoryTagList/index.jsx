@@ -1,5 +1,5 @@
 import { CategoryTag } from '@/components/Tag/CategoryTag'
-import { CATEGORY_LIST } from '@/constants/category'
+import { CATEGORY_LIST } from '@/constants'
 
 import styles from './CategoryTagList.module.css'
 
