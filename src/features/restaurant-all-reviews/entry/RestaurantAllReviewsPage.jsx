@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router'
 
-import { FloatingButton } from '@/components/Button/FloatingButton'
+import { FloatingButton } from '@/components'
 import { Dropdown } from '@/components/DropDown'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { ReviewItem } from '@/components/ReviewItem'
