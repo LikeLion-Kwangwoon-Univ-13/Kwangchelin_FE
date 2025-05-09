@@ -102,17 +102,6 @@ section {
   display: block;
   box-sizing: border-box;
 }
-
-input,
-textarea {
-  box-sizing: border-box;
-  font-family: var(--font-family);
-  color: var(--color-black);
-  background-color: transparent;
-  outline: none;
-  border: none;
-}
-
 body {
   line-height: 1;
   -ms-overflow-style: none;
@@ -165,4 +154,26 @@ a {
   color: inherit;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  color: var(--color-black);
+}
+
+select {
+  font-family: var(--font-family);
+}
+select:focus {
+  outline: none;
+}
+input,
+textarea {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  color: var(--color-black);
+  background-color: transparent;
+  outline: none;
+  border: none;
 }

@@ -1,24 +1,29 @@
 :root {
   --font-family: 'paperlogy', sans-serif;
 
-  /* 홈 화면 */
+  /* 홈 화면 대제목 */
   --font-home-title-weight: 800;
   --font-home-title-size: 30px;
   --font-home-title-line-height: 120%;
 
+  /* 홈 화면 소제목 */
   --font-home-subtitle-weight: 400;
   --font-home-subtitle-size: 24px;
 
+  /* 홈 화면 설명 */
   --font-home-description-weight: 400;
   --font-home-description-size: 12px;
 
+  /* 홈 화면 메인버튼 */
   --font-home-main-button-weight: 600;
   --font-home-main-button-size: 20px;
   --font-home-main-button-line-height: 20px;
 
+  /* 홈 화면 배너글 */
   --font-home-banner-text-weight: 400;
   --font-home-banner-text-size: 13px;
 
+  /* 홈 화면 카테고리 제목 */
   --font-home-category-title-weight: 500;
   --font-home-category-title-size: 10px;
 
@@ -31,13 +36,15 @@
   --font-top-title-size: 24px;
   --letter-top-title: 5%;
 
-  /* 리뷰 */
+  /* 리뷰 닉네임 */
   --font-review-nickname-weight: 600;
   --font-review-nickname-size: 15px;
 
+  /* 닉네임 글 */
   --font-review-text-weight: 400;
   --font-review-text-size: 14px;
 
+  /* 닉네임 날짜 */
   --font-review-date-weight: 400;
   --font-review-date-size: 14px;
   --letter-review-date: -5%;
@@ -52,7 +59,7 @@
   --font-game-description-weight: 400;
   --font-game-description-size: 20px;
 
-  /* 식당 상세정보 */
+  /* 식당 상세정보 상세위치 */
   --font-restaurant-detail-location-weight: 600;
   --font-restaurant-detail-location-size: 16px;
   --font-restaurant-detail-location-line-height: 16px;
@@ -65,10 +72,11 @@
   --font-search-error-weight: 900;
   --font-search-error-size: 14px;
 
-  /* 리스트 */
+  /* 리스트 식당 이름 */
   --font-list-restaurant-name-weight: 800;
   --font-list-restaurant-name-size: 16px;
 
+  /* 리스트 식당 주소 */
   --font-list-restaurant-address-weight: 300;
   --font-list-restaurant-address-size: 12px;
 
@@ -76,13 +84,15 @@
   --font-review-input-weight: 500;
   --font-review-input-size: 12px;
 
-  /* 버튼 */
+  /* 버튼 소 */
   --font-button-small-weight: 600;
   --font-button-small-size: 12px;
 
+  /* 버튼 중 */
   --font-button-medium-weight: 600;
   --font-button-medium-size: 15px;
 
+  /* 버튼 대 */
   --font-button-large-weight: 700;
   --font-button-large-size: 20px;
 

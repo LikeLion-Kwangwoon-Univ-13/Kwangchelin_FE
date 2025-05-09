@@ -58,21 +58,3 @@
   font-style: normal;
   font-display: swap;
 }
-
-html,
-body {
-  font-family: var(--font-family);
-  color: var(--color-black);
-}
-
-input,
-textarea,
-select {
-  font-family: var(--font-family);
-}
-
-input,
-textarea,
-select:focus {
-  outline: none;
-}
