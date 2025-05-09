@@ -38,7 +38,7 @@ export const RestaurantRoulettePlayPage = () => {
   if (!selectedCategory) return null
 
   return (
-    <MainLayout title='식당 룰렛' hasBackgroundColor>
+    <MainLayout title='식당 룰렛'>
       <div className={styles.container}>
         <h3 className={styles.title}>{selectedCategory} 랜덤 룰렛을 시작합니다!</h3>
 

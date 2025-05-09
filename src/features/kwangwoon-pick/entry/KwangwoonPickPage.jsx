@@ -5,7 +5,7 @@ import { Dropdown } from '@/components/DropDown'
 import { MainLayout } from '@/components/MainLayout/MainLayout'
 import { CATEGORY_LIST } from '@/constants/category'
 import { RestaurantItem } from '@/features/kwangwoon-pick/ui/RestaurantItem'
-import { getRestaurantsByCategory } from '@/mock/restaurantUtils'
+import { getFilteredRestaurants } from '@/mock/restaurantUtils'
 
 import styles from './KwangwoonPickPage.module.css'
 
@@ -15,7 +15,7 @@ export const KwangwoonPickPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [selected, setSelected] = useState(sortOptions[0])
 
-  const restaurants = getRestaurantsByCategory(selectedCategory)
+  const restaurants = getFilteredRestaurants(selectedCategory)
 
   const handleCategoryClick = (category) => {
     setSelectedCategory((prev) => (prev === category ? null : category))

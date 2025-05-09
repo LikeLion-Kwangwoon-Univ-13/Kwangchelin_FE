@@ -108,6 +108,9 @@ textarea {
   box-sizing: border-box;
   font-family: var(--font-family);
   color: var(--color-black);
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 body {

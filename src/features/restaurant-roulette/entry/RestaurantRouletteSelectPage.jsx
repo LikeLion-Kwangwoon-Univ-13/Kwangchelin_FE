@@ -16,7 +16,7 @@ const RestaurantRouletteSelectPageContent = () => {
   }
 
   return (
-    <MainLayout title={'식당 룰렛'} hasBackgroundColor>
+    <MainLayout title={'식당 룰렛'}>
       <div className={styles.container}>
         <div className={styles.content}>
           <p className={styles.label}>카테고리를 선택해주세요</p>

@@ -1,17 +1,23 @@
 import { useState } from 'react'
 
-import { getRestaurantsByCategory } from '@/mock/restaurantUtils'
+import { useSearchKeyword } from '@/hooks/useSearchKeword'
+import { useSelectedCategory } from '@/hooks/useSelectedCategory'
+import { getFilteredRestaurants } from '@/mock/restaurantUtils'
 
 import { SCHOOL_LAT, SCHOOL_LNG } from '../domain/constants'
 import { KakaoMap } from './KakaoMap'
 import styles from './RestaurantMap.module.css'
 import { RestaurantMapMarkers } from './RestaurantMapMarkers'
 
-export const RestaurantMap = ({ selectedCategory }) => {
+export const RestaurantMap = () => {
   const [map, setMap] = useState(null)
 
-  const restaurants = getRestaurantsByCategory(
+  const selectedCategory = useSelectedCategory()
+  const searchKeyword = useSearchKeyword()
+
+  const restaurants = getFilteredRestaurants(
     selectedCategory === '전체' ? null : selectedCategory,
+    searchKeyword,
   )
 
   if (!restaurants) return null

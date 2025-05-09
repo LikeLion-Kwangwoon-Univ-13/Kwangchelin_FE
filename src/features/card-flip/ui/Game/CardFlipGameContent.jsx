@@ -12,7 +12,7 @@ export const CardFlipGameContent = () => {
   const isRemainLosers = remainedLosers > 0
 
   return (
-    <MainLayout title='카드 뒤집기' hasBackgroundColor>
+    <MainLayout title='카드 뒤집기'>
       <div className={styles.container}>
         <p className={clsx(styles.description, isRemainLosers && styles.remainedLosers)}>
           {isRemainLosers ? `꽝 ${remainedLosers}개 남았어요!` : '모든 카드가 공개되었어요!'}

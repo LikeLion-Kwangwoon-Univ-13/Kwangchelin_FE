@@ -24,7 +24,7 @@ export const RestaurantReviewPage = () => {
   }
 
   return (
-    <MainLayout title={'리뷰 등록'} hasBackgroundColor>
+    <MainLayout title={'리뷰 등록'}>
       <div className={styles.container}>
         <form className={styles.content} onSubmit={handleSubmit}>
           <p className={styles.title}>오늘의 맛집</p>

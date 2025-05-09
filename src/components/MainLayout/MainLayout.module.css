@@ -4,6 +4,35 @@
   flex-direction: column;
   height: 100%;
 }
+
+.headerContainer {
+  position: relative;
+  padding: 76px 16px 12px;
+  background-color: var(--color-background);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.buttonArrow {
+  cursor: pointer;
+}
+
+.title {
+  font-size: var(--font-top-title-size);
+  font-weight: var(--font-top-title-weight);
+  letter-spacing: var(--letter-top-title);
+  color: var(--color-black);
+}
+
+.inputContainer {
+  background-color: var(--color-background);
+}
+
 .content {
   flex-grow: 1;
   overflow: scroll;

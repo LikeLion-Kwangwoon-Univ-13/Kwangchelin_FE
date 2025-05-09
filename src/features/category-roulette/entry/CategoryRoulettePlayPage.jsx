@@ -23,7 +23,7 @@ export const CategoryRoulettePlayPage = () => {
   } = useCategoryRouletteSpin()
 
   return (
-    <MainLayout title='카테고리 룰렛' hasBackgroundColor>
+    <MainLayout title='카테고리 룰렛'>
       <div className={styles.container}>
         <div className={styles.content}>
           <Icon name='roulette-pointer' size={66} className={styles.pointer} />

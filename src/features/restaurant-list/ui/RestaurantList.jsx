@@ -1,16 +1,19 @@
 import { Link } from 'react-router'
 
 import { Icon } from '@/components/Icon/Icon'
+import { useSearchKeyword } from '@/hooks/useSearchKeword'
 import { useSelectedCategory } from '@/hooks/useSelectedCategory'
-import { getRestaurantsByCategory } from '@/mock/restaurantUtils'
+import { getFilteredRestaurants } from '@/mock/restaurantUtils'
 
 import styles from './RestaurantList.module.css'
 
 export const RestaurantList = () => {
   const selectedCategory = useSelectedCategory()
+  const searchKeyword = useSearchKeyword()
 
-  const filteredData = getRestaurantsByCategory(
+  const filteredData = getFilteredRestaurants(
     selectedCategory === '전체' ? null : selectedCategory,
+    searchKeyword,
   )
 
   return (

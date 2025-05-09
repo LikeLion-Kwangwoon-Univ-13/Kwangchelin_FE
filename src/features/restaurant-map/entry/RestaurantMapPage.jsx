@@ -16,13 +16,10 @@ export const RestaurantMapPage = () => {
   const handleCategoryClick = (category) => {
     const nextCategory = selectedCategory === category ? null : category
 
-    navigate(
-      {
-        pathname: '/restaurant',
-        search: nextCategory ? `?category=${nextCategory}` : '',
-      },
-      { replace: true },
-    )
+    const params = new URLSearchParams()
+    if (nextCategory) params.set('category', nextCategory)
+
+    navigate({ pathname: '/restaurant', search: params.toString() }, { replace: true })
   }
 
   const handleViewListClick = () => {
@@ -30,7 +27,7 @@ export const RestaurantMapPage = () => {
   }
 
   return (
-    <MainLayout title={'광운대 근처 맛집'} hasBackgroundColor hasSearch>
+    <MainLayout title={'광운대 근처 맛집'} hasSearch searchBaseURL={'/restaurant'}>
       <div className={styles.container}>
         <CategoryFilterTagList
           categoryList={['전체', ...CATEGORY_LIST]}
@@ -38,7 +35,7 @@ export const RestaurantMapPage = () => {
           onClickCategory={handleCategoryClick}
         />
 
-        <RestaurantMap selectedCategory={selectedCategory} />
+        <RestaurantMap />
 
         <YellowButton onClick={handleViewListClick} className={styles.button}>
           목록 보기

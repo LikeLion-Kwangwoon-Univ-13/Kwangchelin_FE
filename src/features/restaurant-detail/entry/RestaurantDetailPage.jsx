@@ -17,7 +17,7 @@ export const RestaurantDetailPage = () => {
   const { average, totalReviews, scores } = REVIEW_SUMMARY_DUMMY_DATA
 
   return (
-    <MainLayout title={'상세 정보'} hasBackgroundColor>
+    <MainLayout title={'상세 정보'}>
       <div>
         <RestaurantSummary
           thumb_nail={thumb_nail}

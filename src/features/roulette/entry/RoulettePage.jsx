@@ -5,7 +5,7 @@ import styles from './RoulettePage.module.css'
 
 export const RoulettePage = () => {
   return (
-    <MainLayout title={'랜덤 룰렛'} hasBackgroundColor>
+    <MainLayout title={'랜덤 룰렛'}>
       <div className={styles.container}>
         <p className={styles.label}>돌려봐요! 오늘의 맛집은?</p>
         <RouletteOptionList />

@@ -19,7 +19,7 @@ const CategoryRouletteSelectPageContent = () => {
   }
 
   return (
-    <MainLayout title={'카테고리 룰렛'} hasBackgroundColor>
+    <MainLayout title={'카테고리 룰렛'}>
       <div className={styles.container}>
         <div className={styles.content}>
           <p className={styles.label}>카테고리를 선택해주세요</p>

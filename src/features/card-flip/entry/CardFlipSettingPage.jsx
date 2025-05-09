@@ -17,7 +17,7 @@ const CardFlipSettingPageContent = () => {
   }
 
   return (
-    <MainLayout title={'카드 뒤집기'} hasBackgroundColor>
+    <MainLayout title={'카드 뒤집기'}>
       <div className={styles.container}>
         <h3 className={styles.title}>오늘의 벌칙자, 카드로 정해보세요!</h3>
         <p className={styles.description}>카드를 뒤집으면 꽝 여부가 공개됩니다.</p>
