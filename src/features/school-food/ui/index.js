@@ -1,4 +1,2 @@
-export * from './OfficialLink/SchoolFoodOfficialLink'
-export * from './Review/RatingStars'
-export * from './Review/SchoolFoodReviewItem'
-export * from './Review/SchoolFoodReviewList'
+export * from './SchoolFoodOfficialLink'
+export * from './SchoolFoodReviewList'

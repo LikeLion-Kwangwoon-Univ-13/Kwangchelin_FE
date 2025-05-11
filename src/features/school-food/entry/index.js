@@ -1,2 +1,2 @@
-export * from './SchoolFood'
-export * from './SchoolFoodReview'
+export * from './SchoolFoodPage'
+export * from './SchoolFoodReviewPage'

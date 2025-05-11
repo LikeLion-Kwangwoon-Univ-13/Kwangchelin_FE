@@ -4,6 +4,10 @@ import { Icon } from '@/components'
 
 import styles from './SchoolFoodOfficialLink.module.css'
 
+/**
+ * 학교 학식 페이지로 이동하는 외부 링크 컴포넌트
+ */
+
 export const SchoolFoodOfficialLink = () => {
   return (
     <Link
