@@ -1,8 +1,6 @@
 import { Link, useParams } from 'react-router'
 
-import { FloatingButton } from '@/components'
-import { Icon } from '@/components/Icon/Icon'
-import { ReviewItem } from '@/components/ReviewItem'
+import { FloatingButton, Icon, ReviewItem } from '@/components'
 import { REVIEW_DUMMY_DATA } from '@/mock'
 
 import styles from './RestaurantReview.module.css'

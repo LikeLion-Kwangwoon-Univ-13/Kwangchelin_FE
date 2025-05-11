@@ -1,10 +1,7 @@
 import { useState } from 'react'
 import { useParams } from 'react-router'
 
-import { FloatingButton } from '@/components'
-import { Dropdown } from '@/components/DropDown'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { ReviewItem } from '@/components/ReviewItem'
+import { Dropdown, FloatingButton, MainLayout, ReviewItem } from '@/components'
 import { getSortedReviews, REVIEW_DUMMY_DATA } from '@/mock'
 
 import styles from './RestaurantAllReviewsPage.module.css'
