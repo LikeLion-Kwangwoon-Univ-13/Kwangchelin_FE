@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 
 import defaultImage from '@/assets/defaultImage.png'
-import { Icon } from '@/components/Icon/Icon'
+import { Icon } from '@/components'
 
 import styles from './RestaurantItem.module.css'
 

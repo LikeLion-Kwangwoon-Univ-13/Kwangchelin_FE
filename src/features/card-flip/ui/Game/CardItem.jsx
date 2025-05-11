@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { Icon } from '@/components/Icon/Icon'
+import { Icon } from '@/components'
 
 import styles from './CardItem.module.css'
 

@@ -1,4 +1,4 @@
-import { Icon } from '@/components/Icon/Icon'
+import { Icon } from '@/components'
 import { useBannerRotator } from '@/features/main/domain/hooks'
 
 import styles from './BannerRotator.module.css'

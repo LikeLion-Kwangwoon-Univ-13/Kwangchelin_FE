@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-import { Icon } from '@/components/Icon/Icon'
+import { Icon } from '@/components'
 import { LINK_CARD_LIST } from '@/features/main/domain/constants'
 import { LinkCard } from '@/features/main/ui'
 

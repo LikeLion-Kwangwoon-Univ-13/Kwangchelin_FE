@@ -2,7 +2,8 @@ import clsx from 'clsx'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 
-import { Icon } from '../Icon/Icon'
+import { Icon } from '@/components'
+
 import styles from './SearchInput.module.css'
 
 /**

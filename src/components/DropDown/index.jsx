@@ -1,7 +1,8 @@
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
 
-import { Icon } from '../Icon/Icon'
+import { Icon } from '@/components'
+
 import styles from './DropDown.module.css'
 
 export const Dropdown = ({ options = [], selected, onSelect, className }) => {

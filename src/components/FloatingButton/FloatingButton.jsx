@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 
-import { Icon } from '../Icon/Icon'
+import { Icon } from '@/components'
+
 import styles from './FloatingButton.module.css'
 
 /**

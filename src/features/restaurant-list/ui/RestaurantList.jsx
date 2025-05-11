@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-import { Icon } from '@/components/Icon/Icon'
+import { Icon } from '@/components'
 import { useSearchKeyword, useSelectedCategory } from '@/hooks'
 import { getFilteredRestaurants } from '@/mock'
 

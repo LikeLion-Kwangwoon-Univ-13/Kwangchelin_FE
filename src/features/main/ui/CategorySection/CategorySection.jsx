@@ -1,4 +1,4 @@
-import { Icon } from '@/components/Icon/Icon'
+import { Icon } from '@/components'
 import { CATEGORY_ICON_LIST } from '@/features/main/domain/constants'
 
 import styles from './CategorySection.module.css'
