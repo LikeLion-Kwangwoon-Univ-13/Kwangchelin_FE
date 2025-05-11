@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router'
 
 import { Button, Icon, Modal } from '@/components'
+import { RESTAURANT_DUMMY_DATA } from '@/mock'
 
 import { useRestaurantRoulette } from '../domain/context/RestaurantRouletteContext'
 import styles from './RestaurantRouletteResultModal.module.css'
@@ -22,6 +23,10 @@ export const RestaurantRouletteResultModal = ({ isOpen, onRetry }) => {
     navigate(-1, { replace: true })
   }
 
+  const restaurantId = RESTAURANT_DUMMY_DATA.find(
+    (restaurant) => restaurant.name === resultRestaurant,
+  )?.location_id
+
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
       <div className={styles.container}>
@@ -29,7 +34,7 @@ export const RestaurantRouletteResultModal = ({ isOpen, onRetry }) => {
 
         <p className={styles.label}>{resultRestaurant} 당첨!</p>
         <p className={styles.description}>{'맛있는 식사 시간 되세요!'}</p>
-        <Link to={`/restaurant/list/category=${resultRestaurant}`} className={styles.link}>
+        <Link to={`/restaurant/${restaurantId}`} className={styles.link}>
           <p>상세정보 보러가기</p>
           <Icon name={'shape-arrow-right'} size={13} fill={'#7A7A7A'} />
         </Link>
