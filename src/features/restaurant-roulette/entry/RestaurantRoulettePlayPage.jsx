@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { MainLayout } from '@/components'
 import { useRestaurantRoulette } from '@/features/restaurant-roulette/domain/context'
 import {
   RestaurantRouletteBoard,

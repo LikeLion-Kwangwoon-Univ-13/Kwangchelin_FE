@@ -1,5 +1,4 @@
-import { FloatingButton } from '@/components'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { FloatingButton, MainLayout } from '@/components'
 import { SchoolFoodOfficialLink, SchoolFoodReviewList } from '@/features/school-food/ui'
 
 import styles from './SchoolFoodPage.module.css'

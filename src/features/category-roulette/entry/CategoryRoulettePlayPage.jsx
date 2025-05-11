@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
 
-import { Icon } from '@/components/Icon/Icon'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { Icon, MainLayout } from '@/components'
 import { useCategoryRouletteSpin } from '@/features/category-roulette/domain/hooks'
 import {
   CategoryRouletteBoard,

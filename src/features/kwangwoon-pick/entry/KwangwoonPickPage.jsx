@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
-import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
-import { Dropdown } from '@/components/DropDown'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { CategoryFilterTagList, Dropdown, MainLayout } from '@/components'
 import { CATEGORY_LIST } from '@/constants'
 import { RestaurantItem } from '@/features/kwangwoon-pick/ui/RestaurantItem'
 import { getFilteredRestaurants } from '@/mock'

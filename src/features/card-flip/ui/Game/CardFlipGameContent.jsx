@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { MainLayout } from '@/components'
 import { useCardFlipGame } from '@/features/card-flip/domain/context'
 
 import styles from './CardFlipGameContent.module.css'

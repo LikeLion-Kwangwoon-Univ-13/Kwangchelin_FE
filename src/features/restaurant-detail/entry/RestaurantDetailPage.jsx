@@ -1,6 +1,6 @@
 import { useParams } from 'react-router'
 
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { MainLayout } from '@/components'
 import { getRestaurantById, REVIEW_SUMMARY_DUMMY_DATA } from '@/mock'
 
 import { RestaurantSummary } from '../ui/RestaurantSummary'

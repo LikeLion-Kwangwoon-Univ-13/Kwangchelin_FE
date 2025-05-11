@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { MainLayout } from '@/components'
 import { RouletteOptionList } from '@/features/roulette/ui'
 
 import styles from './RoulettePage.module.css'

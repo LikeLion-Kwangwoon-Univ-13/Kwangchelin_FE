@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router'
 
-import { CategoryFilterTagList } from '@/components/CategoryFilterTagList'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { CategoryFilterTagList, MainLayout } from '@/components'
 import { CATEGORY_LIST } from '@/constants'
 import { useSelectedCategory } from '@/hooks'
 
