@@ -3,7 +3,18 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Icon } from '@/components'
 
-import styles from './DropDown.module.css'
+import styles from './Dropdown.module.css'
+
+/**
+ * 클릭으로 토글 가능한 단일 선택형 드롭다운 컴포넌트
+ *
+ * @param {Object} props
+ * @param {string[]} props.options - 선택 가능한 옵션 리스트
+ * @param {string} props.selected - 현재 선택된 옵션
+ * @param {(option: string) => void} props.onSelect - 옵션 선택 시 호출되는 콜백
+ * @param {string} [props.className] - 외부에서 전달받은 클래스 이름
+ * @returns {JSX.Element}
+ */
 
 export const Dropdown = ({ options = [], selected, onSelect, className }) => {
   const [isOpen, setIsOpen] = useState(false)

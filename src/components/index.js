@@ -1,5 +1,6 @@
 export * from './Button/Button'
 export * from './CategoryTag/CategoryTag'
+export * from './Dropdown/Dropdown'
 export * from './FloatingButton/FloatingButton'
 export * from './Icon/Icon'
 export * from './MainLayout/MainLayout'
