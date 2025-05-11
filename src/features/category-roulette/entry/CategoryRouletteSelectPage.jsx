@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router'
 
-import { Button } from '@/components/Button/Button'
-import { CategoryTagList } from '@/components/CategoryTagList'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { Button, CategoryTagList, MainLayout } from '@/components'
 import { useCategoryRoulette } from '@/features/category-roulette/domain/context'
 
 import styles from './CategoryRouletteSelectPage.module.css'

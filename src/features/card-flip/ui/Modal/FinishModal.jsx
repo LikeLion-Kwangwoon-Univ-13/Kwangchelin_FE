@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router'
 
-import { Button } from '@/components/Button/Button'
-import { Icon } from '@/components/Icon/Icon'
-import { Modal } from '@/components/Modal/Modal'
+import { Button, Icon, Modal } from '@/components'
 
 import { GAME_STATUS } from '../../domain/constants'
 import { useCardFlipGame } from '../../domain/context'

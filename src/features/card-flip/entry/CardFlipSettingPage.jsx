@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router'
 
-import { Button } from '@/components/Button/Button'
-import { Icon } from '@/components/Icon/Icon'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
+import { Button, Icon, MainLayout } from '@/components'
 import { CardFlipSettingProvider, useCardFlipSetting } from '@/features/card-flip/domain/context'
 import { CardFlipSetting } from '@/features/card-flip/ui'
 
