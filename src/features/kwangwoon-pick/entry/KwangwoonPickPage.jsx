@@ -35,9 +35,11 @@ export const KwangwoonPickPage = () => {
           className={styles.dropdown}
         />
 
-        {restaurants.map((restaurant) => (
-          <RestaurantItem key={restaurant.location_id} restaurant={restaurant} />
-        ))}
+        <div className={styles.list}>
+          {restaurants.map((restaurant) => (
+            <RestaurantItem key={restaurant.location_id} restaurant={restaurant} />
+          ))}
+        </div>
       </div>
     </MainLayout>
   )
