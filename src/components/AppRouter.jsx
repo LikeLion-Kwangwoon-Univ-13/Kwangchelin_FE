@@ -11,7 +11,7 @@ import { RestaurantAllReviewsPage } from '@/features/restaurant-all-reviews/entr
 import { RestaurantDetailPage } from '@/features/restaurant-detail/entry/RestaurantDetailPage'
 import { RestaurantListPage } from '@/features/restaurant-list/entry/RestaurantListPage'
 import { RestaurantMapPage } from '@/features/restaurant-map/entry'
-import { RestaurantReviewPage } from '@/features/restaurant-review/entry/RestaurantReviewPage'
+import { RestaurantReviewPage } from '@/features/restaurant-review/entry'
 import {
   RestaurantRoulettePlayPage,
   RestaurantRouletteSelectPage,
