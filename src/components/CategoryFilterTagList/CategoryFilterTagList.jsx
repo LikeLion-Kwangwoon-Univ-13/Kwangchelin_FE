@@ -1,4 +1,5 @@
 import { CategoryTag } from '@/components'
+import { useDragScroll } from '@/hooks'
 
 import styles from './CategoryFilterTagList.module.css'
 
@@ -13,8 +14,10 @@ import styles from './CategoryFilterTagList.module.css'
  */
 
 export const CategoryFilterTagList = ({ categoryList, selectedCategory, onClickCategory }) => {
+  const containerRef = useDragScroll()
+
   return (
-    <div className={styles.container}>
+    <div ref={containerRef} className={styles.container}>
       {categoryList.map((category) => {
         const isSelected = selectedCategory === category
 
