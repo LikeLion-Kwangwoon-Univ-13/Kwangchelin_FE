@@ -2,11 +2,12 @@ import { useNavigate } from 'react-router'
 
 import { Button, MainLayout, RouletteCategoryTagList } from '@/components'
 
-import { useRestaurantRoulette } from '../domain/context'
+import { useRestaurantRoulette } from '../domain/context/RestaurantRouletteContext'
 import styles from './RestaurantRouletteSelectPage.module.css'
 
-const RestaurantRouletteSelectPageContent = () => {
+export const RestaurantRouletteSelectPage = () => {
   const navigate = useNavigate()
+
   const { selectedCategory, setSelectedCategory } = useRestaurantRoulette()
 
   const handleStart = () => {
@@ -38,9 +39,3 @@ const RestaurantRouletteSelectPageContent = () => {
     </MainLayout>
   )
 }
-
-export const RestaurantRouletteSelectPage = () => (
-  <>
-    <RestaurantRouletteSelectPageContent />
-  </>
-)

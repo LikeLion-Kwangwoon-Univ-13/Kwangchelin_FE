@@ -2,8 +2,16 @@ import { Link, useNavigate } from 'react-router'
 
 import { Button, Icon, Modal } from '@/components'
 
-import { useRestaurantRoulette } from '../domain/context'
+import { useRestaurantRoulette } from '../domain/context/RestaurantRouletteContext'
 import styles from './RestaurantRouletteResultModal.module.css'
+
+/**
+ * 룰렛 결과로 선택된 식당을 보여주는 모달 컴포넌트
+ *
+ * @param {Object} props
+ * @param {boolean} props.isOpen - 모달 오픈 여부
+ * @param {() => void} props.onRetry - 다시 하기 클릭 핸들러
+ */
 
 export const RestaurantRouletteResultModal = ({ isOpen, onRetry }) => {
   const navigate = useNavigate()

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 
 import { Button, Icon, Modal } from '@/components'
-import { useRestaurantRoulette } from '@/features/restaurant-roulette/domain/context'
+import { useRestaurantRoulette } from '@/features/restaurant-roulette/domain/context/RestaurantRouletteContext'
 
 import styles from './CategoryRouletteResultModal.module.css'
 

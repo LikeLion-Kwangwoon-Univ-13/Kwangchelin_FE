@@ -1,8 +1,17 @@
 import { useEffect } from 'react'
 
-import { useRestaurantRoulette } from '../domain/context'
-import { useRouletteSpin } from '../domain/hooks'
+import { useRestaurantRoulette } from '../domain/context/RestaurantRouletteContext'
+import { useRouletteSpin } from '../domain/hooks/useRouletteSpin'
 import styles from './RestaurantRouletteBoard.module.css'
+
+/**
+ * 식당 이름을 룰렛 애니메이션으로 보여주는 컴포넌트
+ *
+ * @param {Object} props
+ * @param {string[]} props.restaurantList - 룰렛에 표시할 식당 리스트
+ * @param {() => void} props.onSelect - 룰렛 종료 후 선택된 식당 콜백
+ * @param {boolean} props.restartKey - 재시작 트리거
+ */
 
 export const RestaurantRouletteBoard = ({ restartKey, onSelect }) => {
   const { restaurantList } = useRestaurantRoulette()

@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 
 import { MainLayout } from '@/components'
-import { useRestaurantRoulette } from '@/features/restaurant-roulette/domain/context'
-import {
-  RestaurantRouletteBoard,
-  RestaurantRouletteResultModal,
-} from '@/features/restaurant-roulette/ui'
 import { useModal } from '@/hooks/useModal'
 
+import { useRestaurantRoulette } from '../domain/context/RestaurantRouletteContext'
+import { RestaurantRouletteBoard } from '../ui/RestaurantRouletteBoard'
+import { RestaurantRouletteResultModal } from '../ui/RestaurantRouletteResultModal'
 import styles from './RestaurantRoulettePlayPage.module.css'
+
 export const RestaurantRoulettePlayPage = () => {
   const navigate = useNavigate()
 
