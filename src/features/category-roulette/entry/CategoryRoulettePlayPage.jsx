@@ -2,14 +2,12 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
 
 import { Icon, MainLayout } from '@/components'
-import { useCategoryRouletteSpin } from '@/features/category-roulette/domain/hooks'
-import {
-  CategoryRouletteBoard,
-  CategoryRouletteResultModal,
-  CategoryRouletteStartButton,
-} from '@/features/category-roulette/ui'
+import { useCategoryRouletteSpin } from '@/features/category-roulette/domain/hooks/useCategoryRouletteSpin'
 
-import { useCategoryRoulette } from '../domain/context'
+import { useCategoryRoulette } from '../domain/context/CategoryRouletteContext'
+import { CategoryRouletteBoard } from '../ui/CategoryRouletteBoard'
+import { CategoryRouletteResultModal } from '../ui/CategoryRouletteResultModal'
+import { CategoryRouletteStartButton } from '../ui/CategoryRouletteStartButton'
 import styles from './CategoryRoulettePlayPage.module.css'
 
 export const CategoryRoulettePlayPage = () => {
@@ -46,6 +44,7 @@ export const CategoryRoulettePlayPage = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <Icon name='roulette-pointer' size={66} className={styles.pointer} />
+
           <CategoryRouletteBoard
             categories={selectedCategoryList}
             prizeNumber={prizeIndex}

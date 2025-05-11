@@ -6,6 +6,14 @@ import { useCategoryRoulette } from '../context'
 
 const getRandomIndex = (length) => Math.floor(Math.random() * length)
 
+/**
+ * 카테고리 룰렛 상태 접근용 커스텀 훅
+ *
+ * - Provider 외부에서 사용 시 에러 throw
+ *
+ * @returns {{ selectedCategoryList: string[], toggleCategory: Function, clearCategory: Function }}
+ */
+
 export const useCategoryRouletteSpin = () => {
   const { selectedCategoryList } = useCategoryRoulette()
 

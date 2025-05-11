@@ -5,6 +5,17 @@ import { useRestaurantRoulette } from '@/features/restaurant-roulette/domain/con
 
 import styles from './CategoryRouletteResultModal.module.css'
 
+/**
+ * 룰렛 결과 모달
+ *
+ * - 선택된 카테고리 출력 및 다음 동작 선택 (식당 보기 / 식당 룰렛)
+ *
+ * @param {Object} props
+ * @param {string} props.category - 당첨된 카테고리
+ * @param {boolean} props.isOpen - 모달 열림 여부
+ * @param {() => void} props.onClose - 닫기 핸들러
+ */
+
 export const CategoryRouletteResultModal = ({ category, isOpen, onClose }) => {
   const navigate = useNavigate()
   const { setResultRestaurant } = useRestaurantRoulette()
