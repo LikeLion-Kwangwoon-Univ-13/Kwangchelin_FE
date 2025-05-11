@@ -9,7 +9,7 @@ import { KwangwoonPickPage } from '@/features/kwangwoon-pick/entry/KwangwoonPick
 import { MainPage } from '@/features/main/entry'
 import { RestaurantAllReviewsPage } from '@/features/restaurant-all-reviews/entry/RestaurantAllReviewsPage'
 import { RestaurantDetailPage } from '@/features/restaurant-detail/entry/RestaurantDetailPage'
-import { RestaurantListPage } from '@/features/restaurant-list/entry/RestaurantListPage'
+import { RestaurantListPage } from '@/features/restaurant-list/entry'
 import { RestaurantMapPage } from '@/features/restaurant-map/entry'
 import { RestaurantReviewPage } from '@/features/restaurant-review/entry'
 import {
