@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "predev": "pnpm generate:icons",
+    "prebuild": "pnpm generate:icons",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
