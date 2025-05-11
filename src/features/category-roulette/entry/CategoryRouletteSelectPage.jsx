@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
 
-import { Button, CategoryTagList, MainLayout } from '@/components'
+import { Button, MainLayout, RouletteCategoryTagList } from '@/components'
 import { useCategoryRoulette } from '@/features/category-roulette/domain/context'
 
 import styles from './CategoryRouletteSelectPage.module.css'
@@ -19,7 +19,7 @@ export const CategoryRouletteSelectPage = () => {
         <div className={styles.content}>
           <p className={styles.label}>카테고리를 선택해주세요</p>
 
-          <CategoryTagList
+          <RouletteCategoryTagList
             selectedCategory={selectedCategoryList}
             onSelect={toggleCategory}
             multiple
