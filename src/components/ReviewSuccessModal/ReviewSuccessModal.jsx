@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router'
 
-import { Icon } from '@/components/Icon/Icon'
-import { Modal } from '@/components/Modal/Modal'
+import { Icon, Modal } from '@/components'
 
 import styles from './ReviewSuccessModal.module.css'
 

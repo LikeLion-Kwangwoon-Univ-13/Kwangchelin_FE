@@ -1,5 +1,4 @@
-import { Icon } from '@/components/Icon/Icon'
-import { Modal } from '@/components/Modal/Modal'
+import { Icon, Modal } from '@/components'
 
 import { useCardFlipGame } from '../../domain/context'
 import styles from './BombModal.module.css'
