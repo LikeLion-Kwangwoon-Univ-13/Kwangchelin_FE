@@ -10,7 +10,7 @@ export const CategoryRouletteSelectPage = () => {
   const { selectedCategoryList, toggleCategory } = useCategoryRoulette()
 
   const handleStart = () => {
-    navigate('/roulette/category/game', { state: { selectedCategoryList } })
+    navigate('/roulette/category/game')
   }
 
   return (

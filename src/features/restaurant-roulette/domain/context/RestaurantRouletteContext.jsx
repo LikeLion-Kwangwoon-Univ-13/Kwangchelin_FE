@@ -1,6 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
-
-import { getFilteredRestaurants } from '@/mock'
+import { createContext, useContext, useState } from 'react'
 
 const RestaurantRouletteContext = createContext()
 
@@ -18,19 +16,14 @@ const RestaurantRouletteContext = createContext()
 export const RestaurantRouletteProvider = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState(null)
 
-  const [restaurantList, setRestaurantList] = useState(null)
+  const [restaurantList, setRestaurantList] = useState([])
   const [resultRestaurant, setResultRestaurant] = useState(null)
 
   const clearRestaurantRoulette = () => {
-    setRestaurantList(null)
+    setSelectedCategory(null)
     setResultRestaurant(null)
+    setRestaurantList([])
   }
-
-  useEffect(() => {
-    const restaurantNameList = getFilteredRestaurants(selectedCategory).map((item) => item.name)
-
-    setRestaurantList(restaurantNameList)
-  }, [selectedCategory])
 
   return (
     <RestaurantRouletteContext.Provider
@@ -40,6 +33,7 @@ export const RestaurantRouletteProvider = ({ children }) => {
         restaurantList,
         setSelectedCategory,
         setResultRestaurant,
+        setRestaurantList,
         clearRestaurantRoulette,
       }}
     >

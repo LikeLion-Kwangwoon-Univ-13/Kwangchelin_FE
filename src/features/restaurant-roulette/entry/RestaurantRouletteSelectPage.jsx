@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router'
 
 import { Button, MainLayout, RouletteCategoryTagList } from '@/components'
+import { getFilteredRestaurants } from '@/mock'
 
 import { useRestaurantRoulette } from '../domain/context/RestaurantRouletteContext'
 import styles from './RestaurantRouletteSelectPage.module.css'
@@ -8,10 +9,17 @@ import styles from './RestaurantRouletteSelectPage.module.css'
 export const RestaurantRouletteSelectPage = () => {
   const navigate = useNavigate()
 
-  const { selectedCategory, setSelectedCategory } = useRestaurantRoulette()
+  const { selectedCategory, setSelectedCategory, setRestaurantList } = useRestaurantRoulette()
 
   const handleStart = () => {
     navigate('/roulette/restaurant/game')
+  }
+
+  const handleClickCategoryTag = (category) => {
+    const restaurantNameList = getFilteredRestaurants(category).map((item) => item.name)
+
+    setSelectedCategory(category)
+    setRestaurantList(restaurantNameList)
   }
 
   return (
@@ -22,7 +30,7 @@ export const RestaurantRouletteSelectPage = () => {
 
           <RouletteCategoryTagList
             selectedCategory={selectedCategory}
-            onSelect={setSelectedCategory}
+            onSelect={handleClickCategoryTag}
           />
         </div>
 
