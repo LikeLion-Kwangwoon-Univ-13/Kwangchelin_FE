@@ -1,10 +1,14 @@
 import { Link } from 'react-router'
 
 import { Icon } from '@/components'
-import { LINK_CARD_LIST } from '@/features/main/domain/constants'
-import { LinkCard } from '@/features/main/ui'
 
+import { LINK_CARD_LIST } from '../domain/constants/linkCardList'
+import { LinkCard } from './LinkCard'
 import styles from './LinkCardNavigation.module.css'
+
+/**
+ * 메인 하단의 주요 기능으로 이동할 수 있는 네비게이션 카드 목록
+ */
 
 export const LinkCardNavigation = () => {
   return (

@@ -1,6 +1,8 @@
 import { SearchInput } from '@/components'
-import { BannerRotator, CategorySection, LinkCardNavigation } from '@/features/main/ui'
 
+import { BannerRotator } from '../ui/BannerRotator'
+import { CategorySection } from '../ui/CategorySection'
+import { LinkCardNavigation } from '../ui/LinkCardNavigation'
 import styles from './MainPage.module.css'
 
 export const MainPage = () => {
@@ -15,7 +17,9 @@ export const MainPage = () => {
             <div />
           </div>
         </h1>
+
         <h2 className={styles.subTitle}>학교 주변 식당 리뷰를 피드에서 모아볼 수 있어요</h2>
+
         <BannerRotator />
         <SearchInput primary searchBaseURL={'/restaurant'} />
       </header>
