@@ -10,34 +10,37 @@ export const useRouletteSpin = ({ items, onSelect }) => {
   const totalHeight = items.length * ITEM_HEIGHT
 
   const [isRolling, setIsRolling] = useState(false)
-  const [position, setPosition] = useState(0)
+  const [renderPosition, setRenderPosition] = useState(0)
 
   const animationRef = useRef(null)
   const startTimeRef = useRef(0)
   const targetIndexRef = useRef(null)
+  const positionRef = useRef(0)
 
   const start = useCallback(() => {
     if (isRolling || items.length === 0) return
 
     const randomIndex = Math.floor(Math.random() * items.length)
     targetIndexRef.current = randomIndex
-    setIsRolling(true)
     startTimeRef.current = performance.now()
+    setIsRolling(true)
   }, [isRolling, items])
 
   const stop = useCallback(() => {
     cancelAnimationFrame(animationRef.current)
 
     const targetPosition =
-      (Math.floor(position / totalHeight) + 1) * totalHeight +
+      (Math.floor(positionRef.current / totalHeight) + 1) * totalHeight +
       targetIndexRef.current * ITEM_HEIGHT -
       CENTER_INDEX * ITEM_HEIGHT +
       ITEM_HEIGHT * 2
 
-    setPosition(targetPosition)
+    positionRef.current = targetPosition
+    setRenderPosition(positionRef.current)
     setIsRolling(false)
+
     onSelect(items[targetIndexRef.current])
-  }, [position, totalHeight, items])
+  }, [items, totalHeight, onSelect])
 
   useEffect(() => {
     if (!isRolling) return
@@ -45,12 +48,14 @@ export const useRouletteSpin = ({ items, onSelect }) => {
     const roll = (now) => {
       const elapsed = now - startTimeRef.current
 
-      setPosition((prev) => prev + SCROLL_SPEED)
+      positionRef.current += SCROLL_SPEED
 
       if (elapsed >= ROLL_DURATION) {
         stop()
         return
       }
+
+      setRenderPosition(positionRef.current)
 
       animationRef.current = requestAnimationFrame(roll)
     }
@@ -60,7 +65,8 @@ export const useRouletteSpin = ({ items, onSelect }) => {
     return () => cancelAnimationFrame(animationRef.current)
   }, [isRolling, stop])
 
-  const wrappedPosition = ((position % totalHeight) + totalHeight - 2 * ITEM_HEIGHT) % totalHeight
+  const wrappedPosition =
+    ((renderPosition % totalHeight) + totalHeight - 2 * ITEM_HEIGHT) % totalHeight
 
   return {
     isRolling,
