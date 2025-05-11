@@ -2,6 +2,17 @@ import { Icon } from '@/components'
 
 import styles from './RestaurantSummary.module.css'
 
+const ThumbNail = ({ src }) => {
+  if (src) return <img src={src} alt='식당 이미지' className={styles.thumbnail} />
+
+  return (
+    <div className={styles.defaultBackground}>
+      <Icon name={'map-detail-default'} size={74} />
+      <p>사진 준비 중이에요! 곧 업데이트할게요 :)</p>
+    </div>
+  )
+}
+
 /**
  * 식당의 썸네일, 이름, 주소, 거리, 전화번호 요약 정보 표시
  *
@@ -22,7 +33,7 @@ export const RestaurantSummary = ({ thumb_nail, name, address, distance, phone }
 
   return (
     <>
-      <img src={thumb_nail} alt='식당 이미지' className={styles.thumbnail} />
+      <ThumbNail src={thumb_nail} />
 
       <section className={styles.info}>
         <div className={styles.header}>
