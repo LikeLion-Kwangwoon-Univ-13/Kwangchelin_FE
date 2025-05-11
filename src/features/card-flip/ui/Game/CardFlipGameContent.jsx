@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 
 import { MainLayout } from '@/components'
-import { useCardFlipGame } from '@/features/card-flip/domain/context'
+import { useCardFlipGame } from '@/features/card-flip/domain/context/CardFlipGameContext'
 
 import styles from './CardFlipGameContent.module.css'
 import { CardGrid } from './CardGrid'

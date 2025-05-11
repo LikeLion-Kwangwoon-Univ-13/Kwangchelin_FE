@@ -1,4 +1,4 @@
-import { useCardFlipSetting } from '@/features/card-flip/domain/context'
+import { useCardFlipSetting } from '@/features/card-flip/domain/context/CardFlipSettingContext'
 import { CounterControl } from '@/features/card-flip/ui'
 
 import styles from './CardFlipSetting.module.css'

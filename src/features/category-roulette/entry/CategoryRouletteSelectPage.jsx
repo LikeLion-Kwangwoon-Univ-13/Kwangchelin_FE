@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 
 import { Button, MainLayout, RouletteCategoryTagList } from '@/components'
-import { useCategoryRoulette } from '@/features/category-roulette/domain/context'
+import { useCategoryRoulette } from '@/features/category-roulette/domain/context/CategoryRouletteContext'
 
 import styles from './CategoryRouletteSelectPage.module.css'
 

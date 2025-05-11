@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { useModal } from '@/hooks/useModal'
 
-import { useCategoryRoulette } from '../context'
+import { useCategoryRoulette } from '../context/CategoryRouletteContext'
 
 const getRandomIndex = (length) => Math.floor(Math.random() * length)
 

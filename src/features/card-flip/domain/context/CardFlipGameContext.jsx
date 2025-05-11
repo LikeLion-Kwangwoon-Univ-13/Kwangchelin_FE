@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
-import { GAME_STATUS } from '@/features/card-flip/domain/constants'
 import { generateShuffledCards } from '@/features/card-flip/domain/utils'
+
+import { GAME_STATUS } from '../constants/gameStatus'
 
 const CardFlipGameContext = createContext()
 

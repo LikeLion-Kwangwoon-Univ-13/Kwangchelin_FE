@@ -1,4 +1,4 @@
-import { CARD_STATUS } from '@/features/card-flip/domain/constants'
+import { CARD_STATUS } from '@/features/card-flip/domain/constants/cardStatus'
 
 export const generateShuffledCards = (peopleCount, loserCount) => {
   const cards = []

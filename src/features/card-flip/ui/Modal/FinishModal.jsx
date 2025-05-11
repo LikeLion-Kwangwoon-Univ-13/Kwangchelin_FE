@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router'
 
 import { Button, Icon, Modal } from '@/components'
 
-import { GAME_STATUS } from '../../domain/constants'
-import { useCardFlipGame } from '../../domain/context'
+import { GAME_STATUS } from '../../domain/constants/gameStatus'
+import { useCardFlipGame } from '../../domain/context/CardFlipGameContext'
 import styles from './FinishModal.module.css'
 
 export const FinishModal = () => {

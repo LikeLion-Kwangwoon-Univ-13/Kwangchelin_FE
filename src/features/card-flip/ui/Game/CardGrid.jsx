@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-import { useCardFlipGame } from '@/features/card-flip/domain/context'
+import { useCardFlipGame } from '@/features/card-flip/domain/context/CardFlipGameContext'
 
 import { CardItem } from '../Game/CardItem'
 import styles from './CardGrid.module.css'

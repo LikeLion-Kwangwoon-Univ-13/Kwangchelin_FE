@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router'
 
 import { Button, Icon, MainLayout } from '@/components'
-import { CardFlipSettingProvider, useCardFlipSetting } from '@/features/card-flip/domain/context'
+import { useCardFlipSetting } from '@/features/card-flip/domain/context/CardFlipSettingContext'
 import { CardFlipSetting } from '@/features/card-flip/ui'
 
 import styles from './CardFlipSettingPage.module.css'
 
-const CardFlipSettingPageContent = () => {
+export const CardFlipSettingPage = () => {
   const navigate = useNavigate()
   const { peopleCount, loserCount } = useCardFlipSetting()
 
@@ -37,13 +37,5 @@ const CardFlipSettingPageContent = () => {
         </Button>
       </div>
     </MainLayout>
-  )
-}
-
-export const CardFlipSettingPage = () => {
-  return (
-    <CardFlipSettingProvider>
-      <CardFlipSettingPageContent />
-    </CardFlipSettingProvider>
   )
 }

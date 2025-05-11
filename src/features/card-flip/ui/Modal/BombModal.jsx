@@ -1,6 +1,6 @@
 import { Icon, Modal } from '@/components'
 
-import { useCardFlipGame } from '../../domain/context'
+import { useCardFlipGame } from '../../domain/context/CardFlipGameContext'
 import styles from './BombModal.module.css'
 
 export const BombModal = () => {
