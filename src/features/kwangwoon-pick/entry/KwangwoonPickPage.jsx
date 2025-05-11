@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { CategoryFilterTagList, Dropdown, MainLayout } from '@/components'
 import { CATEGORY_LIST } from '@/constants'
 import { RestaurantItem } from '@/features/kwangwoon-pick/ui/RestaurantItem'
-import { getFilteredRestaurants } from '@/mock'
 
+import { fetchKwangwoonPickList } from '../domain/api/fetchKwangwoonPickList'
 import styles from './KwangwoonPickPage.module.css'
 
 const sortOptions = ['평점순', '리뷰순', '조회순']
@@ -13,7 +13,7 @@ export const KwangwoonPickPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [selected, setSelected] = useState(sortOptions[0])
 
-  const restaurants = getFilteredRestaurants(selectedCategory)
+  const restaurants = fetchKwangwoonPickList(selectedCategory)
 
   const handleCategoryClick = (category) => {
     setSelectedCategory((prev) => (prev === category ? null : category))

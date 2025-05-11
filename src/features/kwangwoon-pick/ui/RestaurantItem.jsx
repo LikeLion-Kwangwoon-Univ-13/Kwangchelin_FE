@@ -5,6 +5,15 @@ import { Icon } from '@/components'
 
 import styles from './RestaurantItem.module.css'
 
+/**
+ * 식당 목록에서 개별 식당을 표시하는 카드 컴포넌트
+ *
+ * - 썸네일, 이름, 주소, 별점 등 표시 (기본 이미지 fallback 포함)
+ *
+ * @param {Object} props
+ * @param {object} props.restaurant - 식당 데이터 객체
+ */
+
 export const RestaurantItem = ({ restaurant }) => {
   return (
     <Link to={`/restaurant/${restaurant.location_id}`} className={styles.container}>

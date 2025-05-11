@@ -5,7 +5,7 @@ import {
   CategoryRoulettePlayPage,
   CategoryRouletteSelectPage,
 } from '@/features/category-roulette/entry'
-import { KwangwoonPickPage } from '@/features/kwangwoon-pick/entry/KwangwoonPickPage'
+import { KwangwoonPickPage } from '@/features/kwangwoon-pick/entry'
 import { MainPage } from '@/features/main/entry'
 import { RestaurantAllReviewsPage } from '@/features/restaurant-all-reviews/entry'
 import { RestaurantDetailPage } from '@/features/restaurant-detail/entry'
