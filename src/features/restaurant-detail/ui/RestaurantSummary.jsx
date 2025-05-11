@@ -2,6 +2,17 @@ import { Icon } from '@/components'
 
 import styles from './RestaurantSummary.module.css'
 
+/**
+ * 식당의 썸네일, 이름, 주소, 거리, 전화번호 요약 정보 표시
+ *
+ * @param {Object} props
+ * @param {string} props.thumb_nail - 이미지 URL
+ * @param {string} props.name - 식당 이름
+ * @param {string} props.address - 주소
+ * @param {string} props.distance - 거리(m)
+ * @param {string} props.phone - 전화번호
+ */
+
 export const RestaurantSummary = ({ thumb_nail, name, address, distance, phone }) => {
   const metadata = [
     { icon: 'map-location', label: address },

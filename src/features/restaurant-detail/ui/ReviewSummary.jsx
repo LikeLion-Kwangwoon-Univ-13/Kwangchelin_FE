@@ -2,6 +2,15 @@ import { Icon } from '@/components'
 
 import styles from './ReviewSummary.module.css'
 
+/**
+ * 평균 평점과 평점 분포 바 시각화 컴포넌트
+ *
+ * @param {Object} props
+ * @param {number} props.average - 평균 평점
+ * @param {number} props.totalReviews - 총 리뷰 수
+ * @param {Object} props.scores - 평점 분포 (key: 점수, value: 개수)
+ */
+
 export const ReviewSummary = ({ average, totalReviews, scores }) => {
   const maxScoreCount = Math.max(...Object.values(scores))
 

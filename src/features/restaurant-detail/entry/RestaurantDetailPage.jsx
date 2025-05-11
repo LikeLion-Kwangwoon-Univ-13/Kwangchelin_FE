@@ -1,8 +1,9 @@
 import { useParams } from 'react-router'
 
 import { MainLayout } from '@/components'
-import { getRestaurantById, REVIEW_SUMMARY_DUMMY_DATA } from '@/mock'
+import { REVIEW_SUMMARY_DUMMY_DATA } from '@/mock'
 
+import { fetchRestaurantDetail } from '../domain/api/fetchRestaurantDetail'
 import { RestaurantSummary } from '../ui/RestaurantSummary'
 import { RestaurantTab } from '../ui/RestaurantTab'
 import styles from './RestaurantDetailPage.module.css'
@@ -10,7 +11,7 @@ import styles from './RestaurantDetailPage.module.css'
 export const RestaurantDetailPage = () => {
   const { restaurantId } = useParams()
 
-  const detailData = getRestaurantById(restaurantId)
+  const detailData = fetchRestaurantDetail(restaurantId)
 
   const { name, address, distance, phone, thumb_nail, latitude, longitude } = detailData
   const { average, totalReviews, scores } = REVIEW_SUMMARY_DUMMY_DATA

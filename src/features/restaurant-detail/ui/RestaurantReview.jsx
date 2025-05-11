@@ -6,6 +6,17 @@ import { REVIEW_DUMMY_DATA } from '@/mock'
 import styles from './RestaurantReview.module.css'
 import { ReviewSummary } from './ReviewSummary'
 
+/**
+ * 리뷰 요약 + 리뷰 리스트 + 플로팅 버튼 구성
+ *
+ * - 상세 페이지의 '리뷰' 탭에서 사용
+ *
+ * @param {Object} props
+ * @param {number} props.average - 평균 평점
+ * @param {number} props.totalReviews - 총 리뷰 수
+ * @param {Object} props.scores - 평점 분포
+ */
+
 export const RestaurantReview = ({ average, totalReviews, scores }) => {
   const { restaurantId } = useParams()
 
