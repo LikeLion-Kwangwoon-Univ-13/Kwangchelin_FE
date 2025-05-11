@@ -5,6 +5,16 @@ import mapPing from '@/assets/map/map-ping.svg'
 
 import { RestaurantMapOverlay } from './RestaurantMapOverlay'
 
+/**
+ * 카카오맵에 마커를 생성하고 오버레이 렌더링
+ *
+ * - 마커 클릭 시 React 포털로 오버레이 UI 표시
+ * - unmount 시 마커, 오버레이 정리 수행
+ * @param {Object} props
+ * @param {object} props.map - Kakao Map 인스턴스
+ * @param {Array} props.restaurants - 렌더링할 식당 정보 배열
+ */
+
 export const RestaurantMapMarkers = ({ map, restaurants }) => {
   const [selected, setSelected] = useState(null)
 

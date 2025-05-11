@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router'
 
 import { CategoryFilterTagList, MainLayout, YellowButton } from '@/components'
 import { CATEGORY_LIST } from '@/constants'
-import { RestaurantMap } from '@/features/restaurant-map/ui'
 import { useSelectedCategory } from '@/hooks'
 
+import { RestaurantMap } from '../ui/RestaurantMap'
 import styles from './RestaurantMapPage.module.css'
 
 export const RestaurantMapPage = () => {
