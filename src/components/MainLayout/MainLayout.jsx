@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 
-import { Icon } from '../Icon/Icon'
-import { SearchInput } from '../SearchInput'
+import { Icon, SearchInput } from '@/components'
+
 import styles from './MainLayout.module.css'
 
 export const MainLayout = ({ title, searchBaseURL, hasSearch, children }) => {

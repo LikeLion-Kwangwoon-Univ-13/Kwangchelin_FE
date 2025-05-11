@@ -1,4 +1,6 @@
 export * from './Button/Button'
 export * from './CategoryTag/CategoryTag'
 export * from './FloatingButton/FloatingButton'
+export * from './RouletteCategoryTagList/RouletteCategoryTagList'
+export * from './SearchInput/SearchInput'
 export * from './YellowButton/YellowButton'

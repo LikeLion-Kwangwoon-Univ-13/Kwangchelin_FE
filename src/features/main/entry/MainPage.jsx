@@ -1,7 +1,7 @@
+import { SearchInput } from '@/components'
 import { BannerRotator, CategorySection, LinkCardNavigation } from '@/features/main/ui'
 
 import styles from './MainPage.module.css'
-import { SearchInput } from '@/components/SearchInput'
 
 export const MainPage = () => {
   return (
