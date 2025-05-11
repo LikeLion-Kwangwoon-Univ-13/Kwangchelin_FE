@@ -8,6 +8,7 @@
   box-shadow: var(--shadow-dropdown);
   background-color: white;
   z-index: 5;
+  color: var(--color-black);
 }
 
 .trigger {
