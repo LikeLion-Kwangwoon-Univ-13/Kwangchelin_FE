@@ -1,6 +1,6 @@
 import { MainLayout } from '@/components'
-import { RouletteOptionList } from '@/features/roulette/ui'
 
+import { RouletteOptionList } from '../ui/RouletteOptionList'
 import styles from './RoulettePage.module.css'
 
 export const RoulettePage = () => {

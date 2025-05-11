@@ -1,3 +1,12 @@
+/**
+ * 룰렛 페이지에서 사용되는 옵션 카드 목록
+ *
+ * - to: 이동할 경로
+ * - title: 카드 제목
+ * - description: 카드 설명
+ * - iconName: 표시할 아이콘 이름
+ */
+
 export const ROULETTE_OPTIONS = [
   {
     to: '/roulette/category',
