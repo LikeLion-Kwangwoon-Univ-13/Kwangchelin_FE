@@ -1,9 +1,6 @@
 import { useState } from 'react'
 
-import { YellowButton } from '@/components'
-import { MainLayout } from '@/components/MainLayout/MainLayout'
-import { RatingSelector } from '@/components/RatingSelector'
-import { ReviewSuccessModal } from '@/components/ReviewSuccessModal'
+import { MainLayout, RatingSelector, ReviewSuccessModal, YellowButton } from '@/components'
 import { useModal } from '@/hooks/useModal'
 
 import styles from './RestaurantReviewPage.module.css'
