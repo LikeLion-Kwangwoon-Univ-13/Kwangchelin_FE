@@ -1,5 +1,16 @@
-import { CategoryTag } from '../Tag/CategoryTag'
-import styles from './CategoryTagList.module.css'
+import { CategoryTag } from '@/components'
+
+import styles from './CategoryFilterTagList.module.css'
+
+/**
+ * 필터용 카테고리 태그 목록 컴포넌트 (단일 선택)
+ *
+ * @param {Object} props
+ * @param {string[]} props.categoryList - 렌더링할 카테고리 항목 배열
+ * @param {string} props.selectedCategory - 현재 선택된 카테고리
+ * @param {(category: string) => void} props.onClickCategory - 카테고리 클릭 핸들러
+ * @returns {JSX.Element}
+ */
 
 export const CategoryFilterTagList = ({ categoryList, selectedCategory, onClickCategory }) => {
   return (
