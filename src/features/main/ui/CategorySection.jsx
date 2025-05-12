@@ -1,6 +1,8 @@
+import { Link } from 'react-router'
+
 import { Icon } from '@/components'
 
-import { CATEGORY_ICON_LIST } from '../domain/constants/categoryIconList'
+import { CATEGORY_ICON_MAP } from '../domain/constants/categoryIconList'
 import styles from './CategorySection.module.css'
 
 /**
@@ -10,8 +12,10 @@ import styles from './CategorySection.module.css'
 export const CategorySection = () => {
   return (
     <section className={styles.container}>
-      {CATEGORY_ICON_LIST.map((icon) => (
-        <Icon name={icon} key={icon} size={50} />
+      {CATEGORY_ICON_MAP.map(({ iconName, keyword }) => (
+        <Link key={keyword} to={`/restaurant?category=${keyword}`}>
+          <Icon name={iconName} size={50} className={styles.icon} />
+        </Link>
       ))}
     </section>
   )
