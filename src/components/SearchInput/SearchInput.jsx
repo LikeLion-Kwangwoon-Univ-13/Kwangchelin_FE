@@ -19,30 +19,30 @@ export const SearchInput = ({ searchBaseURL, primary = false }) => {
   const navigate = useNavigate()
   const [keyword, setKeyword] = useState('')
 
-  const handleSearch = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
     navigate({
       pathname: searchBaseURL,
       search: keyword.length ? `?keyword=${keyword}` : '',
     })
   }
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') handleSearch()
-  }
-
   return (
-    <div className={clsx(styles.container, primary && styles.containerPrimary)}>
-      <button onClick={handleSearch} className={styles.button}>
+    <form
+      onSubmit={handleSubmit}
+      className={clsx(styles.container, primary && styles.containerPrimary)}
+    >
+      <button type='submit' className={styles.button}>
         <Icon name={'shape-search'} size={21} fill={primary ? '#FDF2F2' : '#A31D20'} />
       </button>
 
       <input
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
-        onKeyDown={handleKeyDown}
         placeholder='두근두근 맛집탐방~ 팡팡'
         className={clsx(styles.input, primary && styles.inputPrimary)}
       />
-    </div>
+    </form>
   )
 }
