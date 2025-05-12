@@ -47,7 +47,7 @@ export const RestaurantSummary = ({ thumb_nail, name, address, distance, phone }
           {metadata.map(({ icon, label }) => (
             <div key={icon} className={styles.metaItem}>
               <Icon name={icon} size={20} />
-              <p className={styles.metaText}>{label}</p>
+              <p className={styles.metaText}>{label || ''}</p>
             </div>
           ))}
         </div>
