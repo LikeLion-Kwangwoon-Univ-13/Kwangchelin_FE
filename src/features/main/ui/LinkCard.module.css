@@ -1,9 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 12px;
-  padding: 0 16px;
+  padding: 28px 16px;
   height: 103px;
   border: 1px solid #ffe69d;
   border-radius: 10px;
