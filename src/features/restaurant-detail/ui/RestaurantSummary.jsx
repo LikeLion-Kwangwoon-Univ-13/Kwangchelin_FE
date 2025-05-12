@@ -1,15 +1,28 @@
+import { useState } from 'react'
+
 import { Icon } from '@/components'
 
 import styles from './RestaurantSummary.module.css'
 
 const ThumbNail = ({ src }) => {
-  if (src) return <img src={src} alt='식당 이미지' className={styles.thumbnail} />
+  const [hasError, setHasError] = useState(false)
+
+  if (!src || hasError) {
+    return (
+      <div className={styles.defaultBackground}>
+        <Icon name='map-detail-default' size={74} />
+        <p>사진 준비 중이에요! 곧 업데이트할게요 :)</p>
+      </div>
+    )
+  }
 
   return (
-    <div className={styles.defaultBackground}>
-      <Icon name={'map-detail-default'} size={74} />
-      <p>사진 준비 중이에요! 곧 업데이트할게요 :)</p>
-    </div>
+    <img
+      src={src}
+      alt='식당 이미지'
+      className={styles.thumbnail}
+      onError={() => setHasError(true)}
+    />
   )
 }
 
