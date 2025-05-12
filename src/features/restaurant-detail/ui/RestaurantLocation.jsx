@@ -21,9 +21,10 @@ export const RestaurantLocation = ({ lat, lng }) => {
   })
 
   return (
-    <section>
+    <section className={styles.container}>
       <h4 className={styles.title}>식당 상세 위치</h4>
       <div ref={containerRef} className={styles.map}></div>
+      <div className={styles.foreground} />
     </section>
   )
 }
