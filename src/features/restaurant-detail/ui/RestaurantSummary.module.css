@@ -53,13 +53,17 @@
 }
 
 .metaItem {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  /*
+    TODO: 아이콘과 텍스트를 가로로 나란히 정렬하려면 어떤 속성이 필요할까요?
+    - display, align-items, gap 등을 생각해 보세요.
+    - 전체 metaList에서 간격이 유지되도록 합니다.
+  */
 }
 
 .metaText {
-  font-size: var(--font-detail-info-size);
-  font-weight: var(--font-detail-info-weight);
-  color: var(--color-black);
+  /*
+    TODO: 텍스트의 크기, 굵기, 색상을 설정해 보세요.
+    - 디자인 시스템에 따라 CSS 변수도 활용할 수 있어요.
+    - 가독성을 높이기 위해 적절한 font-size, font-weight를 선택해 보세요.
+  */
 }

@@ -16,10 +16,12 @@ import styles from './ReviewItem.module.css'
 export const ReviewItem = ({ nickname, date, content, rating }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <p className={styles.nickname}>{nickname}</p>
-        <p className={styles.date}>{date}</p>
-      </div>
+      {/* 
+        TODO: 닉네임과 작성일을 보여주는 상단 영역을 만들어 보세요.
+        - 닉네임과 날짜를 나란히 배치하고,
+        - 스타일링을 위해 별도 wrapper div에 감싸는 것이 좋습니다.
+      */}
+
       <div className={styles.rating}>
         {[...Array(rating)].map((_, index) => (
           <Icon key={index} name={'review-fill'} size={20} />

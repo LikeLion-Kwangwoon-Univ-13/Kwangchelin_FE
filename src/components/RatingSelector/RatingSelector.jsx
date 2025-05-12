@@ -14,7 +14,10 @@ import styles from './RatingSelector.module.css'
 
 export const RatingSelector = ({ rating, onRate, iconSize }) => {
   const handleRate = (selectedRating) => {
-    onRate(selectedRating)
+    /**
+     * TODO: 선택한 평점을 부모 컴포넌트에 전달하려면 어떻게 해야 할까요?
+     * onRate에 매개변수로 selectedRating를 넘겨주세요.
+     * */
   }
 
   return (
