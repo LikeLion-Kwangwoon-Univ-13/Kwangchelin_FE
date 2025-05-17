@@ -58,6 +58,9 @@
     - display, align-items, gap 등을 생각해 보세요.
     - 전체 metaList에서 간격이 유지되도록 합니다.
   */
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .metaText {
@@ -66,4 +69,10 @@
     - 디자인 시스템에 따라 CSS 변수도 활용할 수 있어요.
     - 가독성을 높이기 위해 적절한 font-size, font-weight를 선택해 보세요.
   */
+  padding-top: 2.5px;
+  padding-bottom: 3.5px;
+  font-size: var(--font-detail-info-size);
+  font-weight: var(--font-detail-info-weight);
+  height: 14px;
+  color: var(--color-black);
 }

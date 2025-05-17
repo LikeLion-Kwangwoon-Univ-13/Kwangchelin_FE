@@ -57,13 +57,21 @@ export const RestaurantSummary = ({ thumb_nail, name, address, distance, phone }
         </div>
 
         <div className={styles.metaList}>
-          {/*
+          {
+            /*
             TODO: 식당의 주소, 거리, 전화번호를 아이콘과 함께 보여주는 정보를 렌더링해 보세요.
             - metadata 배열을 map으로 순회하면서 출력합니다.
             - 각 항목에는 icon과 label이 포함되어 있어요.
             - 아이콘은 <Icon name={icon} size={20} />으로, 텍스트는 <p>로 표시해 보세요.
             - key에는 icon을 사용하고, 스타일 클래스도 잊지 마세요!
-          */}
+          */
+            metadata.map(({ icon, label }) => (
+              <div className={styles.metaItem}>
+                <Icon name={icon} size={20} />
+                <p className={styles.metaText}>{label}</p>
+              </div>
+            ))
+          }
         </div>
       </section>
     </>
