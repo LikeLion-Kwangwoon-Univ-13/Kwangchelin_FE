@@ -17,9 +17,7 @@ export const RestaurantReviewPage = () => {
   }
 
   const handleReviewChange = (e) => {
-    /**
-     * TODO: 사용자가 textarea에 입력한 리뷰 내용을 상태로 저장하려면 어떻게 해야 할까요?
-     */
+    setReview(e.target.value)
   }
 
   return (
