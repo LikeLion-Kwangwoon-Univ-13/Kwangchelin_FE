@@ -1,3 +1,4 @@
+import { ReviewItem } from '@/components'
 import { fetchSchoolFoodReviewList } from '../domain/api/fetchSchoolFoodReview'
 import styles from './SchoolFoodReviewList.module.css'
 
@@ -13,11 +14,17 @@ export const SchoolFoodReviewList = () => {
 
   return (
     <div className={styles.container}>
-      {/*
-        TODO: reviewList에 담긴 리뷰 데이터를 화면에 출력해 보세요.
-        reviewList에는 여러 개의 리뷰 객체가 배열 형태로 들어 있습니다.
-        각 리뷰를 반복적으로 보여주려면 어떻게 해야 할까요?
-      */}
+      {/* TODO: reviewList에 담긴 리뷰 데이터를 화면에 출력해 보세요. reviewList에는 여러 개의 리뷰
+      객체가 배열 형태로 들어 있습니다. 각 리뷰를 반복적으로 보여주려면 어떻게 해야 할까요? */}
+      {reviewList.map((review, index) => (
+        <ReviewItem
+          key={index}
+          nickname={review.nickname}
+          date={review.date}
+          content={review.content}
+          rating={review.rating}
+        />
+      ))}
     </div>
   )
 }
