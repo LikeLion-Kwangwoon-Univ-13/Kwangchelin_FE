@@ -1,20 +1,25 @@
 .container {
-  /*
-    TODO: 모달 내부 컨테이너의 레이아웃을 설정해 보세요.
-    - 방향, 정렬, 여백 등을 고려해 봅시다.
-  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: 16px;
+  background-color: #ffffff;
 }
 
 .label {
-  /*
-    TODO: 등록 완료 텍스트의 스타일을 지정해 보세요.
-    - 크기, 굵기, 색상, 간격 등을 어떻게 설정할 수 있을까요?
-  */
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 16px;
 }
 
 .description {
-  /*
-    TODO: 설명 텍스트의 스타일을 채워보세요.
-    - 줄간격, 정렬, 색상 등도 중요합니다.
-  */
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.5;
+  margin-top: 8px;
+  white-space: pre-line;
 }
