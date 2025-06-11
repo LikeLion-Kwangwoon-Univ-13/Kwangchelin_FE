@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import { useKakaoMap } from '../domain/hooks/useKakaoMap'
+import { useKakaoMap } from '../hooks/useKakaoMap'
 import styles from './RestaurantLocation.module.css'
 
 /**

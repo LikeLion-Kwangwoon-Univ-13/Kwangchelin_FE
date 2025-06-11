@@ -8,11 +8,11 @@ import styles from './ReviewSummary.module.css'
  * @param {Object} props
  * @param {number} props.average - 평균 평점
  * @param {number} props.totalReviews - 총 리뷰 수
- * @param {Object} props.scores - 평점 분포 (key: 점수, value: 개수)
+ * @param {Array} props.scores - 평점 분포
  */
 
 export const ReviewSummary = ({ average, totalReviews, scores }) => {
-  const maxScoreCount = Math.max(...Object.values(scores))
+  const maxScoreCount = Math.max(...scores)
 
   return (
     <div className={styles.summary}>
@@ -23,12 +23,12 @@ export const ReviewSummary = ({ average, totalReviews, scores }) => {
       </div>
 
       <div className={styles.scoreBars}>
-        {[5, 4, 3, 2, 1].map((score) => (
-          <div key={score} className={styles.scoreRow}>
-            <span className={styles.scoreLabel}>{score}</span>
+        {scores.reverse().map((score, index) => (
+          <div key={index} className={styles.scoreRow}>
+            <span className={styles.scoreLabel}>{5 - index}</span>
             <div
               className={styles.barFill}
-              style={{ width: `${(scores[score] / maxScoreCount) * 100}%` }}
+              style={{ width: `${(score / maxScoreCount) * 100}%` }}
             />
           </div>
         ))}

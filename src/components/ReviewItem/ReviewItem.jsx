@@ -6,14 +6,13 @@ import styles from './ReviewItem.module.css'
  * 하나의 리뷰 정보를 보여주는 컴포넌트
  *
  * @param {Object} props
- * @param {string} props.nickname - 리뷰 작성자 닉네임
  * @param {string} props.date - 작성일s (예: '23.10.09. 12:00')
  * @param {string} props.content - 리뷰 본문
  * @param {number} props.rating - 리뷰 평점 (1~5 사이의 정수)
  * @returns {JSX.Element}
  */
 
-export const ReviewItem = ({ nickname, date, content, rating }) => {
+export const ReviewItem = ({ date, content, rating }) => {
   return (
     <div className={styles.container}>
       {
@@ -23,7 +22,7 @@ export const ReviewItem = ({ nickname, date, content, rating }) => {
         - 스타일링을 위해 별도 wrapper div에 감싸는 것이 좋습니다.
       */
         <div className={styles.header}>
-          <span className={styles.nickname}>{nickname}</span>
+          <p className={styles.nickname}>멋쟁이사자처럼123</p>
           <span className={styles.date}>{date}</span>
         </div>
       }

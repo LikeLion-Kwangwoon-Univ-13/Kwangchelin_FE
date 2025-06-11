@@ -1,9 +1,10 @@
+import { useRef } from 'react'
 import { Link } from 'react-router'
 
 import { Icon } from '@/components'
-import { useSearchKeyword, useSelectedCategory } from '@/hooks'
+import { useIntersectionObserver, useSearchKeyword, useSelectedCategory } from '@/hooks'
 
-import { fetchFilteredRestaurantList } from '../domain/api/fetchFilteredRestaurantList'
+import { useRestaurantList } from '../hooks/useRestaurantList'
 import styles from './RestaurantList.module.css'
 
 /**
@@ -14,17 +15,26 @@ import styles from './RestaurantList.module.css'
  */
 
 export const RestaurantList = () => {
+  const observerRef = useRef(null)
   const selectedCategory = useSelectedCategory()
   const searchKeyword = useSearchKeyword()
 
-  const filteredData = fetchFilteredRestaurantList(
-    selectedCategory === '전체' ? null : selectedCategory,
-    searchKeyword,
-  )
+  const { enabled, restaurantList, loadNextPage, isError, isLoading } = useRestaurantList({
+    category: selectedCategory,
+    keyword: searchKeyword,
+  })
+
+  useIntersectionObserver(observerRef, loadNextPage, enabled)
+
+  // TODO: 로딩 중일 때 처리
+
+  // TODO: 오류 발생 시 처리
+
+  // TODO: 데이터가 없을 때 처리
 
   return (
     <section className={styles.container}>
-      {filteredData.map(({ location_id, name, distance, address }) => (
+      {restaurantList.map(({ location_id, name, distance, address }) => (
         <Link to={`/restaurant/${location_id}`} key={location_id} className={styles.item}>
           <div className={styles.header}>
             <p className={styles.name}>{name}</p>
@@ -43,6 +53,7 @@ export const RestaurantList = () => {
           </div>
         </Link>
       ))}
+      <div ref={observerRef} style={{ height: 1 }} />
     </section>
   )
 }

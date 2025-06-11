@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { MainLayout, RatingSelector, ReviewSuccessModal, YellowButton } from '@/components'
 import { useModal } from '@/hooks/useModal'
 
+import { useCreateSchoolFoodReview } from '../hooks/useCreateSchoolFoodReview'
 import styles from './SchoolFoodReviewPage.module.css'
 
 export const SchoolFoodReviewPage = () => {
@@ -10,11 +11,12 @@ export const SchoolFoodReviewPage = () => {
   const [review, setReview] = useState('')
 
   const { isOpen, openModal, closeModal } = useModal()
+  const { createReview, isLoading, isError } = useCreateSchoolFoodReview()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    openModal()
-  }
+  // TODO: 폼 제출하는 함수 작성
+  const handleSubmit = (e) => {}
+
+  // TODO: 로딩과 에러 처리는 어떻게 할까 고민해보기.
 
   const handleReviewChange = (e) => {
     setReview(e.target.value)

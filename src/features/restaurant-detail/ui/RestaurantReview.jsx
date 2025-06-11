@@ -1,7 +1,6 @@
 import { Link, useParams } from 'react-router'
 
-import { FloatingButton, Icon, ReviewItem } from '@/components'
-import { REVIEW_DUMMY_DATA } from '@/mock'
+import { FloatingButton, Icon } from '@/components'
 
 import styles from './RestaurantReview.module.css'
 import { ReviewSummary } from './ReviewSummary'
@@ -14,10 +13,11 @@ import { ReviewSummary } from './ReviewSummary'
  * @param {Object} props
  * @param {number} props.average - 평균 평점
  * @param {number} props.totalReviews - 총 리뷰 수
- * @param {Object} props.scores - 평점 분포
+ * @param {Array} props.reviews - 리뷰 목록
+ * @param {Array} props.scores - 평점 분포
  */
 
-export const RestaurantReview = ({ average, totalReviews, scores }) => {
+export const RestaurantReview = ({ average, totalReviews, reviews, scores }) => {
   const { restaurantId } = useParams()
 
   return (
@@ -33,9 +33,17 @@ export const RestaurantReview = ({ average, totalReviews, scores }) => {
       </Link>
 
       <div>
-        {REVIEW_DUMMY_DATA.map(({ id, nickname, date, content, rating }) => (
-          <ReviewItem key={id} nickname={nickname} date={date} content={content} rating={rating} />
-        ))}
+        {/* TODO: 필요 시 형식에 맞게 수정. reviews가 빈 배열이라면? */}
+        {/* 
+          reviews.map(({ id, createdAt, comment, rating }) => (
+            <ReviewItem
+              key={id}
+              date={formatDateTime(createdAt)}
+              content={comment}
+              rating={rating}
+            />
+          ))
+        */}
       </div>
 
       <FloatingButton to={`/restaurant/${restaurantId}/review`} />
