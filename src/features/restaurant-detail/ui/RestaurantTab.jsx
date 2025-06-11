@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { useState } from 'react'
 
-import styles from './RestaurantTab.module.css'
-import { RestaurantReview } from './RestaurantReview'
 import { RestaurantLocation } from './RestaurantLocation'
+import { RestaurantReview } from './RestaurantReview'
+import styles from './RestaurantTab.module.css'
 
 const TAB_LIST = [
   { id: 'location', label: '위치' },

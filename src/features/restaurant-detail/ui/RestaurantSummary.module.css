@@ -69,6 +69,12 @@
     - 디자인 시스템에 따라 CSS 변수도 활용할 수 있어요.
     - 가독성을 높이기 위해 적절한 font-size, font-weight를 선택해 보세요.
   */
+
+  /*
+    padding 크기 지정할 필요없음. flex에 의해 자동으로 설정될거임. 
+    높이도 마찬가지. 폰트 크기와 높이를 동시 설정하면 ui가 깨질 수도 있음.
+    예를 들면, 중앙정렬이 안맞는다든가
+  */
   padding-top: 2.5px;
   padding-bottom: 3.5px;
   font-size: var(--font-detail-info-size);

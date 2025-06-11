@@ -66,7 +66,8 @@ export const RestaurantSummary = ({ thumb_nail, name, address, distance, phone }
             - key에는 icon을 사용하고, 스타일 클래스도 잊지 마세요!
           */
             metadata.map(({ icon, label }) => (
-              <div className={styles.metaItem}>
+              // key 값 없음
+              <div key={icon} className={styles.metaItem}>
                 <Icon name={icon} size={20} />
                 <p className={styles.metaText}>{label}</p>
               </div>

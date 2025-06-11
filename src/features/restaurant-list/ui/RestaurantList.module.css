@@ -33,7 +33,8 @@
 
 .content {
   display: flex;
-  algin-items: center;
+  /* algin-items: center; align-items. build해보고 올리기 */
+  align-items: center;
   gap: 15.27px;
 }
 
