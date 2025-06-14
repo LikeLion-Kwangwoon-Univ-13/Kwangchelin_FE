@@ -32,8 +32,14 @@ instance.interceptors.request.use(
 )
 
 instance.interceptors.response.use(
-  (res) => res.data,
+  (res) => {
+    const requestKey = getRequestKey(res.config)
+    pendingRequests.delete(requestKey)
+    return res.data
+  },
   (err) => {
+    const requestKey = getRequestKey(err.config || {})
+    pendingRequests.delete(requestKey)
     console.error('Response Error:', err.response?.data || err.message)
     return Promise.reject(err)
   },
