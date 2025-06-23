@@ -1,4 +1,6 @@
+// src/features/restaurant-review/entry/RestaurantReviewPage.jsx
 import { useState } from 'react'
+import { useParams } from 'react-router'
 
 import { MainLayout, RatingSelector, ReviewSuccessModal, YellowButton } from '@/components'
 import { useModal } from '@/hooks/useModal'
@@ -7,16 +9,29 @@ import { useCreateRestaurantReview } from '../hooks/useCreateRestaurantReview'
 import styles from './RestaurantReviewPage.module.css'
 
 export const RestaurantReviewPage = () => {
+  const { restaurantId } = useParams()
   const [rating, setRating] = useState(0)
   const [review, setReview] = useState('')
 
   const { isOpen, openModal, closeModal } = useModal()
   const { createReview, isLoading, isError } = useCreateRestaurantReview()
 
-  // TODO: 폼 제출하는 함수 작성
-  const handleSubmit = (e) => {}
-
-  // TODO: 로딩과 에러 처리는 어떻게 할까 고민해보기.
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await createReview({
+        placeId: restaurantId,
+        rating,
+        review,
+        onSuccess: openModal,
+      })
+      setRating(0)
+      setReview('')
+    } catch (error) {
+      console.error('리뷰 등록 실패', error)
+      alert('리뷰 등록에 실패하였습니다.')
+    }
+  }
 
   const handleReviewChange = (e) => {
     setReview(e.target.value)
@@ -38,8 +53,14 @@ export const RestaurantReviewPage = () => {
             )}
           </div>
 
-          <YellowButton type='submit' disabled={!review.trim()}>
-            등록하기
+          {isError && (
+            <p className={styles.errorMessage}>
+              리뷰 등록 중 문제가 발생했어요. 잠시 후 다시 시도해 주세요.
+            </p>
+          )}
+
+          <YellowButton type='submit' disabled={!review.trim() || isLoading}>
+            {isLoading ? '등록 중...' : '등록하기'}
           </YellowButton>
         </form>
       </div>
