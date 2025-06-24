@@ -3,36 +3,31 @@ import { useState } from 'react'
 import { instance } from '@/api/client'
 
 export const useFetchAllRestaurantReviews = ({ placeId, sortBy }) => {
-  const [reviewList, setReviewList] = useState([]) // 리뷰 목록 상태
-  const [page, setPage] = useState(1) // 현재 페이지 번호
-  const [isLastPage, setIsLastPage] = useState(false) // 마지막 페이지 여부
-  const [isError, setIsError] = useState(false) // 에러 발생 여부
-  const [isLoading, setIsLoading] = useState(false) // 로딩 중 여부
+  const [reviewList, setReviewList] = useState([])
+  const [page, setPage] = useState(1)
+  const [isLastPage, setIsLastPage] = useState(false)
+  const [isError, setIsError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  // 다음 페이지 요청 가능 여부
-  const enabled = !isLoading && !isLastPage
-
-  // 다음 페이지를 요청하는 함수
   const loadNextPage = async () => {
-    if (!enabled || !placeId) return
+    if (isLoading || isLastPage || !placeId) return
 
     setIsLoading(true)
     setIsError(false)
 
     try {
-      const response = await instance.get('/api/placeReviews/page', {
+      const response = await instance.get(`/placeReviews/page/${page}`, {
         params: {
           placeId,
-          page,
           sortBy,
         },
       })
 
-      const { reviews = [], isLast = false } = response
+      const { reviewInfos = [], last = false } = response
 
-      setReviewList((prev) => [...prev, ...reviews])
+      setReviewList((prev) => [...prev, ...reviewInfos])
       setPage((prev) => prev + 1)
-      setIsLastPage(isLast || reviews.length === 0)
+      setIsLastPage(last || reviewInfos.length === 0)
     } catch (error) {
       console.error('리뷰 불러오기 실패:', error)
       setIsError(true)
@@ -41,5 +36,18 @@ export const useFetchAllRestaurantReviews = ({ placeId, sortBy }) => {
     }
   }
 
-  return { reviewList, loadNextPage, enabled, isError, isLoading }
+  const resetReviews = () => {
+    setReviewList([])
+    setPage(1)
+    setIsLastPage(false)
+  }
+
+  return {
+    reviewList,
+    loadNextPage,
+    enabled: !isLoading && !isLastPage,
+    isError,
+    isLoading,
+    resetReviews,
+  }
 }

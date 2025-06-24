@@ -1,4 +1,3 @@
-// src/features/restaurant-review/entry/RestaurantReviewPage.jsx
 import { useState } from 'react'
 import { useParams } from 'react-router'
 

@@ -10,17 +10,26 @@ import styles from './RestaurantAllReviewsPage.module.css'
 const SORT_OPTIONS = ['최신순', '평점순']
 
 export const RestaurantAllReviewsPage = () => {
-  const { restaurantId } = useParams()
   const observerRef = useRef(null)
+  const { restaurantId } = useParams()
+
   const [selectedDropDown, setSelectedDropDown] = useState(SORT_OPTIONS[0])
+  const [sortBy, setSortBy] = useState(0) // ✨ 정렬 상태를 숫자로 따로 관리
 
-  const { reviewList, loadNextPage, enabled, isError, isLoading } = useFetchAllRestaurantReviews({
-    placeId: restaurantId,
-    sortBy: SORT_OPTIONS.indexOf(selectedDropDown),
-  })
+  const {
+    reviewList,
+    loadNextPage,
+    enabled,
+    isError,
+    isLoading,
+    resetReviews, // ✨ 정렬 변경 시 초기화용
+  } = useFetchAllRestaurantReviews({ placeId: restaurantId, sortBy })
 
-  const handleDropDownClick = (selected) => {
-    setSelectedDropDown(selected)
+  const handleDropDownClick = (selectedLabel) => {
+    const newSortBy = SORT_OPTIONS.indexOf(selectedLabel)
+    setSelectedDropDown(selectedLabel)
+    setSortBy(newSortBy)
+    resetReviews() // ✨ 정렬 변경 시 리뷰 목록 초기화
   }
 
   useIntersectionObserver(observerRef, loadNextPage, enabled)
@@ -42,8 +51,8 @@ export const RestaurantAllReviewsPage = () => {
 
         {!isLoading &&
           !isError &&
-          reviewList.map(({ id, date, content, rating }) => (
-            <ReviewItem key={id} date={date} content={content} rating={rating} />
+          reviewList.map(({ id, date, comment, rating }) => (
+            <ReviewItem key={id} date={date} content={comment} rating={rating} />
           ))}
       </div>
 

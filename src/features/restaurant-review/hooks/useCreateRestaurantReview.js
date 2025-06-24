@@ -12,9 +12,9 @@ export const useCreateRestaurantReview = () => {
     setIsError(false)
 
     try {
-      await instance.post(`/api/placeReviews/${placeId}`, {
+      await instance.post(`/placeReviews/${placeId}`, {
         rating,
-        review,
+        comment: review,
       })
 
       if (onSuccess) {
