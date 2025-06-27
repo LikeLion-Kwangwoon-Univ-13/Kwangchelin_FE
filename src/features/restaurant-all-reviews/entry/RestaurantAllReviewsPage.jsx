@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router'
 
 import { Dropdown, FloatingButton, MainLayout, ReviewItem } from '@/components'
@@ -27,6 +27,10 @@ export const RestaurantAllReviewsPage = () => {
   }
 
   useIntersectionObserver(observerRef, loadNextPage, enabled)
+
+  useEffect(() => {
+    loadNextPage()
+  }, [sortBy, restaurantId, loadNextPage])
 
   return (
     <MainLayout title={'리뷰'}>
