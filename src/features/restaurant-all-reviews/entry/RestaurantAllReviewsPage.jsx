@@ -14,22 +14,16 @@ export const RestaurantAllReviewsPage = () => {
   const { restaurantId } = useParams()
 
   const [selectedDropDown, setSelectedDropDown] = useState(SORT_OPTIONS[0])
-  const [sortBy, setSortBy] = useState(0) // ✨ 정렬 상태를 숫자로 따로 관리
+  const [sortBy, setSortBy] = useState(0)
 
-  const {
-    reviewList,
-    loadNextPage,
-    enabled,
-    isError,
-    isLoading,
-    resetReviews, // ✨ 정렬 변경 시 초기화용
-  } = useFetchAllRestaurantReviews({ placeId: restaurantId, sortBy })
+  const { reviewList, loadNextPage, enabled, isError, isLoading, resetReviews } =
+    useFetchAllRestaurantReviews({ placeId: restaurantId, sortBy })
 
   const handleDropDownClick = (selectedLabel) => {
     const newSortBy = SORT_OPTIONS.indexOf(selectedLabel)
     setSelectedDropDown(selectedLabel)
     setSortBy(newSortBy)
-    resetReviews() // ✨ 정렬 변경 시 리뷰 목록 초기화
+    resetReviews()
   }
 
   useIntersectionObserver(observerRef, loadNextPage, enabled)
@@ -51,12 +45,12 @@ export const RestaurantAllReviewsPage = () => {
 
         {!isLoading &&
           !isError &&
-          reviewList.map(({ id, date, comment, rating }) => (
-            <ReviewItem key={id} date={date} content={comment} rating={rating} />
+          reviewList.map(({ id, createdAt, comment, rating }) => (
+            <ReviewItem key={id} date={createdAt} content={comment} rating={rating} />
           ))}
-      </div>
 
-      <div ref={observerRef} />
+        <div ref={observerRef} className={styles.observer} />
+      </div>
 
       <FloatingButton to={`/restaurant/${restaurantId}/review`} />
     </MainLayout>
