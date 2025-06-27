@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router'
 
 import { Dropdown, FloatingButton, MainLayout, ReviewItem } from '@/components'
@@ -14,23 +14,23 @@ export const RestaurantAllReviewsPage = () => {
   const { restaurantId } = useParams()
 
   const [selectedDropDown, setSelectedDropDown] = useState(SORT_OPTIONS[0])
+  const [sortBy, setSortBy] = useState(0)
 
-  const { reviewList, loadNextPage, enabled, isError, isLoading } = useFetchAllRestaurantReviews({
-    placeId: restaurantId,
-    sortBy: SORT_OPTIONS.indexOf(selectedDropDown),
-  })
+  const { reviewList, loadNextPage, enabled, isError, isLoading, resetReviews } =
+    useFetchAllRestaurantReviews({ placeId: restaurantId, sortBy })
 
-  const handleDropDownClick = (index) => {
-    setSelectedDropDown(index)
+  const handleDropDownClick = (selectedLabel) => {
+    const newSortBy = SORT_OPTIONS.indexOf(selectedLabel)
+    setSelectedDropDown(selectedLabel)
+    setSortBy(newSortBy)
+    resetReviews()
   }
 
   useIntersectionObserver(observerRef, loadNextPage, enabled)
 
-  // TODO: 로딩 중일 때 처리
-
-  // TODO: 오류 발생 시 처리
-
-  // TODO: 데이터가 없을 때 처리
+  useEffect(() => {
+    loadNextPage()
+  }, [sortBy, restaurantId, loadNextPage])
 
   return (
     <MainLayout title={'리뷰'}>
@@ -40,12 +40,22 @@ export const RestaurantAllReviewsPage = () => {
         onSelect={handleDropDownClick}
         className={styles.dropdown}
       />
-      <div>
-        {/* TODO: reviewList의 데이터 형식에 맞게 아래 수정 */}
-        {reviewList.map(({ id, date, content, rating }) => (
-          <ReviewItem key={id} date={date} content={content} rating={rating} />
-        ))}
+      <div className={styles.reviewListContainer}>
+        {isLoading && <p className={styles.infoText}>리뷰를 불러오는 중입니다...</p>}
+        {isError && <p className={styles.infoText}>리뷰를 불러오는 중 오류가 발생했습니다.</p>}
+        {!isLoading && !isError && reviewList.length === 0 && (
+          <p className={styles.infoText}>아직 등록된 리뷰가 없습니다.</p>
+        )}
+
+        {!isLoading &&
+          !isError &&
+          reviewList.map(({ id, createdAt, comment, rating }) => (
+            <ReviewItem key={id} date={createdAt} content={comment} rating={rating} />
+          ))}
+
+        <div ref={observerRef} className={styles.observer} />
       </div>
+
       <FloatingButton to={`/restaurant/${restaurantId}/review`} />
     </MainLayout>
   )
