@@ -26,6 +26,7 @@ export const SchoolFoodReviewList = () => {
 
   return (
     <div className={styles.container}>
+      {console.log('[최종 리뷰 리스트]', reviewList)}
       {reviewList.map((review, index) => (
         <ReviewItem
           key={index}
@@ -35,6 +36,11 @@ export const SchoolFoodReviewList = () => {
           rating={review.rating}
         />
       ))}
+
+      {isLoading && <p>로딩 중</p>}
+      {isError && <p>에러 발생</p>}
+      {reviewList.length === 0 && !isLoading && !isError && <p>빈 데이터</p>}
+
       {enabled && <div ref={observerRef} style={{ height: 1 }} />}
     </div>
   )
