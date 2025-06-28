@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router'
 
 import { FloatingButton, Icon } from '@/components'
+import { ReviewItem } from '@/components/ReviewItem/ReviewItem'
+import { formatDateTime } from '@/utils/formatDateTime'
 
 import styles from './RestaurantReview.module.css'
 import { ReviewSummary } from './ReviewSummary'
@@ -33,17 +35,21 @@ export const RestaurantReview = ({ average, totalReviews, reviews, scores }) => 
       </Link>
 
       <div>
-        {/* TODO: 필요 시 형식에 맞게 수정. reviews가 빈 배열이라면? */}
-        {/* 
-          reviews.map(({ id, createdAt, comment, rating }) => (
-            <ReviewItem
-              key={id}
-              date={formatDateTime(createdAt)}
-              content={comment}
-              rating={rating}
-            />
-          ))
-        */}
+        {
+          /* TODO: 필요 시 형식에 맞게 수정. reviews가 빈 배열이라면? */
+          reviews.length > 0 ? (
+            reviews.map(({ id, createdAt, comment, rating }) => (
+              <ReviewItem
+                key={id}
+                date={formatDateTime(createdAt)}
+                content={comment}
+                rating={rating}
+              />
+            ))
+          ) : (
+            <p>아직 작성된 리뷰가 없습니다.</p>
+          )
+        }
       </div>
 
       <FloatingButton to={`/restaurant/${restaurantId}/review`} />
