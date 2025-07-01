@@ -49,6 +49,7 @@ export const RestaurantDetailPage = () => {
           address={detailData.address}
           distance={detailData.distance}
           phone={detailData.phone}
+          totalReviews={detailData.averageRating}
         />
 
         <div className={styles.divider} />
@@ -58,6 +59,7 @@ export const RestaurantDetailPage = () => {
           longitude={detailData.longitude}
           average={detailData.averageRating}
           totalReviews={detailData.reviewCount}
+          reviews={detailData.reviews}
           scores={detailData.ratingsCount}
         />
       </div>

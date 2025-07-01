@@ -8,12 +8,12 @@ export const useRestaurantDetail = (restaurantId) => {
   const [isError, setIsError] = useState(false)
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (!restaurantId) {
-        setIsError(true)
-        return
-      }
+    if (!restaurantId) {
+      setIsError(true)
+      return
+    }
 
+    const fetchData = async () => {
       setIsLoading(true)
       setIsError(false)
 

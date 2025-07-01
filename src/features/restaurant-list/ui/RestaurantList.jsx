@@ -27,9 +27,11 @@ export const RestaurantList = () => {
   useIntersectionObserver(observerRef, loadNextPage, enabled)
 
   // TODO: 로딩 중일 때 처리
-  if (isLoading && restaurantList.length === 0) {
+  /*
+  if (isLoading) {
     return <div>로딩 중입니다...</div>
   }
+    */
 
   // TODO: 오류 발생 시 처리
   if (isError) {
@@ -62,7 +64,7 @@ export const RestaurantList = () => {
           </div>
         </Link>
       ))}
-      <div ref={observerRef} style={{ height: 1 }} />
+      {isLoading ? <div>로딩 중입니다...</div> : <div ref={observerRef} style={{ height: 1 }} />}
     </section>
   )
 }
