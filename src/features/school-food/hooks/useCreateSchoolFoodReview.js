@@ -16,7 +16,7 @@ export const useCreateSchoolFoodReview = () => {
     try {
       await instance.post('/reviews', {
         rating,
-        review,
+        comment: review,
       })
 
       if (onSuccess) onSuccess()

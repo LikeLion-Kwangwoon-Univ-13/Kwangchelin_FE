@@ -28,16 +28,12 @@ export const useFetchReviewList = () => {
         },
       })
 
-      console.log('[응답 데이터]', response.data)
-
       const { searchedReviews: reviews, last: isLast } = response.data
 
       if (reviews.length === 0) {
         setIsLastPage(true)
         return
       }
-
-      setReviewList((prev) => [...prev, ...reviews])
 
       if (isLast) {
         setIsLastPage(true)
@@ -52,8 +48,6 @@ export const useFetchReviewList = () => {
       setIsLoading(false)
     }
   }
-
-  console.log('[최종 리뷰 리스트]', reviewList)
 
   return { reviewList, loadNextPage, enabled, isError, isLoading }
 }
