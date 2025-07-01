@@ -9,6 +9,7 @@ import styles from './RestaurantDetailPage.module.css'
 
 export const RestaurantDetailPage = () => {
   const { restaurantId } = useParams()
+
   const { detailData, isLoading, isError } = useRestaurantDetail(restaurantId)
 
   // TODO: 로딩 중일 때 보여줄 화면
@@ -43,7 +44,7 @@ export const RestaurantDetailPage = () => {
       <div>
         {/* TODO: 데이터 형식에 맞게 아래 주석 풀고 값 변경하기 */}
         <RestaurantSummary
-          thumb_nail={detailData.thumb_nail}
+          thumb_nail={detailData.imageUrl}
           name={detailData.name}
           address={detailData.address}
           distance={detailData.distance}
@@ -55,9 +56,9 @@ export const RestaurantDetailPage = () => {
         <RestaurantTab
           latitude={detailData.latitude}
           longitude={detailData.longitude}
-          average={detailData.average}
-          totalReviews={detailData.totalReviews}
-          scores={detailData.scores}
+          average={detailData.averageRating}
+          totalReviews={detailData.reviewCount}
+          scores={detailData.ratingsCount}
         />
       </div>
     </MainLayout>

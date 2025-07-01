@@ -26,24 +26,23 @@ export const RestaurantList = () => {
 
   useIntersectionObserver(observerRef, loadNextPage, enabled)
 
-  const showEmpty = !isLoading && restaurantList.length === 0 && !isError
-
   // TODO: 로딩 중일 때 처리
+  if (isLoading && restaurantList.length === 0) {
+    return <div>로딩 중입니다...</div>
+  }
 
   // TODO: 오류 발생 시 처리
+  if (isError) {
+    return <div>오류가 발생했습니다.</div>
+  }
 
   // TODO: 데이터가 없을 때 처리
+  if (!isLoading && restaurantList.length === 0) {
+    return <div>검색 결과가 없습니다.</div>
+  }
 
   return (
     <section className={styles.container}>
-      {isLoading && restaurantList.length === 0 && (
-        <div className={styles.status}>로딩 중입니다...</div>
-      )}
-
-      {isError && <div className={styles.status}>오류가 발생</div>}
-
-      {showEmpty && <div className={styles.status}>검색된 맛집이 없음</div>}
-
       {restaurantList.map(({ location_id, name, distance, address }) => (
         <Link to={`/restaurant/${location_id}`} key={location_id} className={styles.item}>
           <div className={styles.header}>

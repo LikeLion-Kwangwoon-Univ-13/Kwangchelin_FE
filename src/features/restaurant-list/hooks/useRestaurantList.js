@@ -1,15 +1,21 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-export const useRestaurantList = ({ category, keyword }) => {
-  const [restaurantList, setRestaurantList] = useState([]) // 식당 목록 상태
-  const [page, setPage] = useState(1) // 현재 페이지 번호
-  const [isLastPage, setIsLastPage] = useState(false) // 마지막 페이지 여부
-  const [isError, setIsError] = useState(false) // 에러 발생 여부
-  const [isLoading, setIsLoading] = useState(false) // 로딩 중 여부
+import { instance } from '@/api/client'
 
-  // 다음 페이지 요청 가능 여부
+export const useRestaurantList = ({ category, keyword }) => {
+  const [restaurantList, setRestaurantList] = useState([])
+  const [page, setPage] = useState(1)
+  const [isLastPage, setIsLastPage] = useState(false)
+  const [isError, setIsError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+
   const enabled = !isLoading && !isLastPage
+
+  useEffect(() => {
+    setPage(1)
+    setRestaurantList([])
+    setIsLastPage(false)
+  }, [category, keyword])
 
   useEffect(() => {
     const fetchRestaurants = async () => {
@@ -17,25 +23,27 @@ export const useRestaurantList = ({ category, keyword }) => {
       setIsError(false)
 
       try {
-        const response = await axios.get(
-          `/places/page/{page}[?category={category}][&name={name}]`,
-          {
-            params: {
-              page,
-              category,
-              keyword,
-            },
-          },
-        )
+        const resolvedCategory = category === '전체' ? undefined : category
 
-        const newRestaurants = response.data.restaurants
-        const lastPage = response.data.lastPage
+        const data = await instance.get(`/places/page/${page}`, {
+          params: {
+            category: resolvedCategory,
+            name: keyword,
+          },
+        })
+
+        const rawList = data.placeInfosList
+        const lastPage = data.last
+
+        const newRestaurants = rawList.map((item) => ({
+          ...item,
+          location_id: item.id,
+        }))
 
         setRestaurantList((prev) => [...prev, ...newRestaurants])
         setIsLastPage(lastPage)
-      } catch (error) {
+      } catch {
         setIsError(true)
-        console.error('오류 발생', error)
       } finally {
         setIsLoading(false)
       }
@@ -44,12 +52,17 @@ export const useRestaurantList = ({ category, keyword }) => {
     fetchRestaurants()
   }, [page, category, keyword])
 
-  // 다음 페이지를 요청하는 함수
   const loadNextPage = () => {
     if (enabled) {
       setPage((prevPage) => prevPage + 1)
     }
   }
 
-  return { restaurantList, loadNextPage, enabled, isError, isLoading }
+  return {
+    restaurantList,
+    loadNextPage,
+    enabled,
+    isError,
+    isLoading,
+  }
 }
