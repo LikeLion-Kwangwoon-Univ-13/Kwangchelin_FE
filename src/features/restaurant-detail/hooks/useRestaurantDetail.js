@@ -1,15 +1,34 @@
 import { useEffect, useState } from 'react'
 
+import { instance } from '@/api/client'
+
 export const useRestaurantDetail = (restaurantId) => {
   const [detailData, setDetailData] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
 
-  // 식당 상세페이지 데이터 불러오는 함수
-  const fetchData = async () => {}
+  useEffect(() => {
+    if (!restaurantId) {
+      setIsError(true)
+      return
+    }
 
-  // 페이지 마운트 시 데이터 패칭
-  useEffect(() => {}, [])
+    const fetchData = async () => {
+      setIsLoading(true)
+      setIsError(false)
+
+      try {
+        const response = await instance.get(`/places/${restaurantId}`)
+        setDetailData(response)
+      } catch {
+        setIsError(true)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [restaurantId])
 
   return { detailData, isLoading, isError }
 }
