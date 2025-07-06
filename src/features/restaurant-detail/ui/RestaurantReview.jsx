@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router'
 
 import { FloatingButton, Icon } from '@/components'
+import { ReviewItem } from '@/components/ReviewItem/ReviewItem'
+import { formatDateTime } from '@/utils/formatDateTime'
 
 import styles from './RestaurantReview.module.css'
 import { ReviewSummary } from './ReviewSummary'
@@ -16,8 +18,7 @@ import { ReviewSummary } from './ReviewSummary'
  * @param {Array} props.reviews - 리뷰 목록
  * @param {Array} props.scores - 평점 분포
  */
-
-export const RestaurantReview = ({ average, totalReviews, reviews, scores }) => {
+export const RestaurantReview = ({ average, totalReviews, reviews = [], scores }) => {
   const { restaurantId } = useParams()
 
   return (
@@ -29,12 +30,13 @@ export const RestaurantReview = ({ average, totalReviews, reviews, scores }) => 
 
       <Link to={`/restaurant/${restaurantId}/reviews`} className={styles.reviewLink}>
         <span>리뷰 전체보기</span>
-        <Icon name={'shape-arrow-right'} size={13} fill={'#7A7A7A'} />
+        <Icon name='shape-arrow-right' size={13} fill='#7A7A7A' />
       </Link>
 
       <div>
-        {/* TODO: 필요 시 형식에 맞게 수정. reviews가 빈 배열이라면? */}
-        {/* 
+        {reviews.length === 0 ? (
+          <p className={styles.noReview}>아직 등록된 리뷰가 없어요.</p>
+        ) : (
           reviews.map(({ id, createdAt, comment, rating }) => (
             <ReviewItem
               key={id}
@@ -43,7 +45,7 @@ export const RestaurantReview = ({ average, totalReviews, reviews, scores }) => 
               rating={rating}
             />
           ))
-        */}
+        )}
       </div>
 
       <FloatingButton to={`/restaurant/${restaurantId}/review`} />
