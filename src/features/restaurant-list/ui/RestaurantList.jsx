@@ -27,10 +27,21 @@ export const RestaurantList = () => {
   useIntersectionObserver(observerRef, loadNextPage, enabled)
 
   // TODO: 로딩 중일 때 처리
+  /*
+  if (isLoading) {
+    return <div>로딩 중입니다...</div>
+  }
+    */
 
   // TODO: 오류 발생 시 처리
+  if (isError) {
+    return <div>오류가 발생했습니다.</div>
+  }
 
   // TODO: 데이터가 없을 때 처리
+  if (!isLoading && restaurantList.length === 0) {
+    return <div>검색 결과가 없습니다.</div>
+  }
 
   return (
     <section className={styles.container}>
@@ -53,7 +64,7 @@ export const RestaurantList = () => {
           </div>
         </Link>
       ))}
-      <div ref={observerRef} style={{ height: 1 }} />
+      {isLoading ? <div>로딩 중입니다...</div> : <div ref={observerRef} style={{ height: 1 }} />}
     </section>
   )
 }
