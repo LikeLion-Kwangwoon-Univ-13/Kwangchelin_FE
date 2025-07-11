@@ -57,6 +57,9 @@ export default defineConfig([
       // React Refresh 권장 규칙
       'react-refresh/only-export-components': 'warn',
 
+      // 의존성 배열 규칙
+      'react-hooks/exhaustive-deps': 'warn',
+
       // Prettier 규칙
       'prettier/prettier': 'warn',
 

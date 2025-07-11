@@ -4,65 +4,47 @@ import { instance } from '@/api/client'
 
 export const useFetchAllRestaurantReviews = ({ placeId, sortBy }) => {
   const [reviewList, setReviewList] = useState([])
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(1)
   const [isLastPage, setIsLastPage] = useState(false)
   const [isError, setIsError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
+  const enabled = !isLoading && !isLastPage && !isError
+
   useEffect(() => {
-    if (!placeId) return
     setReviewList([])
+    setPage(1)
     setIsLastPage(false)
     setIsError(false)
     setIsLoading(false)
-    setPage(1)
   }, [placeId, sortBy])
 
-  useEffect(() => {
-    if (page === 0 || isLoading || isLastPage || !placeId) return
+  const loadNextPage = async () => {
+    if (!enabled) return
 
-    const fetch = async () => {
+    try {
       setIsLoading(true)
-      try {
-        const response = await instance.get(`/placeReviews/page/${page}`, {
-          params: { placeId, sortBy },
-        })
+      setIsError(false)
 
-        const { reviewInfos = [], last = false } = response.data || response
+      const response = await instance.get(`/placeReviews/page/${page}`, {
+        params: { placeId, sortBy },
+      })
 
-        setReviewList((prev) => [...prev, ...reviewInfos])
-        setIsLastPage(last || reviewInfos.length === 0)
-      } catch (err) {
-        console.error('리뷰 불러오기 실패:', err)
-        setIsError(true)
-      } finally {
-        setIsLoading(false)
+      const { reviewInfos = [], last = false } = response
+
+      if (reviewInfos.length === 0 || last) {
+        setIsLastPage(true)
       }
-    }
 
-    fetch()
-  }, [page, placeId, sortBy, isLoading, isLastPage])
-
-  const loadNextPage = () => {
-    if (!isLoading && !isLastPage) {
+      setReviewList((prev) => [...prev, ...reviewInfos])
       setPage((prev) => prev + 1)
+    } catch (error) {
+      console.error('리뷰 불러오기 실패:', error)
+      setIsError(true)
+    } finally {
+      setIsLoading(false)
     }
   }
 
-  const resetReviews = () => {
-    setReviewList([])
-    setPage(1)
-    setIsLastPage(false)
-    setIsError(false)
-    setIsLoading(false)
-  }
-
-  return {
-    reviewList,
-    loadNextPage,
-    enabled: !isLoading && !isLastPage && !!placeId,
-    isError,
-    isLoading,
-    resetReviews,
-  }
+  return { reviewList, loadNextPage, enabled, isError, isLoading }
 }

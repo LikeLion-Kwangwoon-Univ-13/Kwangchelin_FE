@@ -16,14 +16,17 @@ export const RestaurantAllReviewsPage = () => {
   const [selectedDropDown, setSelectedDropDown] = useState(SORT_OPTIONS[0])
   const [sortBy, setSortBy] = useState(0)
 
-  const { reviewList, loadNextPage, enabled, isError, isLoading, resetReviews } =
-    useFetchAllRestaurantReviews({ placeId: restaurantId, sortBy })
+  const { reviewList, loadNextPage, enabled, isError, isLoading } = useFetchAllRestaurantReviews({
+    placeId: restaurantId,
+    sortBy,
+  })
 
   const handleDropDownClick = (selectedLabel) => {
     const newSortBy = SORT_OPTIONS.indexOf(selectedLabel)
-    setSelectedDropDown(selectedLabel)
-    setSortBy(newSortBy)
-    resetReviews()
+    if (newSortBy !== sortBy) {
+      setSelectedDropDown(selectedLabel)
+      setSortBy(newSortBy)
+    }
   }
 
   useIntersectionObserver(observerRef, loadNextPage, enabled)
@@ -43,13 +46,11 @@ export const RestaurantAllReviewsPage = () => {
           <p className={styles.infoText}>아직 등록된 리뷰가 없습니다.</p>
         )}
 
-        {!isLoading &&
-          !isError &&
-          reviewList.map(({ id, createdAt, comment, rating }) => (
-            <ReviewItem key={id} date={createdAt} content={comment} rating={rating} />
-          ))}
+        {reviewList.map(({ id, createdAt, comment, rating }) => (
+          <ReviewItem key={id} date={createdAt} content={comment} rating={rating} />
+        ))}
 
-        <div ref={observerRef} className={styles.observer} />
+        {enabled && <div ref={observerRef} style={{ height: 1 }} />}
       </div>
 
       <FloatingButton to={`/restaurant/${restaurantId}/review`} />

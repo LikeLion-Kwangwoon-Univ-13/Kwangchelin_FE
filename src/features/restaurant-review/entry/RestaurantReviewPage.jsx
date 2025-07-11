@@ -58,7 +58,7 @@ export const RestaurantReviewPage = () => {
             </p>
           )}
 
-          <YellowButton type='submit' disabled={!review.trim() || isLoading}>
+          <YellowButton type='submit' disabled={!review.length || isLoading}>
             {isLoading ? '등록 중...' : '등록하기'}
           </YellowButton>
         </form>
