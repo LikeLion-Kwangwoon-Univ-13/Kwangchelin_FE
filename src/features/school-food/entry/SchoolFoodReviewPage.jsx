@@ -14,7 +14,17 @@ export const SchoolFoodReviewPage = () => {
   const { createReview, isLoading, isError } = useCreateSchoolFoodReview()
 
   // TODO: 폼 제출하는 함수 작성
-  const handleSubmit = (e) => {}
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    createReview({
+      rating,
+      review,
+      onSuccess: () => {
+        openModal(), setRating(0), setReview('')
+      },
+    })
+  }
 
   // TODO: 로딩과 에러 처리는 어떻게 할까 고민해보기.
 
@@ -38,6 +48,9 @@ export const SchoolFoodReviewPage = () => {
                 <span className={styles.placeholder}>따뜻하고 솔직한 리뷰를 공유해 주세요!</span>
               )}
             </div>
+
+            {isLoading && <p className={styles.loading}>로딩중</p>}
+            {isError && <p className={styles.error}>에러 발생</p>}
 
             <YellowButton type='submit' disabled={!review.trim()}>
               등록하기
